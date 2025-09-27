@@ -16,6 +16,7 @@ public class LegEnemyMove : MonoBehaviour
     private int pd = 0;
     private int pdt = 0;
     public int health;
+    private SpriteRenderer spriteRenderer;
     // Start is called before the first frame update
     void Start()
     {
@@ -35,6 +36,7 @@ public class LegEnemyMove : MonoBehaviour
                 position.x = position.x + (speed / 200);
                 transform.position = position;
                 pd = 1;
+                transform.localRotation = Quaternion.Euler(0, 0, 0);
             }
             else
             {
@@ -42,6 +44,7 @@ public class LegEnemyMove : MonoBehaviour
                 position.x = position.x - (speed / 200);
                 transform.position = position;
                 pd = 0;
+                transform.localRotation = Quaternion.Euler(0, 180, 0);
             }
             tim += Time.deltaTime;
             if (pd != pdt)
