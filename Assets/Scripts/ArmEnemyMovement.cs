@@ -32,11 +32,15 @@ public class ArmEnemyMovement : MonoBehaviour
                 position.x = position.x + (speed / 200);
                 transform.position = position;
             }
-            else
+            else if (player.transform.position.x < transform.position.x)
             {
                 Vector2 position = transform.position;
                 position.x = position.x - (speed / 200);
                 transform.position = position;
+            }
+            if (player.transform.position.x + .5 > transform.position.x && player.transform.position.x - .5 < transform.position.x)
+            {
+                mode = 1;
             }
         }
         else
@@ -54,12 +58,9 @@ public class ArmEnemyMovement : MonoBehaviour
             }
         }
     }
-        void OnCollisionEnter2D(Collision2D collision)
-        {
-            if (collision.gameObject.CompareTag("Player"))
-            {
-                mode = 1;
-            }
-        }
+        public void modeChange()
+    {
+        mode = 1;
     }
+}
 

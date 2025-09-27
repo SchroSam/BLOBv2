@@ -26,9 +26,15 @@ public class Fired : MonoBehaviour
     // Update is called once per frame
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (!other.CompareTag("Player"))
+        if (other.CompareTag("BlobPhys") || other.CompareTag("Player"))
         {
+            Physics2D.IgnoreCollision(gameObject.GetComponent<BoxCollider2D>(), other.GetComponent<CircleCollider2D>());
+        }
+        else
+        {
+            Debug.Log(other.gameObject.name);
             Destroy(gameObject);
         }
+        
     }
 }

@@ -1,3 +1,5 @@
+using System;
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 
@@ -19,6 +21,7 @@ public class Experiment : MonoBehaviour
     public GameObject armShot;
     public GameObject batShot;
     private int dire = 0;
+    private Component mik;
 
     void Start()
     {
@@ -107,12 +110,16 @@ public class Experiment : MonoBehaviour
             rb.linearVelocity = new Vector2(moveInput * (moveSpeed + (legCount / 2)), rb.linearVelocity.y);
         }
     }
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.CompareTag("Arm") && gameObject.GetComponent<CircleCollider2D>().gameObject.name == "Blob 1")
         {
             armCount += 1;
             Destroy(collision.gameObject);
+        }
+        if (collision.CompareTag("FARM") && gameObject.GetComponent<CircleCollider2D>().gameObject.name == "Blob 1")
+        {
+            Physics2D.IgnoreCollision(gameObject.GetComponent<CircleCollider2D>(), collision.GetComponent<BoxCollider2D>());
         }
         if (collision.CompareTag("Leg") && gameObject.GetComponent<CircleCollider2D>().gameObject.name == "Blob 1")
         {
@@ -132,7 +139,16 @@ public class Experiment : MonoBehaviour
             }
             else
             {
-                Physics2D.IgnoreCollision(gameObject.GetComponent<CircleCollider2D>(), collision.GetComponent<BoxCollider2D>(), false);
+                if (collision.GetComponent<ArmEnemyMovement>() != null)
+                {
+                    Physics2D.IgnoreCollision(gameObject.GetComponent<CircleCollider2D>(), collision.GetComponent<BoxCollider2D>(), false);
+                    collision.GetComponent<ArmEnemyMovement>().modeChange();
+                }
+                else
+                {
+                    Physics2D.IgnoreCollision(gameObject.GetComponent<CircleCollider2D>(), collision.GetComponent<BoxCollider2D>(), false);
+                    collision.GetComponent<LegEnemyMove>().modeChange();
+                }
             }
         }
     }

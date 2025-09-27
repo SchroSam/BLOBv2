@@ -44,7 +44,14 @@ public class LegEnemyMove : MonoBehaviour
                 tim += Time.deltaTime;
                 if (tim > 2)
                 {
-                    mode = 0;
+                    if (player.transform.position.x == transform.position.x)
+                    {
+                        mode = 1;
+                    }
+                    else
+                    {
+                        mode = 0;
+                    }
                     tim = 0;
                     fCheck = 0;
                 }
@@ -64,12 +71,8 @@ public class LegEnemyMove : MonoBehaviour
             }
         }
     }
-    void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("Player"))
+    public void modeChange()
         {
             mode = 1;
         }
     }
-}
-
