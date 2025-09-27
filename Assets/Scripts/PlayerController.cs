@@ -57,6 +57,7 @@ public class Experiment : MonoBehaviour
             if (armCount > 0)
             {
                 armCount -= 1;
+                InventoryManager.Instance.UpdateUIFromPlayer(this);
                 GameObject newObject = Instantiate(armShot, transform.position, Quaternion.identity);
 
                 if (dire > 0)
@@ -75,7 +76,9 @@ public class Experiment : MonoBehaviour
             if (batCount > 0)
             {
                 batCount -= 1;
+                InventoryManager.Instance.UpdateUIFromPlayer(this);
                 GameObject newObject = Instantiate(batShot, transform.position, Quaternion.identity);
+
 
                 if (dire > 0)
                 {
