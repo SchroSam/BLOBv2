@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 074cc12eab0e6ef428e128c0cb5e5de3
+guid: 82d2cd9272d5bd542ab1ddc3d641d029
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8390772979853374794
-    second: resting arm_0
+      213: 540803829919948875
+    second: Brain_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,30 +96,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: resting arm_0
+      name: Brain_0
       rect:
         serializedVersion: 2
-        x: 12
-        y: 449
-        width: 1121
-        height: 212
+        x: 268
+        y: 281
+        width: 383
+        height: 346
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a453b17a193027470800000000000000
-      internalID: 8390772979853374794
+      spriteID: b40ac8fc732518700800000000000000
+      internalID: 540803829919948875
       vertices: []
       indices: 
       edges: []
@@ -147,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      resting arm_0: 8390772979853374794
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
