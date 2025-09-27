@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: 51b1870b7e1bb3f429093752c125ce67
+guid: 4122ee76f79b09c4db3e101e74e613db
 TextureImporter:
   internalIDToNameTable:
   - first:
       213: -6582741244318507344
     second: Battery_Receptacle_0
+  - first:
+      213: -7482148732823757968
+    second: Battery_Receptacle_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,6 +99,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -103,10 +119,10 @@ TextureImporter:
       name: Battery_Receptacle_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 2048
-        height: 1024
+        x: 254
+        y: 338
+        width: 501
+        height: 281
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -117,6 +133,28 @@ TextureImporter:
       bones: []
       spriteID: 0be151417b765a4a0800000000000000
       internalID: -6582741244318507344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Battery_Receptacle_1
+      rect:
+        serializedVersion: 2
+        x: 1278
+        y: 338
+        width: 501
+        height: 281
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 07b966f9e511a2890800000000000000
+      internalID: -7482148732823757968
       vertices: []
       indices: 
       edges: []

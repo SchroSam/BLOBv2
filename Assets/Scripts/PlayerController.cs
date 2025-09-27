@@ -20,6 +20,7 @@ public class Experiment : MonoBehaviour
     private float lastDash = -999f;
     public GameObject armShot;
     public GameObject batShot;
+    public GameObject legShot;
     private int dire = 0;
     private Component mik;
 
@@ -69,7 +70,7 @@ public class Experiment : MonoBehaviour
                 {
                     newObject.GetComponent<Fired>().z = 0;
                 }
-                
+
             }
         }
         if (Input.GetKeyDown(KeyCode.Alpha4))
@@ -91,6 +92,25 @@ public class Experiment : MonoBehaviour
                 }
 
             }
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            if (legCount > 0)
+            {
+                legCount -= 1;
+                InventoryManager.Instance.UpdateUIFromPlayer(this);
+                GameObject newObject = Instantiate(legShot, transform.position, Quaternion.identity);
+
+                if (dire > 0)
+                {
+                    newObject.GetComponent<Fired>().z = 1;
+                }
+                else
+                {
+                    newObject.GetComponent<Fired>().z = 0;
+                }
+            }
+
         }
 
     }
