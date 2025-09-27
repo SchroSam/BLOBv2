@@ -314,6 +314,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6169125426121027578, guid: 1c49e914e7978b94aa4fea4d3acc9216, type: 3}
+      propertyPath: force
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6169125426121027578, guid: 1c49e914e7978b94aa4fea4d3acc9216, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -455,11 +463,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 464436, guid: 8a8d083fa12618f42aae9c29cf076400, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.249
+      value: -0.47
       objectReference: {fileID: 0}
     - target: {fileID: 464436, guid: 8a8d083fa12618f42aae9c29cf076400, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.9
+      value: -0.96
       objectReference: {fileID: 0}
     - target: {fileID: 464436, guid: 8a8d083fa12618f42aae9c29cf076400, type: 3}
       propertyPath: m_LocalPosition.z
@@ -491,6 +499,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 464436, guid: 8a8d083fa12618f42aae9c29cf076400, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5039938, guid: 8a8d083fa12618f42aae9c29cf076400, type: 3}
+      propertyPath: m_Constraints
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1665883347255070815, guid: 8a8d083fa12618f42aae9c29cf076400, type: 3}
@@ -580,6 +592,10 @@ PrefabInstance:
     - target: {fileID: 7682320270014523074, guid: 55fab87569465e24c8cc0ca2ab23598e, type: 3}
       propertyPath: m_Name
       value: Leg_Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 7682320270014523074, guid: 55fab87569465e24c8cc0ca2ab23598e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -826,6 +842,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Arm_Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 4925443356360065480, guid: 5721ae2175d88ff41b4b407dd4a1bf94, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5358472989135584255, guid: 5721ae2175d88ff41b4b407dd4a1bf94, type: 3}
       propertyPath: m_LocalPosition.x
       value: -8.52
@@ -927,6 +947,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LegAttackInvis
       objectReference: {fileID: 0}
+    - target: {fileID: 2552173367517773812, guid: 78aeef54d0e557843a9d45c2090ec974, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1017,6 +1041,10 @@ PrefabInstance:
     - target: {fileID: 1494354232999676859, guid: c4f6232cdbc0c664e9f1e300b5bc0a2a, type: 3}
       propertyPath: m_Name
       value: BatteryFired
+      objectReference: {fileID: 0}
+    - target: {fileID: 1494354232999676859, guid: c4f6232cdbc0c664e9f1e300b5bc0a2a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6339780263527942363, guid: c4f6232cdbc0c664e9f1e300b5bc0a2a, type: 3}
       propertyPath: drop

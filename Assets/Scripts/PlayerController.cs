@@ -109,19 +109,19 @@ public class Experiment : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Arm"))
+        if (collision.CompareTag("Arm") && gameObject.GetComponent<CircleCollider2D>().gameObject.name == "Blob 1")
         {
             armCount += 1;
         }
-        if (collision.CompareTag("Leg"))
+        if (collision.CompareTag("Leg") && gameObject.GetComponent<CircleCollider2D>().gameObject.name == "Blob 1")
         {
             legCount += 1;
         }
-        if (collision.CompareTag("Battery"))
+        if (collision.CompareTag("Battery") && gameObject.GetComponent<CircleCollider2D>().gameObject.name == "Blob 1")
         {
             batCount += 1;
         }
-        if (collision.CompareTag("Enemy"))
+        if (collision.CompareTag("Enemy") && gameObject.GetComponent<CircleCollider2D>().gameObject.name == "Blob 1")
         {
             if (isDashing)
             {
