@@ -10,12 +10,14 @@ public class Experiment : MonoBehaviour
     public float dashCooldown = 1f;    // Time before you can dash again
     public int armCount = 0;
     public int legCount = 0;
+    public int batCount = 0;
     private Rigidbody2D rb;
     private float moveInput;
     private bool isDashing = false;
     private float dashTimeLeft;
     private float lastDash = -999f;
     public GameObject armShot;
+    public GameObject batShot;
     private int dire = 0;
 
     void Start()
@@ -65,6 +67,24 @@ public class Experiment : MonoBehaviour
                 
             }
         }
+        if (Input.GetKeyDown(KeyCode.Alpha4))
+        {
+            if (batCount > 0)
+            {
+                batCount -= 1;
+                GameObject newObject = Instantiate(batShot, transform.position, Quaternion.identity);
+
+                if (dire > 0)
+                {
+                    newObject.GetComponent<Fired>().z = 1;
+                }
+                else
+                {
+                    newObject.GetComponent<Fired>().z = 0;
+                }
+
+            }
+        }
 
     }
 
@@ -96,6 +116,10 @@ public class Experiment : MonoBehaviour
         if (collision.CompareTag("Leg"))
         {
             legCount += 1;
+        }
+        if (collision.CompareTag("Battery"))
+        {
+            batCount += 1;
         }
         if (collision.CompareTag("Enemy"))
         {
