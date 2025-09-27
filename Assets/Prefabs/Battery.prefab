@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 6163513363718298794}
   - component: {fileID: 6678583082413762950}
   - component: {fileID: 6499933639882725589}
-  - component: {fileID: 3028981203276131135}
   - component: {fileID: 3301978195393525610}
   m_Layer: 0
   m_Name: Battery
@@ -103,7 +102,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb91e0e94e6af6e43a890e7420cdd2a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 4616241051184047133, guid: 43d63dffa46c92d4080fe9eb1bf9715f, type: 3}
+  player: {fileID: 0}
 --- !u!61 &6499933639882725589
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -150,18 +149,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &3028981203276131135
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3997213899358108021}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 001f2d601d9627042893b05fe37f0474, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!50 &3301978195393525610
 Rigidbody2D:
   serializedVersion: 5

@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -10,6 +11,9 @@ public class SpawnOnPlayer : MonoBehaviour
     private float rval1;
     private float rval2;
     private float rval3;
+    public List<GameObject> arms;
+    private int ranob;
+    private GameObject myObject;
 
     public void SpawnSprite()
     {
@@ -30,6 +34,15 @@ public class SpawnOnPlayer : MonoBehaviour
 
             // Make the sprite a child of the player so it sticks
             spawned.transform.SetParent(player);
+
+            arms.Add(spawned);
         }
+    }
+    public void KillLimbArm()
+    {
+        ranob =  Random.Range(0, arms.Count);
+        myObject = arms[ranob];
+        arms.Remove(arms[ranob]);
+        Destroy(myObject);
     }
 }

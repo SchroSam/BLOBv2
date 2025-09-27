@@ -34,7 +34,7 @@ public class WeightPuzzel : MonoBehaviour
     {
         if (collision.CompareTag("FARM"))
         {
-            Destroy(collision.gameObject);
+            collision.gameObject.SetActive(false);
             weightNeeded -= 2;
             
                 rval1 = Random.Range(0, maxDist); // The distance from center

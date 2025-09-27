@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: 75bde81383592144d96e40c8b2e64abd
+guid: b409006a88aa61242876c06f9ede3dea
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5227922357937593577
-    second: Ground_1_0
+      213: -3017979480325208809
+    second: Battery_0
+  - first:
+      213: -1720865232835478159
+    second: Battery_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +116,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Ground_1_0
+      name: Battery_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1024
-        height: 185
+        x: 312
+        y: 343
+        width: 435
+        height: 371
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +131,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9ec51329faf4d8840800000000000000
-      internalID: 5227922357937593577
+      spriteID: 7154ccf07abfd16d0800000000000000
+      internalID: -3017979480325208809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Battery_1
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 340
+        width: 11
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 17d758230324e18e0800000000000000
+      internalID: -1720865232835478159
       vertices: []
       indices: 
       edges: []
@@ -148,7 +173,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Ground_1_0: 5227922357937593577
+      Battery_0: -3017979480325208809
+      Battery_1: -1720865232835478159
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

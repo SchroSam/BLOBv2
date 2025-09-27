@@ -57,7 +57,9 @@ public class Experiment : MonoBehaviour
             if (armCount > 0)
             {
                 armCount -= 1;
+                InventoryManager.Instance.UpdateUIFromPlayer(this);
                 GameObject newObject = Instantiate(armShot, transform.position, Quaternion.identity);
+                gameObject.GetComponent<SpawnOnPlayer>().KillLimbArm();
 
                 if (dire > 0)
                 {
@@ -75,7 +77,9 @@ public class Experiment : MonoBehaviour
             if (batCount > 0)
             {
                 batCount -= 1;
+                InventoryManager.Instance.UpdateUIFromPlayer(this);
                 GameObject newObject = Instantiate(batShot, transform.position, Quaternion.identity);
+
 
                 if (dire > 0)
                 {
@@ -110,12 +114,13 @@ public class Experiment : MonoBehaviour
             rb.linearVelocity = new Vector2(moveInput * (moveSpeed + (legCount / 2)), rb.linearVelocity.y);
         }
     }
-    private void OnTriggerStay2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Arm") && gameObject.GetComponent<CircleCollider2D>().gameObject.name == "Blob 1")
         {
             armCount += 1;
             Destroy(collision.gameObject);
+            InventoryManager.Instance.UpdateUIFromPlayer(this);
         }
         if (collision.CompareTag("FARM") && gameObject.GetComponent<CircleCollider2D>().gameObject.name == "Blob 1")
         {
@@ -125,12 +130,17 @@ public class Experiment : MonoBehaviour
         {
             legCount += 1;
             Destroy(collision.gameObject);
+            InventoryManager.Instance.UpdateUIFromPlayer(this);
         }
         if (collision.CompareTag("Battery") && gameObject.GetComponent<CircleCollider2D>().gameObject.name == "Blob 1")
         {
             batCount += 1;
             Destroy(collision.gameObject);
+            InventoryManager.Instance.UpdateUIFromPlayer(this);
         }
+    }
+    private void OnTriggerStay2D(Collider2D collision)
+    {
         if (collision.CompareTag("Enemy") && gameObject.GetComponent<CircleCollider2D>().gameObject.name == "Blob 1")
         {
             if (isDashing)
@@ -148,6 +158,7 @@ public class Experiment : MonoBehaviour
                 {
                     Physics2D.IgnoreCollision(gameObject.GetComponent<CircleCollider2D>(), collision.GetComponent<BoxCollider2D>(), false);
                     collision.GetComponent<LegEnemyMove>().modeChange();
+                    collision.GetComponent<Animator>().SetInteger("mode", collision.GetComponent<LegEnemyMove>().mode);
                 }
             }
         }
