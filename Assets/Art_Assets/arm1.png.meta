@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 51b1870b7e1bb3f429093752c125ce67
+guid: c343db0e846f31a4bbbe5b9f95938047
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6582741244318507344
-    second: Battery_Receptacle_0
+      213: -5553399918765898929
+    second: arm1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Battery_Receptacle_0
+      name: arm1_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 2048
-        height: 1024
+        x: 38
+        y: 372
+        width: 1030
+        height: 412
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0be151417b765a4a0800000000000000
-      internalID: -6582741244318507344
+      spriteID: f438642723c5ee2b0800000000000000
+      internalID: -5553399918765898929
       vertices: []
       indices: 
       edges: []
