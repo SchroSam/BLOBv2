@@ -1,24 +1,23 @@
-using UnityEditor;
 using UnityEngine;
 
 public class Experiment : MonoBehaviour
 {
     [Header("Movement Settings")]
-    public float moveSpeed = 5f;       // Normal movement speed
-    public float dashSpeed = 15f;      // Speed during dash
-    public float dashDuration = 0.2f;  // How long the dash lasts
-    public float dashCooldown = 1f;    // Time before you can dash again
-    public int armCount = 0;
-    public int legCount = 0;
-    public int batCount = 0;
+    public float moveSpeed = 5f;
+    public float dashSpeed = 15f;
+    public float dashDuration = 0.2f;
+    public float dashCooldown = 1f;
+
     private Rigidbody2D rb;
     private float moveInput;
     private bool isDashing = false;
     private float dashTimeLeft;
     private float lastDash = -999f;
+    private int dire = 0;
+
+    [Header("Projectiles")]
     public GameObject armShot;
     public GameObject batShot;
-    private int dire = 0;
 
     void Start()
     {
@@ -27,65 +26,37 @@ public class Experiment : MonoBehaviour
 
     void Update()
     {
-        // Get left/right input (-1 to 1)
+        // Movement input
         moveInput = Input.GetAxisRaw("Horizontal");
 
         float z = Input.GetAxis("Horizontal");
-        if (z != 0)
-        {
-            if (z < 0)
-            {
-                dire = 0;
-            }
-            else
-            {
-                dire = 1;
-            }
-        }
-        // Dash input (Shift key)
+        if (z != 0) dire = z < 0 ? 0 : 1;
+
+        // Dash input
         if (Input.GetKeyDown(KeyCode.LeftShift) && Time.time >= lastDash + dashCooldown)
         {
             isDashing = true;
             dashTimeLeft = dashDuration;
             lastDash = Time.time;
         }
+
+        // Shoot Arm
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            if (armCount > 0)
+            if (InventoryManager.Instance.UseArms(1)) // Use 1 arm
             {
-                armCount -= 1;
-                GameObject newObject = Instantiate(armShot, transform.position, Quaternion.identity);
-
-                if (dire > 0)
-                {
-                    newObject.GetComponent<Fired>().z = 1;
-                }
-                else
-                {
-                    newObject.GetComponent<Fired>().z = 0;
-                }
-                
+                FireProjectile(armShot);
             }
         }
+
+        // Shoot Bat (using brains as ammo)
         if (Input.GetKeyDown(KeyCode.Alpha4))
         {
-            if (batCount > 0)
+            if (InventoryManager.Instance.UseBrains(1))
             {
-                batCount -= 1;
-                GameObject newObject = Instantiate(batShot, transform.position, Quaternion.identity);
-
-                if (dire > 0)
-                {
-                    newObject.GetComponent<Fired>().z = 1;
-                }
-                else
-                {
-                    newObject.GetComponent<Fired>().z = 0;
-                }
-
+                FireProjectile(batShot);
             }
         }
-
     }
 
     void FixedUpdate()
@@ -93,43 +64,50 @@ public class Experiment : MonoBehaviour
         if (isDashing)
         {
             // Dash movement
-            rb.linearVelocity = new Vector2(moveInput * (dashSpeed + legCount), rb.linearVelocity.y);
+            rb.linearVelocity = new Vector2(moveInput * (dashSpeed + InventoryManager.Instance.legs), rb.linearVelocity.y);
             dashTimeLeft -= Time.fixedDeltaTime;
-
-            if (dashTimeLeft <= 0)
-            {
-                isDashing = false;
-            }
+            if (dashTimeLeft <= 0) isDashing = false;
         }
         else
         {
             // Normal movement
-            rb.linearVelocity = new Vector2(moveInput * (moveSpeed + (legCount / 2)), rb.linearVelocity.y);
+            rb.linearVelocity = new Vector2(moveInput * (moveSpeed + (InventoryManager.Instance.legs / 2f)), rb.linearVelocity.y);
         }
     }
+
+    private void FireProjectile(GameObject projectile)
+    {
+        if (projectile == null) return;
+        GameObject newObj = Instantiate(projectile, transform.position, Quaternion.identity);
+        newObj.GetComponent<Fired>().z = dire > 0 ? 1 : 0;
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Arm") && gameObject.GetComponent<CircleCollider2D>().gameObject.name == "Blob 1")
         {
-            armCount += 1;
+            InventoryManager.Instance.AddArms(1);
+            Destroy(collision.gameObject);
         }
         if (collision.CompareTag("Leg") && gameObject.GetComponent<CircleCollider2D>().gameObject.name == "Blob 1")
         {
-            legCount += 1;
+            InventoryManager.Instance.AddLegs(1);
+            Destroy(collision.gameObject);
         }
         if (collision.CompareTag("Battery") && gameObject.GetComponent<CircleCollider2D>().gameObject.name == "Blob 1")
         {
-            batCount += 1;
+            InventoryManager.Instance.AddBrains(1);
+            Destroy(collision.gameObject);
         }
         if (collision.CompareTag("Enemy") && gameObject.GetComponent<CircleCollider2D>().gameObject.name == "Blob 1")
         {
             if (isDashing)
             {
-                Physics2D.IgnoreCollision(gameObject.GetComponent<CircleCollider2D>(), collision.GetComponent<BoxCollider2D>());
+                Physics2D.IgnoreCollision(GetComponent<CircleCollider2D>(), collision.GetComponent<BoxCollider2D>());
             }
             else
             {
-                Physics2D.IgnoreCollision(gameObject.GetComponent<CircleCollider2D>(), collision.GetComponent<BoxCollider2D>(), false);
+                Physics2D.IgnoreCollision(GetComponent<CircleCollider2D>(), collision.GetComponent<BoxCollider2D>(), false);
             }
         }
     }
