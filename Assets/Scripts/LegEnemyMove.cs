@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 
 public class LegEnemyMove : MonoBehaviour
@@ -16,10 +17,31 @@ public class LegEnemyMove : MonoBehaviour
     private int pd = 0;
     private int pdt = 0;
     public int health;
+
+    // void TraverseHierarchy(Transform current)
+    // {
+    //     //Debug.Log("Found: " + current.name);
+
+    //     foreach (Transform child in current)
+    //     {
+    //         if (child.gameObject.tag == "Arm" || child.gameObject.tag == "Battery")
+    //         {
+    //             Physics2D.IgnoreCollision(gameObject.GetComponent<BoxCollider2D>(), child.gameObject.GetComponent<BoxCollider2D>());
+    //         }
+    //         TraverseHierarchy(child);
+    //     }
+    // }
+
+
     // Start is called before the first frame update
     void Start()
     {
-        //for(int i = 0; i < )
+        // foreach (GameObject root in SceneManager.GetActiveScene().GetRootGameObjects())
+        // {
+        //     TraverseHierarchy(root.transform);
+
+        // }
+
     }
 
 
