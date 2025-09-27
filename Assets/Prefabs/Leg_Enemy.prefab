@@ -31,7 +31,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7682320270014523074}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.26, y: 0.322584, z: 0.17525072}
   m_ConstrainProportionsScale: 1
@@ -109,6 +109,8 @@ MonoBehaviour:
   mode: 0
   player: {fileID: 0}
   attack: {fileID: 2552173367517773812, guid: 78aeef54d0e557843a9d45c2090ec974, type: 3}
+  animator: {fileID: 5637519519159271572}
+  health: 3
   animator: {fileID: 5637519519159271572}
   health: 0
 --- !u!61 &719241811045089980
