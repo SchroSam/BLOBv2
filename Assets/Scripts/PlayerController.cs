@@ -154,6 +154,7 @@ public class Experiment : MonoBehaviour
                 {
                     Physics2D.IgnoreCollision(gameObject.GetComponent<CircleCollider2D>(), collision.GetComponent<BoxCollider2D>(), false);
                     collision.GetComponent<LegEnemyMove>().modeChange();
+                    collision.GetComponent<Animator>().SetInteger("mode", collision.GetComponent<LegEnemyMove>().mode);
                 }
             }
         }

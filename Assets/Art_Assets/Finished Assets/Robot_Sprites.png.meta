@@ -146,23 +146,155 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Robot_Sprites_7
+      name: Robot_Sprites_0
       rect:
         serializedVersion: 2
-        x: 35
-        y: 19
-        width: 805
-        height: 757
+        x: 0
+        y: 2048
+        width: 1024
+        height: 1024
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 33cd8c65f244f0440800000000000000
-      internalID: 4904213489339915315
+      spriteID: d175dd0b2c9f61145b29fa80fbdada56
+      internalID: 1565454414773705533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_Sprites_1
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 2048
+        width: 1024
+        height: 1024
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44abbae2e8deeb946a31492a95467b50
+      internalID: -1750283455939850998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_Sprites_2
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 2048
+        width: 1024
+        height: 1024
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1653fd2ec3b02a443beecc516873dcd6
+      internalID: 431345278814173264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_Sprites_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1024
+        width: 1024
+        height: 1024
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22253537c31870241b9fd6db2ab49fc6
+      internalID: -8649835076569609943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_Sprites_4
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 1024
+        width: 1024
+        height: 1024
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de19862fdca130346b2114baca4b612d
+      internalID: -8192150802995045427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_Sprites_5
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 1024
+        width: 1024
+        height: 1024
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6790d17d2a8072f4fa63715c5ad807eb
+      internalID: -4341090562214564291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_Sprites_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 1024
+        height: 1024
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 268206819964fbd4aa2be7cb8e7dda80
+      internalID: 3592883954577167468
       vertices: []
       indices: 
       edges: []
@@ -183,16 +315,11 @@ TextureImporter:
     nameFileIdTable:
       Robot_Sprites_0: 1565454414773705533
       Robot_Sprites_1: -1750283455939850998
-      Robot_Sprites_10: 9141898279881877584
-      Robot_Sprites_11: 5161446915185839511
       Robot_Sprites_2: 431345278814173264
       Robot_Sprites_3: -8649835076569609943
       Robot_Sprites_4: -8192150802995045427
       Robot_Sprites_5: -4341090562214564291
       Robot_Sprites_6: 3592883954577167468
-      Robot_Sprites_7: 4904213489339915315
-      Robot_Sprites_8: -6447520761219877819
-      Robot_Sprites_9: 945237970041879103
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
