@@ -173,6 +173,9 @@ MonoBehaviour:
   dashCooldown: 1
   armCount: 0
   legCount: 0
+  batCount: 0
+  armShot: {fileID: 0}
+  batShot: {fileID: 0}
 --- !u!114 &7330703638945838307
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -187,6 +190,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spritePrefab: {fileID: 216977880142089823, guid: bc37bd18393366147a1445168708ce65, type: 3}
   player: {fileID: 847090744702232099}
+  maxDist: 10
 --- !u!1 &8196230777670471866
 GameObject:
   m_ObjectHideFlags: 0
