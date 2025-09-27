@@ -6,22 +6,20 @@ public class TempEnemy : MonoBehaviour
     // Trigger collider detects the player
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        // Check if player collided
+        if (collision.gameObject.CompareTag("Player"))
         {
-            Die();
+            SpawnSpriteOnPlayer();
+            Destroy(gameObject); // Remove the enemy
         }
     }
 
-    void Die()
+    void SpawnSpriteOnPlayer()
     {
-        // Spawn sprite on player
         var spawner = FindFirstObjectByType<SpawnOnPlayer>();
         if (spawner != null)
         {
             spawner.SpawnSprite();
         }
-
-        // Destroy enemy object
-        Destroy(gameObject);
     }
 }
