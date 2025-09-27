@@ -59,6 +59,7 @@ public class Experiment : MonoBehaviour
                 armCount -= 1;
                 InventoryManager.Instance.UpdateUIFromPlayer(this);
                 GameObject newObject = Instantiate(armShot, transform.position, Quaternion.identity);
+                gameObject.GetComponent<SpawnOnPlayer>().KillLimbArm();
 
                 if (dire > 0)
                 {

@@ -38,7 +38,7 @@ public class SpawnOnPlayer : MonoBehaviour
             arms.Add(spawned);
         }
     }
-    public void KillLimb()
+    public void KillLimbArm()
     {
         ranob =  Random.Range(0, arms.Count);
         myObject = arms[ranob];
