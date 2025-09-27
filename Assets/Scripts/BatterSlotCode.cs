@@ -28,6 +28,7 @@ public class BatterSlotCode : MonoBehaviour
         if (collision.CompareTag("Battery"))
         {
             isActive = true;
+            collision.gameObject.SetActive(false);
         }
     }
 }
