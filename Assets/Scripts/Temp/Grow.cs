@@ -14,12 +14,12 @@ public class Grow : MonoBehaviour
     new Transform transform;
     new Rigidbody2D rigidbody;
     //private Rigidbody2D rigidbody;
-    bool growing = true;
-    float startTime;
-    float startScale;
-    float startMass;
+    public bool growing = true;
+    public float startTime;
+    public float startScale;
+    public float startMass;
     const int Left = 0;
-    Vector3 velocity = Vector3.zero;
+    public Vector3 velocity = Vector3.zero;
 
     void Start()
     {
