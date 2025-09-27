@@ -88,6 +88,7 @@ MonoBehaviour:
   startScale: 0
   startMass: 0
   velocity: {x: 0, y: 0, z: 0}
+  clicky: 1
 --- !u!114 &4415715137794803464
 MonoBehaviour:
   m_ObjectHideFlags: 0
