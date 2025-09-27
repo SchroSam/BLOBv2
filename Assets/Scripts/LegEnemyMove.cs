@@ -13,6 +13,9 @@ public class LegEnemyMove : MonoBehaviour
     public Animator animator;
     private float tim;
     private int fCheck;
+    private int pd = 0;
+    private int pdt = 0;
+    public int health;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,12 +34,21 @@ public class LegEnemyMove : MonoBehaviour
                 Vector2 position = transform.position;
                 position.x = position.x + (speed / 200);
                 transform.position = position;
+                pd = 1;
             }
             else
             {
                 Vector2 position = transform.position;
                 position.x = position.x - (speed / 200);
                 transform.position = position;
+                pd = 0;
+            }
+            tim += Time.deltaTime;
+            if (pd != pdt)
+            {
+                mode = 2;
+                tim = 2 + (Random.Range(0,0.5f));
+                pdt = pd;
             }
         }
         else if (mode == 1)
@@ -72,9 +84,27 @@ public class LegEnemyMove : MonoBehaviour
                 }
             }
         }
+        else
+        {
+            tim -= Time.deltaTime;
+            if (tim < 0)
+            {
+                mode = 0;
+                tim = 0;
+            }
+        }
     }
     public void modeChange()
         {
             mode = 1;
+        tim = 0;
+        }
+    public void hurt()
+    {
+        health -= 1;
+        if (health == 0)
+        {
+            Destroy(gameObject);
         }
     }
+}
