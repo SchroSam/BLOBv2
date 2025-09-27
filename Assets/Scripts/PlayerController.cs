@@ -116,6 +116,7 @@ public class Experiment : MonoBehaviour
         {
             armCount += 1;
             Destroy(collision.gameObject);
+            InventoryManager.Instance.UpdateUIFromPlayer(this);
         }
         if (collision.CompareTag("FARM") && gameObject.GetComponent<CircleCollider2D>().gameObject.name == "Blob 1")
         {
@@ -125,11 +126,13 @@ public class Experiment : MonoBehaviour
         {
             legCount += 1;
             Destroy(collision.gameObject);
+            InventoryManager.Instance.UpdateUIFromPlayer(this);
         }
         if (collision.CompareTag("Battery") && gameObject.GetComponent<CircleCollider2D>().gameObject.name == "Blob 1")
         {
             batCount += 1;
             Destroy(collision.gameObject);
+            InventoryManager.Instance.UpdateUIFromPlayer(this);
         }
         if (collision.CompareTag("Enemy") && gameObject.GetComponent<CircleCollider2D>().gameObject.name == "Blob 1")
         {
