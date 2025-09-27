@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4415715137794803464}
   - component: {fileID: 3386826224017997663}
   - component: {fileID: 1665883347255070815}
+  - component: {fileID: -5311222889144748140}
   m_Layer: 0
   m_Name: Blob
   m_TagString: Untagged
@@ -81,6 +82,11 @@ MonoBehaviour:
   scaleStep: 5
   massStep: 10
   explosion: {fileID: 0}
+  growing: 1
+  startTime: 0
+  startScale: 0
+  startMass: 0
+  velocity: {x: 0, y: 0, z: 0}
 --- !u!114 &4415715137794803464
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -154,3 +160,22 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &-5311222889144748140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 143058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2c3dfc1d0029ea4a9f67a1ce2f3f171, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 5
+  dashSpeed: 15
+  dashDuration: 0.2
+  dashCooldown: 1
+  armCount: 0
+  legCount: 0
+  armShot: {fileID: 0}
