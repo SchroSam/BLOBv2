@@ -9,11 +9,13 @@ public class InventoryManager : MonoBehaviour
     public int arms;
     public int legs;
     public int brains;
+    public int batteries; // Added separate batteries count
 
     [Header("UI")]
     public TMP_Text armsText;
     public TMP_Text legsText;
     public TMP_Text brainsText;
+    public TMP_Text batteriesText; // Added separate UI for batteries
 
     void Awake()
     {
@@ -26,6 +28,7 @@ public class InventoryManager : MonoBehaviour
         UpdateUI();
     }
 
+    // Add methods
     public void AddArms(int amount)
     {
         arms += amount;
@@ -44,6 +47,13 @@ public class InventoryManager : MonoBehaviour
         UpdateUI();
     }
 
+    public void AddBatteries(int amount)
+    {
+        batteries += amount;
+        UpdateUI();
+    }
+
+    // Use methods
     public bool UseArms(int amount)
     {
         if (arms >= amount)
@@ -77,10 +87,23 @@ public class InventoryManager : MonoBehaviour
         return false;
     }
 
+    public bool UseBatteries(int amount)
+    {
+        if (batteries >= amount)
+        {
+            batteries -= amount;
+            UpdateUI();
+            return true;
+        }
+        return false;
+    }
+
+    // Update all UI elements
     void UpdateUI()
     {
-        armsText.text = "Arms: " + arms;
-        legsText.text = "Legs: " + legs;
-        brainsText.text = "Brains: " + brains;
+        if (armsText != null) armsText.text = "Arms: " + arms;
+        if (legsText != null) legsText.text = "Legs: " + legs;
+        if (brainsText != null) brainsText.text = "Brains: " + brains;
+        if (batteriesText != null) batteriesText.text = "Batteries: " + batteries;
     }
 }
