@@ -10,6 +10,7 @@ TagManager:
   - Battery
   - FARM
   - BlobPhys
+  - Puzz
   layers:
   - Default
   - TransparentFX

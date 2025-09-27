@@ -30,6 +30,15 @@ public class Fired : MonoBehaviour
         {
             Physics2D.IgnoreCollision(gameObject.GetComponent<BoxCollider2D>(), other.GetComponent<CircleCollider2D>());
         }
+        else if (other.CompareTag("Enemy") && other.GetComponent<LegEnemyMove>() != null)
+        {
+            other.GetComponent<LegEnemyMove>().hurt();
+            Destroy(gameObject);
+        }
+        else if (other.CompareTag("Puzz"))
+        {
+            gameObject.SetActive(false);
+        }
         else
         {
             Debug.Log(other.gameObject.name);

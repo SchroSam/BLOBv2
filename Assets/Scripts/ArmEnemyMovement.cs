@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using static UnityEditor.PlayerSettings;
 
 
 public class ArmEnemyMovement : MonoBehaviour
@@ -38,10 +39,6 @@ public class ArmEnemyMovement : MonoBehaviour
                 position.x = position.x - (speed / 200);
                 transform.position = position;
             }
-            if (player.transform.position.x + .5 > transform.position.x && player.transform.position.x - .5 < transform.position.x)
-            {
-                mode = 1;
-            }
         }
         else
         {
@@ -51,6 +48,7 @@ public class ArmEnemyMovement : MonoBehaviour
                 elapsedTime += Time.deltaTime;
                 transform.localScale = Vector3.Lerp(initialScale, targetScale, elapsedTime / shrinkDuration);
                 GetComponent<BoxCollider2D>().enabled = false;
+                transform.position = Vector3.MoveTowards(transform.position, player.transform.position, 8 * Time.deltaTime);
             }
             if (transform.localScale.y <= 0)
             {
