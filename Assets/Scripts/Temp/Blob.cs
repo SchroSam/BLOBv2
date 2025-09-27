@@ -10,7 +10,7 @@ public class Blob : MonoBehaviour {
 
     public int width = 5;
     public int height = 5;
-    public int referencePointsCount = 12;
+    public int referencePointsCount = 32;
     public float referencePointRadius = 0.25f;
     public float mappingDetail = 10;
     public float springDampingRatio = 0;

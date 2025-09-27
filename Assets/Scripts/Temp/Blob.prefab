@@ -88,6 +88,7 @@ MonoBehaviour:
   startScale: 0
   startMass: 0
   velocity: {x: 0, y: 0, z: 0}
+  clicky: 1
 --- !u!114 &4415715137794803464
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -102,7 +103,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   width: 5
   height: 5
-  referencePointsCount: 12
+  referencePointsCount: 32
   referencePointRadius: 0.25
   mappingDetail: 10
   springDampingRatio: 0
