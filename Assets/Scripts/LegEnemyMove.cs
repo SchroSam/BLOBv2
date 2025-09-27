@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 
 public class LegEnemyMove : MonoBehaviour
@@ -20,7 +21,12 @@ public class LegEnemyMove : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //for(int i = 0; i < )
+        // foreach (GameObject root in SceneManager.GetActiveScene().GetRootGameObjects())
+        // {
+        //     TraverseHierarchy(root.transform);
+
+        // }
+
     }
 
 
