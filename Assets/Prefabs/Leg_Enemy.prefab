@@ -111,7 +111,7 @@ MonoBehaviour:
   player: {fileID: 0}
   attack: {fileID: 2552173367517773812, guid: 78aeef54d0e557843a9d45c2090ec974, type: 3}
   animator: {fileID: 5637519519159271572}
-  health: 0
+  health: 3
 --- !u!61 &719241811045089980
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -266,7 +266,7 @@ Animator:
   m_GameObject: {fileID: 7682320270014523074}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0582e355d5739214db307c3ea75e23db, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
