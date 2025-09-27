@@ -12,6 +12,7 @@ public class SpawnOnPlayer : MonoBehaviour
     private float rval2;
     private float rval3;
     public List<GameObject> arms;
+    public List<GameObject> legs;
     private int ranob;
     private GameObject myObject;
 
