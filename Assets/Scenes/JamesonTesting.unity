@@ -319,6 +319,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1222411169 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 4722215438692217673, guid: 55fab87569465e24c8cc0ca2ab23598e, type: 3}
+  m_PrefabInstance: {fileID: 1321116735433084897}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1443997449
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -660,12 +665,24 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 464228802374172042, guid: 55fab87569465e24c8cc0ca2ab23598e, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.18
+      objectReference: {fileID: 0}
+    - target: {fileID: 464228802374172042, guid: 55fab87569465e24c8cc0ca2ab23598e, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.322584
+      objectReference: {fileID: 0}
+    - target: {fileID: 464228802374172042, guid: 55fab87569465e24c8cc0ca2ab23598e, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.17525072
+      objectReference: {fileID: 0}
+    - target: {fileID: 464228802374172042, guid: 55fab87569465e24c8cc0ca2ab23598e, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6.5
       objectReference: {fileID: 0}
     - target: {fileID: 464228802374172042, guid: 55fab87569465e24c8cc0ca2ab23598e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.63
+      value: -0.106
       objectReference: {fileID: 0}
     - target: {fileID: 464228802374172042, guid: 55fab87569465e24c8cc0ca2ab23598e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -699,10 +716,38 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 464228802374172042, guid: 55fab87569465e24c8cc0ca2ab23598e, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 719241811045089980, guid: 55fab87569465e24c8cc0ca2ab23598e, type: 3}
+      propertyPath: m_Size.x
+      value: 6.9810457
+      objectReference: {fileID: 0}
+    - target: {fileID: 719241811045089980, guid: 55fab87569465e24c8cc0ca2ab23598e, type: 3}
+      propertyPath: m_Size.y
+      value: 6.1014104
+      objectReference: {fileID: 0}
+    - target: {fileID: 719241811045089980, guid: 55fab87569465e24c8cc0ca2ab23598e, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.73447657
+      objectReference: {fileID: 0}
+    - target: {fileID: 719241811045089980, guid: 55fab87569465e24c8cc0ca2ab23598e, type: 3}
+      propertyPath: m_Offset.y
+      value: -1.5686743
+      objectReference: {fileID: 0}
     - target: {fileID: 1723616419695579994, guid: 55fab87569465e24c8cc0ca2ab23598e, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 741224045}
+    - target: {fileID: 1723616419695579994, guid: 55fab87569465e24c8cc0ca2ab23598e, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 1222411169}
+    - target: {fileID: 6825181194665827968, guid: 55fab87569465e24c8cc0ca2ab23598e, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1565454414773705533, guid: aa272a0b7339af44b928cb8b90e4ab50, type: 3}
     - target: {fileID: 7682320270014523074, guid: 55fab87569465e24c8cc0ca2ab23598e, type: 3}
       propertyPath: m_Name
       value: Leg_Enemy

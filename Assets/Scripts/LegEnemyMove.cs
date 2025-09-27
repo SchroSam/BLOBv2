@@ -6,22 +6,24 @@ using UnityEngine;
 
 public class LegEnemyMove : MonoBehaviour
 {
-    [SerializeField] public float speed;
-    public int mode;
+    public float speed;
+    public int mode = 0;
     public GameObject player;
     public GameObject attack;
+    public Animator animator;
     private float tim;
     private int fCheck;
     // Start is called before the first frame update
     void Start()
     {
-
+        //for(int i = 0; i < )
     }
 
 
     // Update is called once per frame
     void Update()
     {
+        animator.SetInteger("mode", mode);
         if (mode == 0)
         {
             if (player.transform.position.x > transform.position.x)
@@ -40,7 +42,7 @@ public class LegEnemyMove : MonoBehaviour
         else if (mode == 1)
         {
             {
-                
+
                 tim += Time.deltaTime;
                 if (tim > 2)
                 {
@@ -55,7 +57,7 @@ public class LegEnemyMove : MonoBehaviour
                     tim = 0;
                     fCheck = 0;
                 }
-                if (tim >= 1 && fCheck != 1) 
+                if (tim >= 1 && fCheck != 1)
                 {
                     GameObject newObject = Instantiate(attack, transform.position, Quaternion.identity);
                     fCheck = 1;

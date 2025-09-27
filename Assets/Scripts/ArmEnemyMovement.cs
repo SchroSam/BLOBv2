@@ -6,9 +6,9 @@ using UnityEngine;
 
 public class ArmEnemyMovement : MonoBehaviour
 {
-    [SerializeField] public float speed;
+    public float speed;
     public int mode;
-    [SerializeField] public Vector3 rotateSpeed;
+    public Vector3 rotateSpeed;
     public float shrinkDuration = 2f; // Time to fully shrink
     public Vector3 targetScale = new Vector3(0, 0, 0); // Final size
     private Vector3 initialScale;
