@@ -628,6 +628,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Leg_Enemy
       objectReference: {fileID: 0}
+<<<<<<< HEAD
+=======
+    - target: {fileID: 7682320270014523074, guid: 55fab87569465e24c8cc0ca2ab23598e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8789840163780156045, guid: 55fab87569465e24c8cc0ca2ab23598e, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+>>>>>>> 820aff923ccc7549710b6fbc6798bbe3afdc73ca
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -869,6 +880,13 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+<<<<<<< HEAD
+=======
+    - target: {fileID: 2090844574091089573, guid: 5721ae2175d88ff41b4b407dd4a1bf94, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+>>>>>>> 820aff923ccc7549710b6fbc6798bbe3afdc73ca
     - target: {fileID: 4925443356360065480, guid: 5721ae2175d88ff41b4b407dd4a1bf94, type: 3}
       propertyPath: m_Name
       value: Arm_Enemy

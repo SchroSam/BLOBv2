@@ -15,8 +15,12 @@ GameObject:
   - component: {fileID: 428920476239081857}
   - component: {fileID: 4346152283325107875}
   - component: {fileID: 1574109084766827484}
+<<<<<<< HEAD
   - component: {fileID: 7504712296413634631}
   - component: {fileID: 5637519519159271572}
+=======
+  - component: {fileID: 8789840163780156045}
+>>>>>>> 820aff923ccc7549710b6fbc6798bbe3afdc73ca
   m_Layer: 0
   m_Name: Leg_Enemy
   m_TagString: Enemy
@@ -118,7 +122,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7682320270014523074}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
@@ -209,7 +213,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   drop: {fileID: 4534806233703194560, guid: cb672cbd50e896a439e85d3c1b93149e, type: 3}
+<<<<<<< HEAD
 --- !u!61 &7504712296413634631
+=======
+--- !u!61 &8789840163780156045
+>>>>>>> 820aff923ccc7549710b6fbc6798bbe3afdc73ca
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -243,16 +251,25 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
+<<<<<<< HEAD
   m_Offset: {x: -0.9, y: -0.52}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 8.05, y: 7.57}
+=======
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+>>>>>>> 820aff923ccc7549710b6fbc6798bbe3afdc73ca
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
+<<<<<<< HEAD
   m_Size: {x: 6.7, y: 5.01}
   m_EdgeRadius: 0
 --- !u!95 &5637519519159271572
@@ -277,3 +294,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+=======
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
+>>>>>>> 820aff923ccc7549710b6fbc6798bbe3afdc73ca
