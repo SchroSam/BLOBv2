@@ -179,11 +179,11 @@ MonoBehaviour:
   dashSpeed: 15
   dashDuration: 0.2
   dashCooldown: 1
-  armCount: 55
-  legCount: 10
+  armCount: 0
+  legCount: 0
   batCount: 0
   armShot: {fileID: 1416524186251972493, guid: 1c49e914e7978b94aa4fea4d3acc9216, type: 3}
-  batShot: {fileID: 0}
+  batShot: {fileID: 1494354232999676859, guid: c4f6232cdbc0c664e9f1e300b5bc0a2a, type: 3}
 --- !u!114 &8795786415622898076
 MonoBehaviour:
   m_ObjectHideFlags: 0

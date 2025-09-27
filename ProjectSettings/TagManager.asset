@@ -8,6 +8,7 @@ TagManager:
   - Arm
   - Leg
   - Battery
+  - FARM
   layers:
   - Default
   - TransparentFX
