@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class TempEnemy : MonoBehaviour
 {
+    public GameObject player;
     // Trigger collider detects the player
     private void OnTriggerEnter2D(Collider2D collision)
     {

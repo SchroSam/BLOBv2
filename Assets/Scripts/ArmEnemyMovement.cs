@@ -13,6 +13,7 @@ public class ArmEnemyMovement : MonoBehaviour
     public Vector3 targetScale = new Vector3(0, 0, 0); // Final size
     private Vector3 initialScale;
     private float elapsedTime = 0f;
+    public GameObject player;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,9 +26,18 @@ public class ArmEnemyMovement : MonoBehaviour
     {
         if (mode == 0)
         {
-            Vector2 position = transform.position;
-            position.x = position.x + (speed / 200);
-            transform.position = position;
+            if (player.transform.position.x > transform.position.x)
+            {
+                Vector2 position = transform.position;
+                position.x = position.x + (speed / 200);
+                transform.position = position;
+            }
+            else
+            {
+                Vector2 position = transform.position;
+                position.x = position.x - (speed / 200);
+                transform.position = position;
+            }
         }
         else
         {
