@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 1665883347255070815}
   - component: {fileID: -5311222889144748140}
   - component: {fileID: 8795786415622898076}
+  - component: {fileID: 6665330062363948813}
   m_Layer: 0
   m_Name: Blob 1
   m_TagString: Player
@@ -179,11 +180,11 @@ MonoBehaviour:
   dashSpeed: 15
   dashDuration: 0.2
   dashCooldown: 1
-  armCount: 55
-  legCount: 10
+  armCount: 0
+  legCount: 0
   batCount: 0
   armShot: {fileID: 1416524186251972493, guid: 1c49e914e7978b94aa4fea4d3acc9216, type: 3}
-  batShot: {fileID: 0}
+  batShot: {fileID: 1494354232999676859, guid: c4f6232cdbc0c664e9f1e300b5bc0a2a, type: 3}
 --- !u!114 &8795786415622898076
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -199,6 +200,42 @@ MonoBehaviour:
   spritePrefab: {fileID: 216977880142089823, guid: bc37bd18393366147a1445168708ce65, type: 3}
   player: {fileID: 4461132364606670918}
   maxDist: 0.5
+--- !u!58 &6665330062363948813
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 143058}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: -0.02, y: 0}
+  m_Radius: 0.5851161
 --- !u!1 &9039915426980959748
 GameObject:
   m_ObjectHideFlags: 0

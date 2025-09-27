@@ -8,6 +8,8 @@ TagManager:
   - Arm
   - Leg
   - Battery
+  - FARM
+  - BlobPhys
   layers:
   - Default
   - TransparentFX

@@ -37,7 +37,8 @@ public class Blob : MonoBehaviour {
         Vector3 offsetFromCenter = ((0.5f - referencePointRadius) * Vector3.up);
         float angle = 360.0f / referencePointsCount;
 
-        for (int i = 0; i < referencePointsCount; i++) {
+        for (int i = 0; i < referencePointsCount; i++)
+        {
             referencePoints[i] = new GameObject();
             referencePoints[i].tag = gameObject.tag;
             referencePoints[i].AddComponent<PropagateCollisions>();
@@ -55,15 +56,19 @@ public class Blob : MonoBehaviour {
             CircleCollider2D collider =
                 referencePoints[i].AddComponent<CircleCollider2D>();
             collider.radius = referencePointRadius * transform.localScale.x;
-            if (surfaceMaterial != null) {
+            if (surfaceMaterial != null)
+            {
                 collider.sharedMaterial = surfaceMaterial;
             }
 
             AttachWithSpringJoint(referencePoints[i], gameObject);
-            if (i > 0) {
+            if (i > 0)
+            {
                 AttachWithSpringJoint(referencePoints[i],
                         referencePoints[i - 1]);
             }
+
+            referencePoints[i].gameObject.tag = "BlobPhys";
         }
         AttachWithSpringJoint(referencePoints[0],
                 referencePoints[referencePointsCount - 1]);
