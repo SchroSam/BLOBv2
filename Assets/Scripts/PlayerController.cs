@@ -112,14 +112,17 @@ public class Experiment : MonoBehaviour
         if (collision.CompareTag("Arm") && gameObject.GetComponent<CircleCollider2D>().gameObject.name == "Blob 1")
         {
             armCount += 1;
+            Destroy(collision.gameObject);
         }
         if (collision.CompareTag("Leg") && gameObject.GetComponent<CircleCollider2D>().gameObject.name == "Blob 1")
         {
             legCount += 1;
+            Destroy(collision.gameObject);
         }
         if (collision.CompareTag("Battery") && gameObject.GetComponent<CircleCollider2D>().gameObject.name == "Blob 1")
         {
             batCount += 1;
+            Destroy(collision.gameObject);
         }
         if (collision.CompareTag("Enemy") && gameObject.GetComponent<CircleCollider2D>().gameObject.name == "Blob 1")
         {

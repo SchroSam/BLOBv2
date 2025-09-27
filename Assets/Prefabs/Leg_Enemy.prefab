@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1723616419695579994}
   - component: {fileID: 719241811045089980}
   - component: {fileID: 428920476239081857}
+  - component: {fileID: 4346152283325107875}
   - component: {fileID: 1574109084766827484}
   m_Layer: 0
   m_Name: Leg_Enemy
@@ -180,6 +181,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 6
+--- !u!114 &4346152283325107875
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7682320270014523074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 001f2d601d9627042893b05fe37f0474, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1574109084766827484
 MonoBehaviour:
   m_ObjectHideFlags: 0
