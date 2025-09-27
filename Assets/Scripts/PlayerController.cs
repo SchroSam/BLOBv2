@@ -7,6 +7,8 @@ public class Experiment : MonoBehaviour
     public float dashSpeed = 15f;      // Speed during dash
     public float dashDuration = 0.2f;  // How long the dash lasts
     public float dashCooldown = 1f;    // Time before you can dash again
+    public int armCount = 0;
+    public int legCount = 0;
 
     private Rigidbody2D rb;
     private float moveInput;
@@ -38,7 +40,7 @@ public class Experiment : MonoBehaviour
         if (isDashing)
         {
             // Dash movement
-            rb.linearVelocity = new Vector2(moveInput * dashSpeed, rb.linearVelocity.y);
+            rb.linearVelocity = new Vector2(moveInput * (dashSpeed + legCount), rb.linearVelocity.y);
             dashTimeLeft -= Time.fixedDeltaTime;
 
             if (dashTimeLeft <= 0)
@@ -49,7 +51,18 @@ public class Experiment : MonoBehaviour
         else
         {
             // Normal movement
-            rb.linearVelocity = new Vector2(moveInput * moveSpeed, rb.linearVelocity.y);
+            rb.linearVelocity = new Vector2(moveInput * (moveSpeed + (legCount / 2)), rb.linearVelocity.y);
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Arm"))
+        {
+            armCount += 1;
+        }
+        if (collision.CompareTag("Leg"))
+        {
+            legCount += 1;
         }
     }
 }

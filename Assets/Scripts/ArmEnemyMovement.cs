@@ -36,6 +36,7 @@ public class ArmEnemyMovement : MonoBehaviour
             {
                 elapsedTime += Time.deltaTime;
                 transform.localScale = Vector3.Lerp(initialScale, targetScale, elapsedTime / shrinkDuration);
+                GetComponent<BoxCollider2D>().enabled = false;
             }
             if (transform.localScale.y <= 0)
             {
