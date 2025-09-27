@@ -21,16 +21,21 @@ public class Grow : MonoBehaviour
     const int Left = 0;
     public Vector3 velocity = Vector3.zero;
 
+    public bool clicky = true;
+
     void Start()
     {
-        GetComponent<Renderer>().material.color =
-            HSV(Random.value, 0.99f, 0.99f);
-        transform = GetComponent<Transform>();
-        rigidbody = GetComponent<Rigidbody2D>();
-        rigidbody.bodyType = RigidbodyType2D.Kinematic;
-        startTime = Time.time;
-        startScale = transform.localScale.x;
-        startMass = rigidbody.mass;
+        if (clicky)
+        {
+            GetComponent<Renderer>().material.color =
+                HSV(Random.value, 0.99f, 0.99f);
+            transform = GetComponent<Transform>();
+            rigidbody = GetComponent<Rigidbody2D>();
+            rigidbody.bodyType = RigidbodyType2D.Kinematic;
+            startTime = Time.time;
+            startScale = transform.localScale.x;
+            startMass = rigidbody.mass;
+        }
     }
 
     void Update()
@@ -127,19 +132,19 @@ public class Grow : MonoBehaviour
     }
 }
 
-[CustomEditor(typeof(Grow))]
-public class GrowEditor : Editor
-{
-    public override void OnInspectorGUI()
-    {
-        base.OnInspectorGUI();
+// [CustomEditor(typeof(Grow))]
+// public class GrowEditor : Editor
+// {
+//     public override void OnInspectorGUI()
+//     {
+//         base.OnInspectorGUI();
 
-        Grow grower = (Grow)target;
+//         Grow grower = (Grow)target;
 
-        if (GUILayout.Button("Spawn"))
-        {
-            grower.Spawn();
-        }
-    }
+//         if (GUILayout.Button("Spawn"))
+//         {
+//             grower.Spawn();
+//         }
+//     }
 
-}
+// }
