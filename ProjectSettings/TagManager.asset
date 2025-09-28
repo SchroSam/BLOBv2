@@ -15,6 +15,7 @@ TagManager:
   - Brain
   - FLEG
   - FBAT
+  - Puzz2
   layers:
   - Default
   - TransparentFX

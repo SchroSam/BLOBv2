@@ -37,7 +37,11 @@ public class Fired : MonoBehaviour
             other.GetComponent<LegEnemyMove>().hurt();
             Destroy(gameObject);
         }
-        else if (other.CompareTag("Puzz"))
+        else if (other.CompareTag("Puzz2") && gameObject.CompareTag("FBAT"))
+        {
+            gameObject.SetActive(false);
+        }
+        else if (other.CompareTag("Puzz") && !gameObject.CompareTag("FBAT"))
         {
             gameObject.SetActive(false);
         }
