@@ -1545,10 +1545,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62c1c02505ab77148b6407ad6e3cedf3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  armsText: {fileID: 1152887111}
-  legsText: {fileID: 1152887110}
-  brainsText: {fileID: 1152887109}
-  batteriesText: {fileID: 1152887108}
+  armsText: {fileID: 0}
+  legsText: {fileID: 0}
+  brainsText: {fileID: 0}
+  batteriesText: {fileID: 0}
 --- !u!4 &651458532
 Transform:
   m_ObjectHideFlags: 0
@@ -2525,6 +2525,10 @@ PrefabInstance:
       propertyPath: legShot
       value: 
       objectReference: {fileID: 156417649371751523, guid: 4f6788e21faebcd42b7f4c6392850c61, type: 3}
+    - target: {fileID: -5311222889144748140, guid: 8a8d083fa12618f42aae9c29cf076400, type: 3}
+      propertyPath: brainShot
+      value: 
+      objectReference: {fileID: 7621086685592211659, guid: 725cf7048e28ca94ab7b00d17797932a, type: 3}
     - target: {fileID: 143058, guid: 8a8d083fa12618f42aae9c29cf076400, type: 3}
       propertyPath: m_Name
       value: Blob 1
@@ -2553,6 +2557,10 @@ PrefabInstance:
       propertyPath: maxDist
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8795786415622898076, guid: 8a8d083fa12618f42aae9c29cf076400, type: 3}
+      propertyPath: spritePrefabBat
+      value: 
+      objectReference: {fileID: 216977880142089823, guid: 64e0e4baa1a0d7942866783654985f0e, type: 3}
     - target: {fileID: 8795786415622898076, guid: 8a8d083fa12618f42aae9c29cf076400, type: 3}
       propertyPath: spritePrefabLeg
       value: 
@@ -3435,6 +3443,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 2000023229}
   type: 0
+  smoothTime: 0.3
 --- !u!114 &1769360220
 MonoBehaviour:
   m_ObjectHideFlags: 0
