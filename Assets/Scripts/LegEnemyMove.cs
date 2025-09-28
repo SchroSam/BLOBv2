@@ -99,7 +99,7 @@ public class LegEnemyMove : MonoBehaviour
     public void modeChange()
         {
             mode = 1;
-        tim = 0;
+            tim = 0;
         }
     public void hurt()
     {

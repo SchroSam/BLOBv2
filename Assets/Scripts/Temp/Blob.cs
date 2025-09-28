@@ -53,6 +53,7 @@ public class Blob : MonoBehaviour {
             body.interpolation = rigidbody.interpolation;
             body.collisionDetectionMode = rigidbody.collisionDetectionMode;
 
+
             CircleCollider2D collider =
                 referencePoints[i].AddComponent<CircleCollider2D>();
             collider.radius = referencePointRadius * transform.localScale.x;

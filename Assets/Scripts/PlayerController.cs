@@ -2,6 +2,7 @@ using System;
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
+using System.Collections.Generic;
 
 public class Experiment : MonoBehaviour
 {
@@ -26,6 +27,8 @@ public class Experiment : MonoBehaviour
     public int playerhealth;
     public float healtime;
     public float invistime;
+
+    private List<GameObject> recentCollison = new List<GameObject>();
 
     void Start()
     {
@@ -177,24 +180,49 @@ public class Experiment : MonoBehaviour
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.CompareTag("Enemy") && gameObject.GetComponent<CircleCollider2D>().gameObject.name == "Blob 1")
+        if (collision.gameObject.CompareTag("Enemy") && gameObject.name == "Blob 1")
         {
+            recentCollison.Add(collision.gameObject);
+
+            float tim = Time.time;
+
             if (isDashing)
             {
-                Physics2D.IgnoreCollision(gameObject.GetComponent<CircleCollider2D>(), collision.GetComponent<BoxCollider2D>());
+                //Physics2D.IgnoreCollision(gameObject.GetComponent<CircleCollider2D>(), collision.gameObject.GetComponent<BoxCollider2D>());
+                collision.gameObject.GetComponent<BoxCollider2D>().enabled = false;
             }
             else
             {
-                if (collision.GetComponent<ArmEnemyMovement>() != null)
+                if (collision.gameObject.GetComponent<ArmEnemyMovement>() != null)
                 {
-                    Physics2D.IgnoreCollision(gameObject.GetComponent<CircleCollider2D>(), collision.GetComponent<BoxCollider2D>(), false);
-                    collision.GetComponent<ArmEnemyMovement>().modeChange();
+
+                    //Physics2D.IgnoreCollision(gameObject.GetComponent<CircleCollider2D>(), collision.gameObject.GetComponent<BoxCollider2D>(), false);
+                    collision.gameObject.GetComponent<BoxCollider2D>().enabled = true;
+                    collision.gameObject.GetComponent<ArmEnemyMovement>().modeChange();
                 }
                 else
                 {
-                    Physics2D.IgnoreCollision(gameObject.GetComponent<CircleCollider2D>(), collision.GetComponent<BoxCollider2D>(), false);
-                    collision.GetComponent<LegEnemyMove>().modeChange();
-                    collision.GetComponent<Animator>().SetInteger("mode", collision.GetComponent<LegEnemyMove>().mode);
+                    //Physics2D.IgnoreCollision(gameObject.GetComponent<CircleCollider2D>(), collision.gameObject.GetComponent<BoxCollider2D>(), false);
+                    collision.gameObject.GetComponent<BoxCollider2D>().enabled = true;
+                    collision.gameObject.GetComponent<LegEnemyMove>().modeChange();
+                    collision.gameObject.GetComponent<Animator>().SetInteger("mode", collision.gameObject.GetComponent<LegEnemyMove>().mode);
+                }
+            }
+
+            float tim2 = 0f;
+            tim2 = Time.time;
+            while (tim2 - tim < 1f)
+            {
+                tim2 += Time.deltaTime;
+                if (tim >= 1f)
+                {
+                    Debug.Log("tim = " + tim);
+                    for (int i = 0; i < recentCollison.Count; i++)
+                    {
+                        recentCollison[i].GetComponent<BoxCollider2D>().enabled = true;
+                        Debug.Log("Enabled Box collider of " + recentCollison[i].name);
+                    }
+                    recentCollison.Clear();
                 }
             }
         }
