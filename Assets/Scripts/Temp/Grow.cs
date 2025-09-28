@@ -20,10 +20,13 @@ public class Grow : MonoBehaviour
     public float startMass;
     const int Left = 0;
     public Vector3 velocity = Vector3.zero;
+
     public bool clicky = true;
 
     void Start()
     {
+        if (clicky)
+        {
             GetComponent<Renderer>().material.color =
                 HSV(Random.value, 0.99f, 0.99f);
             transform = GetComponent<Transform>();
@@ -32,6 +35,7 @@ public class Grow : MonoBehaviour
             startTime = Time.time;
             startScale = transform.localScale.x;
             startMass = rigidbody.mass;
+        }
     }
 
     void Update()
