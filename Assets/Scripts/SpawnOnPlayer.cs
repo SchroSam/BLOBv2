@@ -86,7 +86,7 @@ public class SpawnOnPlayer : MonoBehaviour
             // Make the sprite a child of the player so it sticks
             spawned.transform.SetParent(player);
 
-            legs.Add(spawned);
+            bat.Add(spawned);
         }
     }
     public void KillLimbArm()
