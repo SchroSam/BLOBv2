@@ -1,6 +1,7 @@
 using Unity.VisualScripting;
 using UnityEngine;
 using System.Collections;
+using NUnit.Framework;
 
 public class Elevator : MonoBehaviour
 {
@@ -8,10 +9,9 @@ public class Elevator : MonoBehaviour
     private Vector3 previousTransform;
     private bool playerTrigger = false;
     private Vector3 velocity = Vector3.zero;
-    public float smoothTime = 0.3f;
+    public float speed = 0.3f;
     public float waitTime = 2.0f;
     public bool isLocked = false;
-
     private float fixedX;
 
     public void Start()
@@ -23,22 +23,54 @@ public class Elevator : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if (isLocked == false)
-        {
-            if (collision.gameObject.tag == "Player")
+       
+            if (collision.gameObject.tag == "Player" && !playerTrigger)
             {
-                StartCoroutine(PauseThenContinue());
+                if (isLocked == false)
+                    StartCoroutine(PauseThenContinue());
             }
-        }
     }
 
-    public void Update()
+    public void FixedUpdate()
     {
-        if (isLocked == false)
+        if (playerTrigger)
         {
-            if (playerTrigger)
+            if (isLocked == false)
             {
-                transform.position = Vector3.SmoothDamp(transform.position, targetTransform, ref velocity, smoothTime);
+                Debug.Log("moving");
+                if (targetTransform.y < transform.position.y)
+                {
+                    transform.position = new Vector3(transform.position.x, transform.position.y - speed, transform.position.z);
+
+                    if (transform.position.y <= targetTransform.y)
+                    {
+
+                        playerTrigger = false;
+                        targetTransform = previousTransform;
+                        previousTransform = transform.position;
+                        Debug.Log("new targetTransform y: " + targetTransform.y);
+                    }
+                }
+                else
+                {
+                    transform.position = new Vector3(transform.position.x, transform.position.y + speed, transform.position.z);
+
+                    if (transform.position.y >= targetTransform.y)
+                    {
+
+                        playerTrigger = false;
+                        targetTransform = previousTransform;
+                        previousTransform = transform.position;
+                        Debug.Log("new targetTransform y: " + targetTransform.y);
+                    }
+            }
+            }
+
+            if (isLocked == true)
+            {
+                playerTrigger = false;
+            }
+                    
             }
             if (transform.position == targetTransform)
             {
@@ -48,7 +80,6 @@ public class Elevator : MonoBehaviour
                 previousTransform = transform.position;
                 Debug.Log("new targetTransform y: " + targetTransform.y);
             }
-        }
     }
     public void lockVader(bool locker)
     {
