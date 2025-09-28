@@ -43,8 +43,6 @@ public class IgnoreEnemy : MonoBehaviour
     {
         GameObject[] allObjects = FindObjectsOfType<GameObject>(true);
 
-
-
         foreach (GameObject obj in allObjects)
         {
             TraverseHierarchy(obj.transform);

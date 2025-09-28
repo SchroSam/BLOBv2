@@ -49,7 +49,7 @@ public class SpawnOnPlayer : MonoBehaviour
         float offsetX = Mathf.Cos(rval3) * rval1;
         float offsety = Mathf.Sin(rval3) * rval1;
 
-        if (spritePrefab != null && player != null)
+        if (spritePrefabLeg != null && player != null)
         {
             // Spawn at player's position, no rotation
             Vector3 spawnPosition = transform.position + new Vector3(offsetX, offsety, 0);
