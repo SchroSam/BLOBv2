@@ -14,6 +14,7 @@ public class SpawnOnPlayer : MonoBehaviour
     private float rval3;
     public List<GameObject> arms;
     public List<GameObject> legs;
+    public List<GameObject> brain;
     private int ranob;
     private GameObject myObject;
 
@@ -32,7 +33,7 @@ public class SpawnOnPlayer : MonoBehaviour
             Vector3 spawnPosition = transform.position + new Vector3(offsetX, offsety, 0);
 
             // Instantiate the object at the calculated position
-            GameObject spawned = Instantiate(spritePrefab, spawnPosition, Quaternion.Euler(0,0,rval2));
+            GameObject spawned = Instantiate(spritePrefab, spawnPosition, Quaternion.Euler(0, 0, rval2));
 
             // Make the sprite a child of the player so it sticks
             spawned.transform.SetParent(player);
@@ -65,7 +66,7 @@ public class SpawnOnPlayer : MonoBehaviour
     }
     public void KillLimbArm()
     {
-        ranob =  Random.Range(0, arms.Count);
+        ranob = Random.Range(0, arms.Count);
         myObject = arms[ranob];
         arms.Remove(arms[ranob]);
         Destroy(myObject);
@@ -73,6 +74,13 @@ public class SpawnOnPlayer : MonoBehaviour
     public void KillLimbLeg()
     {
         ranob = Random.Range(0, legs.Count);
+        myObject = legs[ranob];
+        legs.Remove(legs[ranob]);
+        Destroy(myObject);
+    }
+    public void KillLimbBrain()
+    {
+        ranob = Random.Range(0, brain.Count);
         myObject = legs[ranob];
         legs.Remove(legs[ranob]);
         Destroy(myObject);

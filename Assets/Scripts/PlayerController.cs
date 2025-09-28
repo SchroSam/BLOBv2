@@ -13,6 +13,7 @@ public class Experiment : MonoBehaviour
     public int armCount = 0; // Number of arms
     public int legCount = 0; // Number of Legs
     public int batCount = 0; // Number of batteries
+    public int brainCount = 1;//Number of brains
     private Rigidbody2D rb; // for getting rigid body
     private float moveInput; 
     private bool isDashing = false;
@@ -21,19 +22,24 @@ public class Experiment : MonoBehaviour
     public GameObject armShot;
     public GameObject batShot;
     public GameObject legShot;
+    public GameObject brainShot;
     private int dire = 0;
     private Component mik;
     public int playerhealth;
     public float healtime;
     public float invistime;
+    private bool CanControlPlayer => brainCount > 0;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        brainCount = 1;
+        InventoryManager.Instance.UpdateUIFromPlayer(this);
     }
 
     void Update()
     {
+        if (!CanControlPlayer) return;
         // Get left/right input (-1 to 1)
         moveInput = Input.GetAxisRaw("Horizontal");
         if (playerhealth != 4)
@@ -123,6 +129,25 @@ public class Experiment : MonoBehaviour
                 }
             }
 
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            if (brainCount > 0)
+            {
+                brainCount -= 1;
+                InventoryManager.Instance.UpdateUIFromPlayer(this);
+                GameObject newObject = Instantiate(brainShot, transform.position, Quaternion.identity);
+                gameObject.GetComponent<SpawnOnPlayer>().KillLimbBrain();
+
+                if (dire > 0)
+                {
+                    newObject.GetComponent<Fired>().z = 1;
+                }
+                else
+                {
+                    newObject.GetComponent<Fired>().z = 0;
+                }
+            }
         }
 
     }

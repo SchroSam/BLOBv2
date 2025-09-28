@@ -12,6 +12,7 @@ TagManager:
   - BlobPhys
   - Puzz
   - Lattack
+  - Brain
   layers:
   - Default
   - TransparentFX
