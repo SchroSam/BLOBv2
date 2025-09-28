@@ -3,7 +3,8 @@ using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 using System.Collections.Generic;
-
+using Microsoft.Unity.VisualStudio.Editor;
+using UnityEngine.UI;
 public class Experiment : MonoBehaviour
 {
     [Header("Movement Settings")]
@@ -14,6 +15,7 @@ public class Experiment : MonoBehaviour
     public int armCount = 0; // Number of arms
     public int legCount = 0; // Number of Legs
     public int batCount = 0; // Number of batteries
+    public int brainCount = 1;//Number of brains
     private Rigidbody2D rb; // for getting rigid body
     private float moveInput; 
     private bool isDashing = false;
@@ -22,21 +24,37 @@ public class Experiment : MonoBehaviour
     public GameObject armShot;
     public GameObject batShot;
     public GameObject legShot;
+    public GameObject brainShot;
     private int dire = 0;
     private Component mik;
     public int playerhealth;
     public float healtime;
     public float invistime;
+    private bool CanControlPlayer => brainCount > 0;
 
     private List<GameObject> recentCollison = new List<GameObject>();
+
+    [Header("Health Sprites")]
+    public Sprite[] slimesprites;
+    public UnityEngine.UI.Image healthimage;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        brainCount = 1;
+        InventoryManager.Instance.UpdateUIFromPlayer(this);
+        UpdateHealthUI();
     }
+    void UpdateHealthUI()
+{
+    // Ensure index is within bounds of your slimesprites array
+    int index = Mathf.Clamp(playerhealth, 0, slimesprites.Length - 1);
+    //healthimage.sprite = slimesprites[index];
+}
 
     void Update()
     {
+        if (!CanControlPlayer) return;
         // Get left/right input (-1 to 1)
         moveInput = Input.GetAxisRaw("Horizontal");
         if (playerhealth != 4)
@@ -47,6 +65,7 @@ public class Experiment : MonoBehaviour
         {
             healtime = 0;
             playerhealth += 1;
+            UpdateHealthUI();
         }
         float z = Input.GetAxis("Horizontal");
         if (z != 0)
@@ -94,6 +113,7 @@ public class Experiment : MonoBehaviour
                 batCount -= 1;
                 InventoryManager.Instance.UpdateUIFromPlayer(this);
                 GameObject newObject = Instantiate(batShot, transform.position, Quaternion.identity);
+                gameObject.GetComponent<SpawnOnPlayer>().KillLimbBat();
 
 
                 if (dire > 0)
@@ -126,6 +146,25 @@ public class Experiment : MonoBehaviour
                 }
             }
 
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            if (brainCount > 0)
+            {
+                brainCount -= 1;
+                InventoryManager.Instance.UpdateUIFromPlayer(this);
+                GameObject newObject = Instantiate(brainShot, transform.position, Quaternion.identity);
+                gameObject.GetComponent<SpawnOnPlayer>().KillLimbBrain();
+
+                if (dire > 0)
+                {
+                    newObject.GetComponent<Fired>().z = 1;
+                }
+                else
+                {
+                    newObject.GetComponent<Fired>().z = 0;
+                }
+            }
         }
 
     }
@@ -177,6 +216,7 @@ public class Experiment : MonoBehaviour
         {
             Destroy(collision);
             playerhealth -= 1;
+            UpdateHealthUI();
         }
     }
     private void OnTriggerStay2D(Collider2D collision)
