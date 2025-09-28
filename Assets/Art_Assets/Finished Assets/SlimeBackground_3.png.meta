@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      SlimeBackground_3_0: -8320498228931866451
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
