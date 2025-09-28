@@ -43,7 +43,14 @@ public class Experiment : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         brainCount = 1;
         InventoryManager.Instance.UpdateUIFromPlayer(this);
+        UpdateHealthUI();
     }
+    void UpdateHealthUI()
+{
+    // Ensure index is within bounds of your slimesprites array
+    int index = Mathf.Clamp(playerhealth, 0, slimesprites.Length - 1);
+    healthimage.sprite = slimesprites[index];
+}
 
     void Update()
     {
@@ -58,6 +65,7 @@ public class Experiment : MonoBehaviour
         {
             healtime = 0;
             playerhealth += 1;
+            UpdateHealthUI();
         }
         float z = Input.GetAxis("Horizontal");
         if (z != 0)
@@ -208,6 +216,7 @@ public class Experiment : MonoBehaviour
         {
             Destroy(collision);
             playerhealth -= 1;
+            UpdateHealthUI();
         }
     }
     private void OnTriggerStay2D(Collider2D collision)
