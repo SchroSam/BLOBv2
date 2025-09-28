@@ -49,7 +49,7 @@ public class Experiment : MonoBehaviour
 {
     // Ensure index is within bounds of your slimesprites array
     int index = Mathf.Clamp(playerhealth, 0, slimesprites.Length - 1);
-    healthimage.sprite = slimesprites[index];
+    //healthimage.sprite = slimesprites[index];
 }
 
     void Update()
