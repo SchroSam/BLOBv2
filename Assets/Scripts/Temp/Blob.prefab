@@ -183,7 +183,8 @@ MonoBehaviour:
   legCount: 10
   batCount: 0
   armShot: {fileID: 1416524186251972493, guid: 1c49e914e7978b94aa4fea4d3acc9216, type: 3}
-  batShot: {fileID: 0}
+  batShot: {fileID: 1494354232999676859, guid: c4f6232cdbc0c664e9f1e300b5bc0a2a, type: 3}
+  legShot: {fileID: 156417649371751523, guid: 4f6788e21faebcd42b7f4c6392850c61, type: 3}
 --- !u!114 &8795786415622898076
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -199,6 +200,8 @@ MonoBehaviour:
   spritePrefab: {fileID: 216977880142089823, guid: bc37bd18393366147a1445168708ce65, type: 3}
   player: {fileID: 464436}
   maxDist: 0.5
+  arms: []
+  legs: []
 --- !u!58 &3376668094086060148
 CircleCollider2D:
   m_ObjectHideFlags: 0
