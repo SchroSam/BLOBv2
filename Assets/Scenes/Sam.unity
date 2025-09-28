@@ -193,6 +193,17 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.5
+--- !u!114 &190263538 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6531092941195462768, guid: 6cad5b6b25c22d645b62b25319e23bbe, type: 3}
+  m_PrefabInstance: {fileID: 2019331624}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &442417840
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -250,6 +261,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: efc3eb4dfb825e84e8c195e271c02902, type: 3}
+--- !u!114 &483048904 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3701850699996327087, guid: 6cad5b6b25c22d645b62b25319e23bbe, type: 3}
+  m_PrefabInstance: {fileID: 2019331624}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &532203250
 GameObject:
   m_ObjectHideFlags: 0
@@ -597,6 +619,17 @@ MonoBehaviour:
   m_FirstSelected: {fileID: 0}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
+--- !u!114 &1062776875 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5087313680609915751, guid: 6cad5b6b25c22d645b62b25319e23bbe, type: 3}
+  m_PrefabInstance: {fileID: 2019331624}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1302600767
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -702,11 +735,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62c1c02505ab77148b6407ad6e3cedf3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  armsText: {fileID: 0}
-  legsText: {fileID: 0}
-  brainsText: {fileID: 0}
-  batteriesText: {fileID: 0}
-  brains: 0
+  armsText: {fileID: 1062776875}
+  legsText: {fileID: 483048904}
+  brainsText: {fileID: 190263538}
+  batteriesText: {fileID: 1453239355}
+--- !u!114 &1453239355 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5154489108110895500, guid: 6cad5b6b25c22d645b62b25319e23bbe, type: 3}
+  m_PrefabInstance: {fileID: 2019331624}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1642287839
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -845,6 +888,14 @@ PrefabInstance:
       propertyPath: legShot
       value: 
       objectReference: {fileID: 156417649371751523, guid: 4f6788e21faebcd42b7f4c6392850c61, type: 3}
+    - target: {fileID: -5311222889144748140, guid: 8a8d083fa12618f42aae9c29cf076400, type: 3}
+      propertyPath: brainShot
+      value: 
+      objectReference: {fileID: 7621086685592211659, guid: 725cf7048e28ca94ab7b00d17797932a, type: 3}
+    - target: {fileID: -5311222889144748140, guid: 8a8d083fa12618f42aae9c29cf076400, type: 3}
+      propertyPath: brainCount
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 143058, guid: 8a8d083fa12618f42aae9c29cf076400, type: 3}
       propertyPath: m_Name
       value: Blob 1

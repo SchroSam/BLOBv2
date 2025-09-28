@@ -11,8 +11,7 @@ public class InventoryManager : MonoBehaviour
     public TMP_Text brainsText;
     public TMP_Text batteriesText;
 
-    [Header("Other counts (optional)")]
-    public int brains; // still separate if you want to track brains independently
+
 
     void Awake()
     {
@@ -31,6 +30,6 @@ public class InventoryManager : MonoBehaviour
         if (armsText != null) armsText.text = "Arms: " + player.armCount;
         if (legsText != null) legsText.text = "Legs: " + player.legCount;
         if (batteriesText != null) batteriesText.text = "Batteries: " + player.batCount;
-        if (brainsText != null) brainsText.text = "Brains: " + brains; // brains can be separate
+        if (brainsText != null) brainsText.text = "Brains: " + player.brainCount; // brains can be separate
     }
 }
