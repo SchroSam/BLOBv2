@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: a866dd3217a94634d8b5ecc337c4d88a
+guid: b8f6abbae8edb344fa2c188bb5021804
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1718446650327539248
-    second: BossFight_Background_0
+      213: 562762604424825021
+    second: UI_SlimeBackdrop_V2_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: BossFight_Background_0
+      name: UI_SlimeBackdrop_V2_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1024
-        height: 1024
+        x: 49
+        y: 477
+        width: 750
+        height: 277
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0d164c150e9d628e0800000000000000
-      internalID: -1718446650327539248
+      spriteID: db88d996b955fc700800000000000000
+      internalID: 562762604424825021
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      BossFight_Background_0: -1718446650327539248
+      UI_SlimeBackdrop_V2_0: 562762604424825021
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

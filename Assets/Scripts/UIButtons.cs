@@ -7,6 +7,7 @@ public class UIButtons : MonoBehaviour
     public GameObject MainMenu;
     public GameObject PlayMenu;
     public GameObject QuitMenu;
+    public GameObject CredMenu;
     // Start is called before the first frame update
     public void TitileNowButton()
     {
@@ -17,12 +18,18 @@ public class UIButtons : MonoBehaviour
     public void PlayNowButton()
     {
         // Play Now Button has been pressed, here you can initialize your game (For example Load a Scene called GameLevel etc.)
-        UnityEngine.SceneManagement.SceneManager.LoadScene("THEGAME");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Sam");
+    }
+    public void CredNowButton()
+    {
+        // Play Now Button has been pressed, here you can initialize your game (For example Load a Scene called GameLevel etc.)
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Credits");
     }
     public void QuitButton()
     {
         // Quit Game
         Application.Quit();
     }
+
 }
 

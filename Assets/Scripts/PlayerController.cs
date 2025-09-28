@@ -1,5 +1,10 @@
+using System;
+using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
 using System.Collections.Generic;
+using Microsoft.Unity.VisualStudio.Editor;
+using UnityEngine.UI;
 public class Experiment : MonoBehaviour
 {
     [Header("Movement Settings")]
@@ -36,6 +41,8 @@ public class Experiment : MonoBehaviour
     [Header("Lost Health Sprites")]
     public GameObject[] damageOverlays;
 
+    public GameObject GameOverImage;
+
 
     void Start()
     {
@@ -60,8 +67,18 @@ public class Experiment : MonoBehaviour
             damageOverlays[i].SetActive(i < lost);
         }
     }
+
     void Update()
     {
+        if (playerhealth <= 0)
+        {
+            if (GameOverImage != null)
+            {
+                GameOverImage.SetActive(true);
+            }
+             return;
+            
+        }
         if (!CanControlPlayer) return;
         // Get left/right input (-1 to 1)
         moveInput = Input.GetAxisRaw("Horizontal");
@@ -200,6 +217,7 @@ public class Experiment : MonoBehaviour
 
 
                 brainCount -= 1;
+                playerhealth = 0;
                 InventoryManager.Instance.UpdateUIFromPlayer(this);
                 GameObject newObject = Instantiate(brainShot, transform.position, Quaternion.identity);
                 gameObject.GetComponent<SpawnOnPlayer>().KillLimbBrain();
@@ -212,6 +230,7 @@ public class Experiment : MonoBehaviour
                 {
                     newObject.GetComponent<Fired>().z = 0;
                 }
+                
             }
         }
 
@@ -260,14 +279,6 @@ public class Experiment : MonoBehaviour
             InventoryManager.Instance.UpdateUIFromPlayer(this);
         }
         if (collision.CompareTag("FARM") && gameObject.GetComponent<CircleCollider2D>().gameObject.name == "Blob 1")
-        {
-            Physics2D.IgnoreCollision(gameObject.GetComponent<CircleCollider2D>(), collision.GetComponent<BoxCollider2D>());
-        }
-        if (collision.CompareTag("FLEG") && gameObject.GetComponent<CircleCollider2D>().gameObject.name == "Blob 1")
-        {
-            Physics2D.IgnoreCollision(gameObject.GetComponent<CircleCollider2D>(), collision.GetComponent<BoxCollider2D>());
-        }
-        if (collision.CompareTag("FBAT") && gameObject.GetComponent<CircleCollider2D>().gameObject.name == "Blob 1")
         {
             Physics2D.IgnoreCollision(gameObject.GetComponent<CircleCollider2D>(), collision.GetComponent<BoxCollider2D>());
         }
