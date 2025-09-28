@@ -8,6 +8,7 @@ public class Cam : MonoBehaviour
     public float smoothTime = 0.3f;    // Damping time
     private Vector3 velocity = Vector3.zero;
     Vector3 targetTransform;
+    public float yOffset = 1;
 
     // Update is called once per frame
     private void Start()
@@ -21,6 +22,7 @@ public class Cam : MonoBehaviour
         //{
         targetTransform = target.transform.position;
         targetTransform.z = transform.position.z;
+        targetTransform.y = target.transform.position.y + yOffset;
 
         transform.position = Vector3.SmoothDamp(transform.position, targetTransform, ref velocity, smoothTime);
 
