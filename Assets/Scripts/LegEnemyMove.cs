@@ -18,6 +18,9 @@ public class LegEnemyMove : MonoBehaviour
     private int pdt = 0;
     public int health;
     private SpriteRenderer spriteRenderer;
+
+    public float interval = 0.5f;
+    public float lastWalk = 0.0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,11 +32,25 @@ public class LegEnemyMove : MonoBehaviour
 
     }
 
+    // void FixedUpdate()
+    // {
+    //     while (animator.GetFloat("mode") == 0.0f)
+    //     {
+    //         if (Time.time > lastWalk + interval)
+    //         {
+    //             lastWalk = Time.time;
+    //             gameObject.GetComponent<AudioSource>().Play();
+    //         }
+    //     }
+    // }
 
     // Update is called once per frame
     void Update()
     {
         animator.SetInteger("mode", mode);
+
+        
+
         if (mode == 0)
         {
             if (player.transform.position.x > transform.position.x)
@@ -56,7 +73,7 @@ public class LegEnemyMove : MonoBehaviour
             if (pd != pdt)
             {
                 mode = 2;
-                tim = 2 + (Random.Range(0,0.5f));
+                tim = 2 + (Random.Range(0, 0.5f));
                 pdt = pd;
             }
         }
