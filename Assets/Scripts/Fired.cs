@@ -13,6 +13,7 @@ public class Fired : MonoBehaviour
             Vector3 dir = new Vector3(100f, 0f, 0f);
             dir.Normalize();
             right.AddForce((dir * 100) * force);
+            transform.localRotation = Quaternion.Euler(0, 0, 0);
         }
         else
         {
@@ -20,6 +21,7 @@ public class Fired : MonoBehaviour
             Vector3 dir = new Vector3(100f, 0f, 0f);
             dir.Normalize();
             right.AddForce(-1 * ((dir * 100) * force));
+            transform.localRotation = Quaternion.Euler(0, 180, 0);
         }
     }
 

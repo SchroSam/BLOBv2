@@ -10,18 +10,22 @@ public class Experiment : MonoBehaviour
     public float dashSpeed = 15f;      // Speed during dash
     public float dashDuration = 0.2f;  // How long the dash lasts
     public float dashCooldown = 1f;    // Time before you can dash again
-    public int armCount = 0;
-    public int legCount = 0;
-    public int batCount = 0;
-    private Rigidbody2D rb;
-    private float moveInput;
+    public int armCount = 0; // Number of arms
+    public int legCount = 0; // Number of Legs
+    public int batCount = 0; // Number of batteries
+    private Rigidbody2D rb; // for getting rigid body
+    private float moveInput; 
     private bool isDashing = false;
     private float dashTimeLeft;
     private float lastDash = -999f;
     public GameObject armShot;
     public GameObject batShot;
+    public GameObject legShot;
     private int dire = 0;
     private Component mik;
+    public int playerhealth;
+    public float healtime;
+    public float invistime;
 
     void Start()
     {
@@ -32,7 +36,15 @@ public class Experiment : MonoBehaviour
     {
         // Get left/right input (-1 to 1)
         moveInput = Input.GetAxisRaw("Horizontal");
-
+        if (playerhealth != 4)
+        {
+            healtime += Time.deltaTime;
+        }
+        if (healtime > 30)
+        {
+            healtime = 0;
+            playerhealth += 1;
+        }
         float z = Input.GetAxis("Horizontal");
         if (z != 0)
         {
@@ -69,7 +81,7 @@ public class Experiment : MonoBehaviour
                 {
                     newObject.GetComponent<Fired>().z = 0;
                 }
-                
+
             }
         }
         if (Input.GetKeyDown(KeyCode.Alpha4))
@@ -91,6 +103,26 @@ public class Experiment : MonoBehaviour
                 }
 
             }
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            if (legCount > 0)
+            {
+                legCount -= 1;
+                InventoryManager.Instance.UpdateUIFromPlayer(this);
+                GameObject newObject = Instantiate(legShot, transform.position, Quaternion.identity);
+                gameObject.GetComponent<SpawnOnPlayer>().KillLimbLeg();
+
+                if (dire > 0)
+                {
+                    newObject.GetComponent<Fired>().z = 1;
+                }
+                else
+                {
+                    newObject.GetComponent<Fired>().z = 0;
+                }
+            }
+
         }
 
     }
@@ -137,6 +169,11 @@ public class Experiment : MonoBehaviour
             batCount += 1;
             Destroy(collision.gameObject);
             InventoryManager.Instance.UpdateUIFromPlayer(this);
+        }
+        if (collision.CompareTag("Lattack") && gameObject.GetComponent<CircleCollider2D>().gameObject.name == "Blob 1")
+        {
+            Destroy(collision);
+            playerhealth -= 1;
         }
     }
     private void OnTriggerStay2D(Collider2D collision)

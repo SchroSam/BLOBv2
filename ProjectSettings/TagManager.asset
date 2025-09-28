@@ -11,6 +11,7 @@ TagManager:
   - FARM
   - BlobPhys
   - Puzz
+  - Lattack
   layers:
   - Default
   - TransparentFX
