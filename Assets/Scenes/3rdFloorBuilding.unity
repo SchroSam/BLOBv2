@@ -12082,10 +12082,6 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0.52
       objectReference: {fileID: 0}
-    - target: {fileID: 8182664198277543905, guid: efc3eb4dfb825e84e8c195e271c02902, type: 3}
-      propertyPath: m_TagString
-      value: Puzz
-      objectReference: {fileID: 0}
     - target: {fileID: 8479202332809497079, guid: efc3eb4dfb825e84e8c195e271c02902, type: 3}
       propertyPath: m_SortingOrder
       value: 9
