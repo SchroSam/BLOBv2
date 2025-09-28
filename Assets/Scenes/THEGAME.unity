@@ -247,7 +247,7 @@ Transform:
   m_GameObject: {fileID: 29375027}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.74, y: -2.02, z: 0}
+  m_LocalPosition: {x: 8.54, y: -2.02, z: 0}
   m_LocalScale: {x: 3.1994333, y: 4.5791225, z: 0.9848568}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1548,7 +1548,6 @@ MonoBehaviour:
   legsText: {fileID: 230050031}
   brainsText: {fileID: 94790273}
   batteriesText: {fileID: 496816209}
-  brains: 0
 --- !u!4 &651458532
 Transform:
   m_ObjectHideFlags: 0
@@ -2525,9 +2524,21 @@ PrefabInstance:
       propertyPath: legShot
       value: 
       objectReference: {fileID: 156417649371751523, guid: 4f6788e21faebcd42b7f4c6392850c61, type: 3}
+    - target: {fileID: -5311222889144748140, guid: 8a8d083fa12618f42aae9c29cf076400, type: 3}
+      propertyPath: brainShot
+      value: 
+      objectReference: {fileID: 7621086685592211659, guid: 725cf7048e28ca94ab7b00d17797932a, type: 3}
+    - target: {fileID: -5311222889144748140, guid: 8a8d083fa12618f42aae9c29cf076400, type: 3}
+      propertyPath: playerhealth
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 143058, guid: 8a8d083fa12618f42aae9c29cf076400, type: 3}
       propertyPath: m_Name
       value: Blob 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 464436, guid: 8a8d083fa12618f42aae9c29cf076400, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 14.09
       objectReference: {fileID: 0}
     - target: {fileID: 464436, guid: 8a8d083fa12618f42aae9c29cf076400, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2553,6 +2564,10 @@ PrefabInstance:
       propertyPath: maxDist
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8795786415622898076, guid: 8a8d083fa12618f42aae9c29cf076400, type: 3}
+      propertyPath: spritePrefabBat
+      value: 
+      objectReference: {fileID: 216977880142089823, guid: 8acc1ae5a4aa2ac458a5d345b7922399, type: 3}
     - target: {fileID: 8795786415622898076, guid: 8a8d083fa12618f42aae9c29cf076400, type: 3}
       propertyPath: spritePrefabLeg
       value: 
@@ -2965,7 +2980,7 @@ Transform:
   m_GameObject: {fileID: 1477806784}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.89, y: -2.8745036, z: 0}
+  m_LocalPosition: {x: 14.28, y: -2.8745036, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3744,7 +3759,7 @@ Transform:
   m_GameObject: {fileID: 1910082883}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 17.72, y: -3.3186674, z: 0}
+  m_LocalPosition: {x: 45.27, y: -3.3186674, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
