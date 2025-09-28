@@ -30,7 +30,7 @@ public class Experiment : MonoBehaviour
     public int playerhealth;
     public float healtime;
     public float invistime;
-    private bool CanControlPlayer => brainCount > 0;
+    private bool CanControlPlayer => brainCount > 0 && playerhealth > 0;
 
     private List<GameObject> recentCollison = new List<GameObject>();
 
@@ -38,20 +38,33 @@ public class Experiment : MonoBehaviour
     public Sprite[] slimesprites;
     public UnityEngine.UI.Image healthimage;
 
+    [Header("Lost Health Sprites")]
+    public GameObject[] damageOverlays;
+
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         brainCount = 1;
         InventoryManager.Instance.UpdateUIFromPlayer(this);
         UpdateHealthUI();
+        UpdatedamageOverlays();
     }
     void UpdateHealthUI()
-{
-    // Ensure index is within bounds of your slimesprites array
-    int index = Mathf.Clamp(playerhealth, 0, slimesprites.Length - 1);
-    //healthimage.sprite = slimesprites[index];
-}
+    {
+        // Ensure index is within bounds of your slimesprites array
+        int index = Mathf.Clamp(playerhealth, 0, slimesprites.Length - 1);
+        healthimage.sprite = slimesprites[index];
+    }
 
+    void UpdatedamageOverlays()
+    {
+        int lost = Mathf.Clamp(4 - playerhealth, 0, damageOverlays.Length);
+        for (int i = 0; i < damageOverlays.Length; i++)
+        {
+            damageOverlays[i].SetActive(i < lost);
+        }
+    }
     void Update()
     {
         if (!CanControlPlayer) return;
@@ -66,6 +79,7 @@ public class Experiment : MonoBehaviour
             healtime = 0;
             playerhealth += 1;
             UpdateHealthUI();
+            UpdatedamageOverlays();
         }
         float z = Input.GetAxis("Horizontal");
         if (z != 0)
@@ -217,6 +231,7 @@ public class Experiment : MonoBehaviour
             Destroy(collision);
             playerhealth -= 1;
             UpdateHealthUI();
+            UpdatedamageOverlays();
         }
     }
     private void OnTriggerStay2D(Collider2D collision)
