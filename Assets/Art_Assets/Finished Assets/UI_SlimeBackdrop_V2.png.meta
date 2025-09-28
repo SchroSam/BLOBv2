@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      UI_SlimeBackdrop_V2_0: 562762604424825021
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
