@@ -111,6 +111,7 @@ public class Experiment : MonoBehaviour
                 legCount -= 1;
                 InventoryManager.Instance.UpdateUIFromPlayer(this);
                 GameObject newObject = Instantiate(legShot, transform.position, Quaternion.identity);
+                gameObject.GetComponent<SpawnOnPlayer>().KillLimbLeg();
 
                 if (dire > 0)
                 {
