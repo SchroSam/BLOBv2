@@ -148,8 +148,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetTransform: {x: 4.10806, y: 4.99, z: -0.031297266}
-  smoothTime: 0.57
+  speed: 0.1
   waitTime: 2
+  isLocked: 0
 --- !u!1 &5132612860298684993
 GameObject:
   m_ObjectHideFlags: 0
