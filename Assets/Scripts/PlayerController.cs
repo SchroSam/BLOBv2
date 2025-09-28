@@ -1,10 +1,5 @@
-using System;
-using Unity.VisualScripting;
-using UnityEditor;
 using UnityEngine;
 using System.Collections.Generic;
-using Microsoft.Unity.VisualStudio.Editor;
-using UnityEngine.UI;
 public class Experiment : MonoBehaviour
 {
     [Header("Movement Settings")]

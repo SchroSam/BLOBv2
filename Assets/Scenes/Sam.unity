@@ -9280,7 +9280,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -774.69, y: 388.2}
+  m_AnchoredPosition: {x: -663.51, y: 449.74}
   m_SizeDelta: {x: 100.6947, y: 102.536}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1438598470
@@ -15752,6 +15752,8 @@ MonoBehaviour:
   attack: {fileID: 2552173367517773812, guid: 78aeef54d0e557843a9d45c2090ec974, type: 3}
   animator: {fileID: 5352286648195016366}
   health: 3
+  interval: 0.5
+  lastWalk: 0
 --- !u!114 &1412403362208276106
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16201,6 +16203,8 @@ MonoBehaviour:
   attack: {fileID: 2552173367517773812, guid: 78aeef54d0e557843a9d45c2090ec974, type: 3}
   animator: {fileID: 4750090248635692472}
   health: 3
+  interval: 0.5
+  lastWalk: 0
 --- !u!1 &1753788286314492661
 GameObject:
   m_ObjectHideFlags: 0
@@ -20446,6 +20450,8 @@ MonoBehaviour:
   attack: {fileID: 2552173367517773812, guid: 78aeef54d0e557843a9d45c2090ec974, type: 3}
   animator: {fileID: 7221399293742729100}
   health: 3
+  interval: 0.5
+  lastWalk: 0
 --- !u!4 &4503179446071912940
 Transform:
   m_ObjectHideFlags: 0
@@ -21355,6 +21361,8 @@ MonoBehaviour:
   attack: {fileID: 2552173367517773812, guid: 78aeef54d0e557843a9d45c2090ec974, type: 3}
   animator: {fileID: 2159484403129705530}
   health: 3
+  interval: 0.5
+  lastWalk: 0
 --- !u!1 &4923849031327646971
 GameObject:
   m_ObjectHideFlags: 0
@@ -24601,6 +24609,8 @@ MonoBehaviour:
   attack: {fileID: 2552173367517773812, guid: 78aeef54d0e557843a9d45c2090ec974, type: 3}
   animator: {fileID: 4322913048864802981}
   health: 3
+  interval: 0.5
+  lastWalk: 0
 --- !u!4 &7077373170478042447
 Transform:
   m_ObjectHideFlags: 0
@@ -28076,6 +28086,8 @@ MonoBehaviour:
   attack: {fileID: 2552173367517773812, guid: 78aeef54d0e557843a9d45c2090ec974, type: 3}
   animator: {fileID: 2790591004338386229}
   health: 3
+  interval: 0.5
+  lastWalk: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
