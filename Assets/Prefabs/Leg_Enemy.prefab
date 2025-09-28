@@ -111,8 +111,6 @@ MonoBehaviour:
   attack: {fileID: 2552173367517773812, guid: 78aeef54d0e557843a9d45c2090ec974, type: 3}
   animator: {fileID: 5637519519159271572}
   health: 3
-  animator: {fileID: 5637519519159271572}
-  health: 0
 --- !u!61 &719241811045089980
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -143,7 +141,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -210,7 +208,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ad9fc667a52b4d468df9eb791f2a8f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  drop: {fileID: 4534806233703194560, guid: cb672cbd50e896a439e85d3c1b93149e, type: 3}
+  drop: {fileID: 4879707903960116068, guid: a26fd4e06e66906429ff9aadc98b36e2, type: 3}
 --- !u!95 &5637519519159271572
 Animator:
   serializedVersion: 7

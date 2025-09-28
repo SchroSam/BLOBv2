@@ -52,7 +52,7 @@ public class LegEnemyMove : MonoBehaviour
                 pd = 0;
                 transform.localRotation = Quaternion.Euler(0, 180, 0);
             }
-            tim += Time.deltaTime;
+            tim = Time.deltaTime;
             if (pd != pdt)
             {
                 mode = 2;
@@ -67,14 +67,7 @@ public class LegEnemyMove : MonoBehaviour
                 tim += Time.deltaTime;
                 if (tim > 2)
                 {
-                    if (player.transform.position.x == transform.position.x)
-                    {
-                        mode = 1;
-                    }
-                    else
-                    {
-                        mode = 0;
-                    }
+                    mode = 0;
                     tim = 0;
                     fCheck = 0;
                 }
