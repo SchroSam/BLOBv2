@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 4415715137794803464}
   - component: {fileID: 3386826224017997663}
   - component: {fileID: 1665883347255070815}
-  - component: {fileID: -5311222889144748140}
   - component: {fileID: 8795786415622898076}
   - component: {fileID: 3376668094086060148}
   m_Layer: 0
@@ -163,28 +162,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &-5311222889144748140
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 143058}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c2c3dfc1d0029ea4a9f67a1ce2f3f171, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 5
-  dashSpeed: 15
-  dashDuration: 0.2
-  dashCooldown: 1
-  armCount: 55
-  legCount: 10
-  batCount: 0
-  armShot: {fileID: 1416524186251972493, guid: 1c49e914e7978b94aa4fea4d3acc9216, type: 3}
-  batShot: {fileID: 1494354232999676859, guid: c4f6232cdbc0c664e9f1e300b5bc0a2a, type: 3}
-  legShot: {fileID: 156417649371751523, guid: 4f6788e21faebcd42b7f4c6392850c61, type: 3}
 --- !u!114 &8795786415622898076
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -198,10 +175,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spritePrefab: {fileID: 216977880142089823, guid: bc37bd18393366147a1445168708ce65, type: 3}
+  spritePrefabLeg: {fileID: 0}
+  spritePrefabBat: {fileID: 0}
   player: {fileID: 464436}
   maxDist: 0.5
   arms: []
   legs: []
+  brain: []
+  bat: []
 --- !u!58 &3376668094086060148
 CircleCollider2D:
   m_ObjectHideFlags: 0

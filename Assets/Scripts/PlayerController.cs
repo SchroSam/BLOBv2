@@ -108,14 +108,30 @@ public class Experiment : MonoBehaviour
         // Dash input (Shift key)
         if (Input.GetKeyDown(KeyCode.LeftShift) && Time.time >= lastDash + dashCooldown)
         {
+            if (gameObject.GetComponent<AudioSource>().resource.name != "Blob_Dash")
+            {
+                gameObject.GetComponent<AudioSource>().clip = Resources.Load<AudioClip>("Blob_Dash");
+            }
+            gameObject.GetComponent<AudioSource>().Play();
+
             isDashing = true;
             dashTimeLeft = dashDuration;
             lastDash = Time.time;
         }
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
+
+
+
             if (armCount > 0)
             {
+
+                if (gameObject.GetComponent<AudioSource>().resource.name != "Throw2")
+                {
+                    gameObject.GetComponent<AudioSource>().clip = Resources.Load<AudioClip>("Throw2");
+                }
+                gameObject.GetComponent<AudioSource>().Play();
+
                 armCount -= 1;
                 InventoryManager.Instance.UpdateUIFromPlayer(this);
                 GameObject newObject = Instantiate(armShot, transform.position, Quaternion.identity);
@@ -136,6 +152,13 @@ public class Experiment : MonoBehaviour
         {
             if (batCount > 0)
             {
+
+                if (gameObject.GetComponent<AudioSource>().resource.name != "Throw2")
+                {
+                    gameObject.GetComponent<AudioSource>().clip = Resources.Load<AudioClip>("Throw2");
+                }
+                gameObject.GetComponent<AudioSource>().Play();
+
                 batCount -= 1;
                 InventoryManager.Instance.UpdateUIFromPlayer(this);
                 GameObject newObject = Instantiate(batShot, transform.position, Quaternion.identity);
@@ -157,6 +180,14 @@ public class Experiment : MonoBehaviour
         {
             if (legCount > 0)
             {
+
+                if (gameObject.GetComponent<AudioSource>().resource.name != "Throw2")
+                {
+                    gameObject.GetComponent<AudioSource>().clip = Resources.Load<AudioClip>("Throw2");
+                }
+                gameObject.GetComponent<AudioSource>().Play();
+
+
                 legCount -= 1;
                 InventoryManager.Instance.UpdateUIFromPlayer(this);
                 GameObject newObject = Instantiate(legShot, transform.position, Quaternion.identity);
@@ -177,6 +208,14 @@ public class Experiment : MonoBehaviour
         {
             if (brainCount > 0)
             {
+
+                if (gameObject.GetComponent<AudioSource>().resource.name != "Throw2")
+                {
+                    gameObject.GetComponent<AudioSource>().clip = Resources.Load<AudioClip>("Throw2");
+                }
+                gameObject.GetComponent<AudioSource>().Play();
+
+
                 brainCount -= 1;
                 playerhealth = 0;
                 InventoryManager.Instance.UpdateUIFromPlayer(this);
@@ -194,6 +233,21 @@ public class Experiment : MonoBehaviour
                 
             }
         }
+
+        // if (Input.GetKeyDown(KeyCode.Alpha5))
+        // {
+        //     playerhealth -= 1;
+
+        //     if (gameObject.GetComponent<AudioSource>().resource.name != "Hurt" || playerhealth != 0)
+        //     {
+        //         gameObject.GetComponent<AudioSource>().clip = Resources.Load<AudioClip>("Hurt");
+        //     }
+        //     else if(gameObject.GetComponent<AudioSource>().resource.name != "Die")
+        //     {
+        //         gameObject.GetComponent<AudioSource>().clip = Resources.Load<AudioClip>("Die");
+        //     }
+        //         gameObject.GetComponent<AudioSource>().Play();
+        // }
 
     }
 
@@ -244,6 +298,17 @@ public class Experiment : MonoBehaviour
         {
             Destroy(collision);
             playerhealth -= 1;
+
+            if (gameObject.GetComponent<AudioSource>().resource.name != "Hurt" || playerhealth != 0)
+            {
+                gameObject.GetComponent<AudioSource>().clip = Resources.Load<AudioClip>("Hurt");
+            }
+            else if(gameObject.GetComponent<AudioSource>().resource.name != "Die")
+            {
+                gameObject.GetComponent<AudioSource>().clip = Resources.Load<AudioClip>("Die");
+            }
+                gameObject.GetComponent<AudioSource>().Play();
+
             UpdateHealthUI();
             UpdatedamageOverlays();
         }
