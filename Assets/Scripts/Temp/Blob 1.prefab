@@ -48,7 +48,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 143058}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -183,8 +183,21 @@ MonoBehaviour:
   armCount: 0
   legCount: 0
   batCount: 0
+  brainCount: 1
   armShot: {fileID: 1416524186251972493, guid: 1c49e914e7978b94aa4fea4d3acc9216, type: 3}
   batShot: {fileID: 1494354232999676859, guid: c4f6232cdbc0c664e9f1e300b5bc0a2a, type: 3}
+  legShot: {fileID: 156417649371751523, guid: 4f6788e21faebcd42b7f4c6392850c61, type: 3}
+  brainShot: {fileID: 7621086685592211659, guid: 725cf7048e28ca94ab7b00d17797932a, type: 3}
+  playerhealth: 4
+  healtime: 0
+  invistime: 0
+  slimesprites:
+  - {fileID: 7863259107483899418, guid: 1ad8698248377d243b5ba5b10ad54017, type: 3}
+  - {fileID: 6653187333150486840, guid: 1ad8698248377d243b5ba5b10ad54017, type: 3}
+  - {fileID: -2506514697743671747, guid: 1ad8698248377d243b5ba5b10ad54017, type: 3}
+  - {fileID: -1790736743939489203, guid: 1ad8698248377d243b5ba5b10ad54017, type: 3}
+  healthimage: {fileID: 0}
+  damageOverlays: []
 --- !u!114 &8795786415622898076
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -198,8 +211,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spritePrefab: {fileID: 216977880142089823, guid: bc37bd18393366147a1445168708ce65, type: 3}
+  spritePrefabLeg: {fileID: 216977880142089823, guid: b70e9fbc1b5c7944183e0cf985d56746, type: 3}
+  spritePrefabBat: {fileID: 216977880142089823, guid: 64e0e4baa1a0d7942866783654985f0e, type: 3}
   player: {fileID: 4461132364606670918}
-  maxDist: 0.5
+  maxDist: 1
+  arms: []
+  legs: []
+  brain: []
+  bat: []
 --- !u!58 &6665330062363948813
 CircleCollider2D:
   m_ObjectHideFlags: 0
