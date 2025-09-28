@@ -7,8 +7,9 @@ public class LockEle : MonoBehaviour
     // Update is called once per frame
     private void OnDestroy()
     {
-        if (lockTarget.GetComponent<Elevator>() != null)
+        if (lockTarget.GetComponent<Elevator>() != null && gameObject != null)
         {
+            Debug.Log(lockingIt.ToString());
             lockTarget.GetComponent<Elevator>().lockVader(lockingIt);
         }
     }
