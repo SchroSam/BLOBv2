@@ -111,8 +111,6 @@ MonoBehaviour:
   attack: {fileID: 2552173367517773812, guid: 78aeef54d0e557843a9d45c2090ec974, type: 3}
   animator: {fileID: 5637519519159271572}
   health: 3
-  animator: {fileID: 5637519519159271572}
-  health: 0
 --- !u!61 &719241811045089980
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -143,7 +141,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -193,7 +191,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7682320270014523074}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 001f2d601d9627042893b05fe37f0474, type: 3}
   m_Name: 

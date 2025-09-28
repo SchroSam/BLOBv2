@@ -52,7 +52,6 @@ public class LegEnemyMove : MonoBehaviour
                 pd = 0;
                 transform.localRotation = Quaternion.Euler(0, 180, 0);
             }
-            tim += Time.deltaTime;
             if (pd != pdt)
             {
                 mode = 2;
