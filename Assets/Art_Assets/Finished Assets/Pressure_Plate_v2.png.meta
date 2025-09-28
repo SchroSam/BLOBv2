@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Pressure_Plate_v2_0: 2876853666787179475
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

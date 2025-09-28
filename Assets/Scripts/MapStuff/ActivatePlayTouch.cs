@@ -8,7 +8,7 @@ public class ActivatePlayTouch : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             activate.SetActive(true);
-            gameObject.SetActive(false);
+            Destroy(gameObject);
         }
     }
 }
