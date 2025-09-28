@@ -209,6 +209,14 @@ public class Experiment : MonoBehaviour
         {
             Physics2D.IgnoreCollision(gameObject.GetComponent<CircleCollider2D>(), collision.GetComponent<BoxCollider2D>());
         }
+        if (collision.CompareTag("FLEG") && gameObject.GetComponent<CircleCollider2D>().gameObject.name == "Blob 1")
+        {
+            Physics2D.IgnoreCollision(gameObject.GetComponent<CircleCollider2D>(), collision.GetComponent<BoxCollider2D>());
+        }
+        if (collision.CompareTag("FBAT") && gameObject.GetComponent<CircleCollider2D>().gameObject.name == "Blob 1")
+        {
+            Physics2D.IgnoreCollision(gameObject.GetComponent<CircleCollider2D>(), collision.GetComponent<BoxCollider2D>());
+        }
         if (collision.CompareTag("Leg") && gameObject.GetComponent<CircleCollider2D>().gameObject.name == "Blob 1")
         {
             legCount += 1;

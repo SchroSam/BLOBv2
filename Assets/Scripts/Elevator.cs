@@ -55,13 +55,9 @@ public class Elevator : MonoBehaviour
 
     IEnumerator PauseThenContinue()
     {
-        if (isLocked != true)
-        {
             yield return new WaitForSeconds(waitTime); // Wait for 2 seconds
             playerTrigger = true;
             Debug.Log("playerTrigger set True");
-            Debug.Log("is unlocked");
-        }
     }
 
 

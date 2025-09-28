@@ -25,7 +25,7 @@ public class BatterSlotCode : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Battery"))
+        if (collision.CompareTag("FBAT"))
         {
             isActive = true;
             collision.gameObject.SetActive(false);
