@@ -234,7 +234,12 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Ooze Vial_0: 916366052245242820
+      Ooze Vial_1: -1790736743939489203
+      Ooze Vial_2: -2506514697743671747
+      Ooze Vial_3: 6653187333150486840
+      Ooze Vial_4: 7863259107483899418
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

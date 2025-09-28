@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 1638820074555104889}
   m_Layer: 0
   m_Name: LegFired
-  m_TagString: Untagged
+  m_TagString: FLEG
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

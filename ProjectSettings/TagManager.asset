@@ -12,6 +12,7 @@ TagManager:
   - BlobPhys
   - Puzz
   - Lattack
+  - FLEG
   layers:
   - Default
   - TransparentFX
