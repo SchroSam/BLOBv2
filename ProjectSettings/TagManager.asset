@@ -13,6 +13,8 @@ TagManager:
   - Puzz
   - Lattack
   - Brain
+  - FLEG
+  - FBAT
   layers:
   - Default
   - TransparentFX
