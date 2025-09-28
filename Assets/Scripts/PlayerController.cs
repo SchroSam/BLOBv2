@@ -3,7 +3,8 @@ using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 using System.Collections.Generic;
-
+using Microsoft.Unity.VisualStudio.Editor;
+using UnityEngine.UI;
 public class Experiment : MonoBehaviour
 {
     [Header("Movement Settings")]
@@ -32,6 +33,10 @@ public class Experiment : MonoBehaviour
     private bool CanControlPlayer => brainCount > 0;
 
     private List<GameObject> recentCollison = new List<GameObject>();
+
+    [Header("Health Sprites")]
+    public Sprite[] slimesprites;
+    public UnityEngine.UI.Image healthimage;
 
     void Start()
     {
