@@ -1,10 +1,22 @@
 fileFormatVersion: 2
-guid: f8bd4cc413e5f79438e3f5bf43c6479c
+guid: aafb3374664b38e42939b8d54911a845
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7957958698382939216
-    second: firehazard_0
+      213: 916366052245242820
+    second: Ooze Vial_0
+  - first:
+      213: -1790736743939489203
+    second: Ooze Vial_1
+  - first:
+      213: -2506514697743671747
+    second: Ooze Vial_2
+  - first:
+      213: 6653187333150486840
+    second: Ooze Vial_3
+  - first:
+      213: 7863259107483899418
+    second: Ooze Vial_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +112,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: firehazard_0
+      name: Ooze Vial_0
       rect:
         serializedVersion: 2
-        x: 212
-        y: 304
-        width: 755
-        height: 704
+        x: 302
+        y: 1043
+        width: 290
+        height: 746
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +127,96 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 054585ae549507e60800000000000000
-      internalID: 7957958698382939216
+      spriteID: 4c30e44c11697bc00800000000000000
+      internalID: 916366052245242820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ooze Vial_1
+      rect:
+        serializedVersion: 2
+        x: 1326
+        y: 1043
+        width: 290
+        height: 746
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d424f3b4b660627e0800000000000000
+      internalID: -1790736743939489203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ooze Vial_2
+      rect:
+        serializedVersion: 2
+        x: 2350
+        y: 1043
+        width: 290
+        height: 746
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d3e51b89922173dd0800000000000000
+      internalID: -2506514697743671747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ooze Vial_3
+      rect:
+        serializedVersion: 2
+        x: 302
+        y: 19
+        width: 290
+        height: 746
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 831309021aed45c50800000000000000
+      internalID: 6653187333150486840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ooze Vial_4
+      rect:
+        serializedVersion: 2
+        x: 1326
+        y: 19
+        width: 290
+        height: 746
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a16de663f78ef1d60800000000000000
+      internalID: 7863259107483899418
       vertices: []
       indices: 
       edges: []
@@ -134,8 +234,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      firehazard_0: 7957958698382939216
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
