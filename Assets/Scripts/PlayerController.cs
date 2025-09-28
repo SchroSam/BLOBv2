@@ -113,6 +113,7 @@ public class Experiment : MonoBehaviour
                 batCount -= 1;
                 InventoryManager.Instance.UpdateUIFromPlayer(this);
                 GameObject newObject = Instantiate(batShot, transform.position, Quaternion.identity);
+                gameObject.GetComponent<SpawnOnPlayer>().KillLimbBat();
 
 
                 if (dire > 0)

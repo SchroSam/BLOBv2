@@ -33,5 +33,14 @@ public class TempEnemy : MonoBehaviour
                 spawner.SpawnSpriteLeg();
             }
         }
-    }
+
+        if (type == 2)
+            {
+                var spawner = FindFirstObjectByType<SpawnOnPlayer>();
+                if (spawner != null)
+                {
+                    spawner.SpawnSpriteBat();
+                }
+            }
+        }
 }
