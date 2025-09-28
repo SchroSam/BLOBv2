@@ -1184,6 +1184,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -5311222889144748140, guid: 19ce4d6377505cd45a27d76d63152594, type: 3}
+      propertyPath: playerhealth
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: -959455838254590004, guid: 19ce4d6377505cd45a27d76d63152594, type: 3}
       propertyPath: m_Enabled
       value: 1

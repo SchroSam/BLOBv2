@@ -23,7 +23,7 @@ public class Elevator : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if (isLocked != true)
+        if (isLocked == false)
         {
             if (collision.gameObject.tag == "Player")
             {
@@ -34,7 +34,7 @@ public class Elevator : MonoBehaviour
 
     public void Update()
     {
-        if (isLocked != true)
+        if (isLocked == false)
         {
             if (playerTrigger)
             {
@@ -42,9 +42,11 @@ public class Elevator : MonoBehaviour
             }
             if (transform.position == targetTransform)
             {
+
                 playerTrigger = false;
                 targetTransform = previousTransform;
                 previousTransform = transform.position;
+                Debug.Log("new targetTransform y: " + targetTransform.y);
             }
         }
     }
