@@ -1,22 +1,28 @@
 fileFormatVersion: 2
-guid: aafb3374664b38e42939b8d54911a845
+guid: 9dea8e79f72f2144b938929689af0ea8
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 916366052245242820
-    second: Ooze Vial_0
+      213: -5502937322215286666
+    second: Menu blob_0
   - first:
-      213: -1790736743939489203
-    second: Ooze Vial_1
+      213: -3813171250221610145
+    second: Menu blob_1
   - first:
-      213: -2506514697743671747
-    second: Ooze Vial_2
+      213: 1758212703641887842
+    second: Menu blob_2
   - first:
-      213: 6653187333150486840
-    second: Ooze Vial_3
+      213: -624436708416508730
+    second: Menu blob_3
   - first:
-      213: 7863259107483899418
-    second: Ooze Vial_4
+      213: -2360230208763432682
+    second: Menu blob_4
+  - first:
+      213: 4827526584088865590
+    second: Menu blob_5
+  - first:
+      213: 2862406340589740553
+    second: Menu blob_6
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -112,13 +118,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Ooze Vial_0
+      name: Menu blob_0
       rect:
         serializedVersion: 2
-        x: 302
-        y: 1043
-        width: 290
-        height: 746
+        x: 24
+        y: 381
+        width: 431
+        height: 393
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -127,20 +133,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4c30e44c11697bc00800000000000000
-      internalID: 916366052245242820
+      spriteID: 6785e1849a3a1a3b0800000000000000
+      internalID: -5502937322215286666
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ooze Vial_1
+      name: Menu blob_1
       rect:
         serializedVersion: 2
-        x: 1326
-        y: 1043
-        width: 290
-        height: 746
+        x: 495
+        y: 392
+        width: 148
+        height: 87
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -149,20 +155,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d424f3b4b660627e0800000000000000
-      internalID: -1790736743939489203
+      spriteID: f5b0fc273f4e41bc0800000000000000
+      internalID: -3813171250221610145
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ooze Vial_2
+      name: Menu blob_2
       rect:
         serializedVersion: 2
-        x: 2350
-        y: 1043
-        width: 290
-        height: 746
+        x: 659
+        y: 370
+        width: 390
+        height: 393
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -171,20 +177,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d3e51b89922173dd0800000000000000
-      internalID: -2506514697743671747
+      spriteID: 2646728732d666810800000000000000
+      internalID: 1758212703641887842
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ooze Vial_3
+      name: Menu blob_3
       rect:
         serializedVersion: 2
-        x: 302
-        y: 19
-        width: 290
-        height: 746
+        x: 1081
+        y: 392
+        width: 148
+        height: 87
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -193,20 +199,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 831309021aed45c50800000000000000
-      internalID: 6653187333150486840
+      spriteID: 6ccae124f1e8557f0800000000000000
+      internalID: -624436708416508730
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ooze Vial_4
+      name: Menu blob_4
       rect:
         serializedVersion: 2
-        x: 1326
-        y: 19
-        width: 290
-        height: 746
+        x: 1271
+        y: 382
+        width: 414
+        height: 388
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -215,8 +221,52 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a16de663f78ef1d60800000000000000
-      internalID: 7863259107483899418
+      spriteID: 61172825127ce3fd0800000000000000
+      internalID: -2360230208763432682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Menu blob_5
+      rect:
+        serializedVersion: 2
+        x: 1727
+        y: 392
+        width: 147
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63b2f54d9d1def240800000000000000
+      internalID: 4827526584088865590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Menu blob_6
+      rect:
+        serializedVersion: 2
+        x: 1869
+        y: 381
+        width: 431
+        height: 393
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9026dada66f49b720800000000000000
+      internalID: 2862406340589740553
       vertices: []
       indices: 
       edges: []
