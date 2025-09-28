@@ -8,6 +8,7 @@ public class PickupItem : MonoBehaviour
     {
         if (!isCollected && collision.CompareTag("Player"))
         {
+            gameObject.GetComponent<AudioSource>().Play();
             isCollected = true;
 
             // Attach to player

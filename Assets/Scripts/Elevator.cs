@@ -89,7 +89,7 @@ public class Elevator : MonoBehaviour
     IEnumerator PauseThenContinue()
     {
             yield return new WaitForSeconds(waitTime); // Wait for 2 seconds
-            
+            //gameObject.GetComponent<AudioSource>().Play();
             playerTrigger = true;
             Debug.Log("playerTrigger set True");
     }

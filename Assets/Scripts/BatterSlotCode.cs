@@ -27,6 +27,7 @@ public class BatterSlotCode : MonoBehaviour
     {
         if (collision.CompareTag("FBAT"))
         {
+            gameObject.GetComponent<AudioSource>().Play();
             isActive = true;
             collision.gameObject.SetActive(false);
         }

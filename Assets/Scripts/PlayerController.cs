@@ -275,6 +275,14 @@ public class Experiment : MonoBehaviour
         if (collision.CompareTag("Arm") && gameObject.GetComponent<CircleCollider2D>().gameObject.name == "Blob 1")
         {
             armCount += 1;
+
+            if (gameObject.GetComponent<AudioSource>().resource.name != "Pickup")
+            {
+                gameObject.GetComponent<AudioSource>().clip = Resources.Load<AudioClip>("Pickup");
+            }
+            gameObject.GetComponent<AudioSource>().Play();
+            
+            
             Destroy(collision.gameObject);
             InventoryManager.Instance.UpdateUIFromPlayer(this);
         }
@@ -285,12 +293,26 @@ public class Experiment : MonoBehaviour
         if (collision.CompareTag("Leg") && gameObject.GetComponent<CircleCollider2D>().gameObject.name == "Blob 1")
         {
             legCount += 1;
+
+            if (gameObject.GetComponent<AudioSource>().resource.name != "Pickup")
+            {
+                gameObject.GetComponent<AudioSource>().clip = Resources.Load<AudioClip>("Pickup");
+            }
+            gameObject.GetComponent<AudioSource>().Play();
+
             Destroy(collision.gameObject);
             InventoryManager.Instance.UpdateUIFromPlayer(this);
         }
         if (collision.CompareTag("Battery") && gameObject.GetComponent<CircleCollider2D>().gameObject.name == "Blob 1")
         {
             batCount += 1;
+
+            if (gameObject.GetComponent<AudioSource>().resource.name != "Pickup")
+            {
+                gameObject.GetComponent<AudioSource>().clip = Resources.Load<AudioClip>("Pickup");
+            }
+            gameObject.GetComponent<AudioSource>().Play();
+
             Destroy(collision.gameObject);
             InventoryManager.Instance.UpdateUIFromPlayer(this);
         }
