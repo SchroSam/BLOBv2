@@ -182,6 +182,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MainMenu: {fileID: 9082311474972660587}
   PlayMenu: {fileID: 0}
+  QuitMenu: {fileID: 0}
+  CredMenu: {fileID: 0}
 --- !u!1 &2218532279540742888
 GameObject:
   m_ObjectHideFlags: 0
@@ -477,7 +479,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &5952747536149883942
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -106,7 +106,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   width: 5
   height: 5
-  referencePointsCount: 12
+  referencePointsCount: 32
   referencePointRadius: 0.25
   mappingDetail: 10
   springDampingRatio: 0
@@ -199,6 +199,7 @@ MonoBehaviour:
   - {fileID: -1790736743939489203, guid: 1ad8698248377d243b5ba5b10ad54017, type: 3}
   healthimage: {fileID: 0}
   damageOverlays: []
+  GameOverImage: {fileID: 0}
 --- !u!114 &8795786415622898076
 MonoBehaviour:
   m_ObjectHideFlags: 0
