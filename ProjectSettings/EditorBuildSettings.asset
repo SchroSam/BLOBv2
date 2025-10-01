@@ -9,13 +9,13 @@ EditorBuildSettings:
     path: Assets/Scenes/SampleScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
   - enabled: 1
-    path: Assets/Scenes/BlobPhysTest.unity
+    path: Assets/Scenes/MainMenu.unity
     guid: 87b37100aaf9c224b895e52002da14b0
   - enabled: 0
     path: Assets/Scenes/THEGAME.unity
     guid: b5e25a2f35a909f4081a13ac535263b2
   - enabled: 1
-    path: Assets/Scenes/Sam.unity
+    path: Assets/Scenes/MainGame.unity
     guid: 5679c2b0f6289894e928eb4afdb0b2ab
   - enabled: 1
     path: Assets/Scenes/Credits.unity
