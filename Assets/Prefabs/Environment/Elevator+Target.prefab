@@ -151,7 +151,6 @@ MonoBehaviour:
   targetTransform: {fileID: 5880761366128182899}
   speed: 0.1
   waitTime: 2
-  isLocked: 0
 --- !u!82 &9118780153706425006
 AudioSource:
   m_ObjectHideFlags: 0

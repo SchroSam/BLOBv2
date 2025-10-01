@@ -7,26 +7,26 @@ using UnityEngine.UIElements;
 public class Elevator : MonoBehaviour
 {
     public Transform targetTransform;
-    private Vector3 previousPosition;
-    private bool playerTrigger = false;
+    private Vector3 originalPosition;
+    public bool playerTrigger = false;
+    public bool returning = false;
+    public bool returnStarted = false;
     public float speed = 0.3f;
-    public float waitTime = 2.0f;
-    public bool isLocked = false;
-    private float fixedX;
+    private float velocity;
+    public float playerSenseDelay = 2.0f;
+    public float returnDelay = 3.0f;
 
     public void Start()
     {
-        //fixedX = gameObject.transform.position.x;
-        previousPosition = transform.position;
+        originalPosition = transform.position;
     }
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
        
-            if (collision.gameObject.tag == "Player" && !playerTrigger)
+            if (collision.gameObject.tag == "Player" && !playerTrigger && !returning)
             {
-                if (isLocked == false)
-                    StartCoroutine(PauseThenContinue());
+                StartCoroutine(PauseThenContinue(playerSenseDelay));
             }
     }
 
@@ -34,63 +34,82 @@ public class Elevator : MonoBehaviour
     {
         if (playerTrigger)
         {
-            if (isLocked == false)
+
+            
+            if (targetTransform.position != transform.position)
             {
-                Debug.Log("moving");
+
                 if (targetTransform.position.y < transform.position.y)
-                {
-                    transform.position = new Vector3(transform.position.x, transform.position.y - speed, transform.position.z);
-
-                    if (transform.position.y <= targetTransform.position.y)
-                    {
-
-                        playerTrigger = false;
-                        targetTransform.position = previousPosition;
-                        previousPosition = transform.position;
-                        Debug.Log("new targetTransform y: " + targetTransform.position.y);
-                    }
-                }
+                    velocity = -speed;
                 else
+                    velocity = speed;
+
+                transform.position = new Vector3(transform.position.x, transform.position.y + velocity, transform.position.z);
+
+                if ((transform.position.y <= targetTransform.position.y && velocity < 0) || (transform.position.y >= targetTransform.position.y && velocity > 0))
                 {
-                    transform.position = new Vector3(transform.position.x, transform.position.y + speed, transform.position.z);
 
-                    if (transform.position.y >= targetTransform.position.y)
-                    {
-
-                        playerTrigger = false;
-                        targetTransform.position = previousPosition;
-                        previousPosition = transform.position;
-                        Debug.Log("new targetTransform y: " + targetTransform.position.y);
-                    }
-            }
-            }
-
-            if (isLocked == true)
-            {
-                playerTrigger = false;
-            }
+                    playerTrigger = false;
+                    returning = true;
+                    Debug.Log("returning");
                     
+                    Debug.Log("arrived at target: " + targetTransform.position.y);
+                }
             }
-            if (transform.position == targetTransform.position)
+
+        }
+
+        else if (returning && returnStarted)
+        {
+            
+            if (originalPosition != transform.position)
             {
 
-                playerTrigger = false;
-                targetTransform.position = previousPosition;
-                previousPosition = transform.position;
-                Debug.Log("new targetTransform y: " + targetTransform.position.y);
+                if (originalPosition.y < transform.position.y)
+                    velocity = -speed;
+                else
+                    velocity = speed;
+
+                transform.position = new Vector3(transform.position.x, transform.position.y + velocity, transform.position.z);
+
+                if ((transform.position.y <= originalPosition.y && velocity < 0) || (transform.position.y >= originalPosition.y && velocity > 0))
+                {
+                    
+                    returning = false;
+                    returnStarted = false;
+                    
+                    Debug.Log("arrived back home: " + originalPosition.y);
+                }
             }
-    }
-    public void lockVader(bool locker)
-    {
-        isLocked = locker;
+        }
+
+        else if (returning)
+        {
+            StartCoroutine(PauseThenContinue(returnDelay));
+        }
+
+        
+
     }
 
-    IEnumerator PauseThenContinue()
+    IEnumerator PauseThenContinue(float _waitTime)
     {
-            yield return new WaitForSeconds(waitTime); // Wait for 2 seconds
-            //gameObject.GetComponent<AudioSource>().Play();
+            yield return new WaitForSeconds(_waitTime);
+        //gameObject.GetComponent<AudioSource>().Play();
+
+        if (!returning)
+        {
             playerTrigger = true;
             Debug.Log("playerTrigger set True");
+        }
+        else
+        {
+            returnStarted = true;
+            Debug.Log("returnStarted set True");
+        }
+            
+
+            
     }
 
 
