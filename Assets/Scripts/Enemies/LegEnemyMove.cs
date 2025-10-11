@@ -1,8 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+
 
 
 public class LegEnemyMove : MonoBehaviour
@@ -123,6 +120,7 @@ public class LegEnemyMove : MonoBehaviour
         health -= 1;
         if (health == 0)
         {
+            Debug.Log("I, " + gameObject.name + " just killed myself");
             Destroy(gameObject);
         }
     }

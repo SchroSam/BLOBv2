@@ -91,30 +91,58 @@ public class SpawnOnPlayer : MonoBehaviour
     }
     public void KillLimbArm()
     {
-        ranob = Random.Range(0, arms.Count);
-        myObject = arms[ranob];
-        arms.Remove(arms[ranob]);
-        Destroy(myObject);
+        // ranob = Random.Range(0, arms.Count - 1);
+        // myObject = arms[ranob];
+        arms.RemoveAt(0);
+        for (int i = 0; i < gameObject.transform.GetChild(0).childCount; i++)
+        {
+            if (gameObject.transform.GetChild(0).GetChild(i).tag == "Arm")
+            {
+                Destroy(gameObject.transform.GetChild(0).GetChild(i).gameObject);
+                break;
+            }
+        }
     }
     public void KillLimbLeg()
     {
-        ranob = Random.Range(0, legs.Count);
-        myObject = legs[ranob];
-        legs.Remove(legs[ranob]);
-        Destroy(myObject);
+        // ranob = Random.Range(0, legs.Count - 1);
+        // myObject = legs[ranob];
+        legs.RemoveAt(0);
+        for (int i = 0; i < gameObject.transform.GetChild(0).childCount; i++)
+        {
+            if (gameObject.transform.GetChild(0).GetChild(i).tag == "Leg")
+            {
+                Destroy(gameObject.transform.GetChild(0).GetChild(i).gameObject);
+                break;
+            }
+        }
     }
     public void KillLimbBrain()
     {
-        ranob = Random.Range(0, brain.Count);
-        myObject = brain[ranob];
-        brain.Remove(brain[ranob]);
-        Destroy(myObject);
+        // ranob = Random.Range(0, brain.Count - 1);
+        // myObject = brain[ranob];
+        brain.RemoveAt(0);
+        for (int i = 0; i < gameObject.transform.GetChild(0).childCount; i++)
+        {
+            if (gameObject.transform.GetChild(0).GetChild(i).tag == "Brain")
+            {
+                Destroy(gameObject.transform.GetChild(0).GetChild(i).gameObject);
+                break;
+            }
+        }
     }
     public void KillLimbBat()
     {
-        ranob = Random.Range(0, bat.Count);
-        myObject = bat[ranob];
-        bat.Remove(bat[ranob]);
-        Destroy(myObject);
+        // ranob = Random.Range(0, bat.Count - 1);
+        // myObject = bat[ranob];
+        bat.RemoveAt(0);
+        for (int i = 0; i < gameObject.transform.GetChild(0).childCount; i++)
+        {
+            if (gameObject.transform.GetChild(0).GetChild(i).tag == "Battery")
+            {
+                Destroy(gameObject.transform.GetChild(0).GetChild(i).gameObject);
+                break;
+            }
+        }
     }
 }

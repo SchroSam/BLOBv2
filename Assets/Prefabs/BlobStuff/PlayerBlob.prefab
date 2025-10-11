@@ -180,8 +180,13 @@ MonoBehaviour:
   - {fileID: 6653187333150486840, guid: 1ad8698248377d243b5ba5b10ad54017, type: 3}
   - {fileID: -2506514697743671747, guid: 1ad8698248377d243b5ba5b10ad54017, type: 3}
   - {fileID: -1790736743939489203, guid: 1ad8698248377d243b5ba5b10ad54017, type: 3}
+  - {fileID: 916366052245242820, guid: 1ad8698248377d243b5ba5b10ad54017, type: 3}
   healthimage: {fileID: 0}
-  damageOverlays: []
+  damageOverlays:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   GameOverImage: {fileID: 0}
 --- !u!114 &8795786415622898076
 MonoBehaviour:
@@ -195,7 +200,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 040dbb14d34cb2e4b968756283d70618, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spritePrefab: {fileID: 216977880142089823, guid: bc37bd18393366147a1445168708ce65, type: 3}
+  spritePrefabArm: {fileID: 216977880142089823, guid: bc37bd18393366147a1445168708ce65, type: 3}
   spritePrefabLeg: {fileID: 216977880142089823, guid: b70e9fbc1b5c7944183e0cf985d56746, type: 3}
   spritePrefabBat: {fileID: 216977880142089823, guid: 64e0e4baa1a0d7942866783654985f0e, type: 3}
   player: {fileID: 4461132364606670918}

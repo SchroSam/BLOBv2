@@ -8,19 +8,23 @@ public class BatterySlotCode : MonoBehaviour
     public GameObject visual;
     public GameObject doorLink;
     public Vector2 pos = new Vector2(0,0);
-    private Vector2 qaid;
+    private Vector2 origPos;
 
     // Update is called once per frame
     private void Start()
     {
-        qaid = doorLink.transform.position;
+        origPos = doorLink.transform.position;
     }
     void Update()
     {
         if (isActive)
         {
             visual.SetActive(true);
-            doorLink.transform.position = Vector3.MoveTowards(doorLink.transform.position, qaid + pos, 2 * Time.deltaTime);
+            doorLink.transform.position = Vector3.MoveTowards(doorLink.transform.position, origPos + pos, 2 * Time.deltaTime);
+        }
+        if(doorLink.transform.position.y == origPos.y + pos.y)
+        {
+            doorLink.SetActive(false);
         }    
     }
     private void OnTriggerEnter2D(Collider2D collision)

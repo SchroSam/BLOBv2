@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5200299893002952034}
   m_Layer: 0
   m_Name: LegInBlob
-  m_TagString: Untagged
+  m_TagString: Leg
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

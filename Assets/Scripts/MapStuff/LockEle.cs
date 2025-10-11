@@ -10,6 +10,7 @@ public class LockEle : MonoBehaviour
         if (lockTarget.GetComponent<Elevator>() != null && gameObject != null)
         {
             Debug.Log(lockingIt.ToString());
+            Debug.Log("I DID IT" + gameObject.name);
             lockTarget.GetComponent<Elevator>().enabled = lockingIt;
         }
     }
