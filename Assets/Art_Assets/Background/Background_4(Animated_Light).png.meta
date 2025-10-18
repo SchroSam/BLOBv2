@@ -116,10 +116,10 @@ TextureImporter:
       name: Background_4(Animated_Light)_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 4096
-        height: 4096
+        x: 224
+        y: 3072
+        width: 968
+        height: 1024
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -134,11 +134,275 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Background_4(Animated_Light)_1
+      rect:
+        serializedVersion: 2
+        x: 1192
+        y: 3072
+        width: 968
+        height: 1024
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a134383c660a7e40a0a1c0d2f4f679d
+      internalID: 282307604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Background_4(Animated_Light)_2
+      rect:
+        serializedVersion: 2
+        x: 2160
+        y: 3072
+        width: 968
+        height: 1024
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0833a2c4188fb664ba95c3fa492b5c99
+      internalID: 2112031610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Background_4(Animated_Light)_3
+      rect:
+        serializedVersion: 2
+        x: 3128
+        y: 3072
+        width: 968
+        height: 1024
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a3bffaa0a04b6643b1abee665f5d319
+      internalID: 1636971177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Background_4(Animated_Light)_4
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 2048
+        width: 968
+        height: 1024
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 221fc7cfe21708941afa6ab42cf46f80
+      internalID: 808793251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Background_4(Animated_Light)_5
+      rect:
+        serializedVersion: 2
+        x: 1192
+        y: 2048
+        width: 968
+        height: 1024
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba9da8c04bdb4e34282125a73a6ceea0
+      internalID: -440917734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Background_4(Animated_Light)_6
+      rect:
+        serializedVersion: 2
+        x: 2160
+        y: 2048
+        width: 968
+        height: 1024
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70438b44554488d47a2e479116493743
+      internalID: 1743853756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Background_4(Animated_Light)_7
+      rect:
+        serializedVersion: 2
+        x: 3128
+        y: 2048
+        width: 968
+        height: 1024
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7424f998c1766ce4f92f8720332d7fe8
+      internalID: -526438841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Background_4(Animated_Light)_8
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 1024
+        width: 968
+        height: 1024
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99abb1226576a8a4a995221e5ee5f097
+      internalID: -818842260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Background_4(Animated_Light)_9
+      rect:
+        serializedVersion: 2
+        x: 1192
+        y: 1024
+        width: 968
+        height: 1024
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3184ce5ab97dbb4e9e33360c6aa0787
+      internalID: 620792447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Background_4(Animated_Light)_10
+      rect:
+        serializedVersion: 2
+        x: 2160
+        y: 1024
+        width: 968
+        height: 1024
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f990ec89017b1e48b16a110aa24441b
+      internalID: -879111431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Background_4(Animated_Light)_11
+      rect:
+        serializedVersion: 2
+        x: 3128
+        y: 1024
+        width: 968
+        height: 1024
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3670e63e1eb67c04db7236b73c24e782
+      internalID: -671300812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Background_4(Animated_Light)_12
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 0
+        width: 968
+        height: 1024
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6dbc6a4d72992da4da576d49a7cf9763
+      internalID: -1633287534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: bfffeb978dfd0f4438eca88b5f1bd83f
     internalID: 0
     vertices: []
     indices: 
@@ -149,6 +413,18 @@ TextureImporter:
       entries: []
     nameFileIdTable:
       Background_4(Animated_Light)_0: -8245804053436008202
+      Background_4(Animated_Light)_1: 282307604
+      Background_4(Animated_Light)_10: -879111431
+      Background_4(Animated_Light)_11: -671300812
+      Background_4(Animated_Light)_12: -1633287534
+      Background_4(Animated_Light)_2: 2112031610
+      Background_4(Animated_Light)_3: 1636971177
+      Background_4(Animated_Light)_4: 808793251
+      Background_4(Animated_Light)_5: -440917734
+      Background_4(Animated_Light)_6: 1743853756
+      Background_4(Animated_Light)_7: -526438841
+      Background_4(Animated_Light)_8: -818842260
+      Background_4(Animated_Light)_9: 620792447
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
