@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Blob (No controller)
       objectReference: {fileID: 0}
+    - target: {fileID: 143058, guid: 8a8d083fa12618f42aae9c29cf076400, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 464436, guid: 8a8d083fa12618f42aae9c29cf076400, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

@@ -7,22 +7,13 @@ public class Fired : MonoBehaviour
     public int z;
     void Start()
     {
-        if (z > 0)
-        {
             right = GetComponent<Rigidbody2D>();
-            Vector3 dir = new Vector3(100f, 0f, 0f);
+            Vector2 dir = GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody2D>().linearVelocity;
             dir.Normalize();
+            dir.x += GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody2D>().linearVelocityX/10f;
             right.AddForce((dir * 100) * force);
-            transform.localRotation = Quaternion.Euler(0, 0, 0);
-        }
-        else
-        {
-            right = GetComponent<Rigidbody2D>();
-            Vector3 dir = new Vector3(100f, 0f, 0f);
-            dir.Normalize();
-            right.AddForce(-1 * ((dir * 100) * force));
-            transform.localRotation = Quaternion.Euler(0, 180, 0);
-        }
+            if(z <= 0)
+                transform.localRotation = Quaternion.Euler(0, 180, 0);
     }
 
     // Update is called once per frame

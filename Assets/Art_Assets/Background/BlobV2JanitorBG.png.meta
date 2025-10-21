@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      BlobV2JanitorBG_0: -2390244794648205879
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

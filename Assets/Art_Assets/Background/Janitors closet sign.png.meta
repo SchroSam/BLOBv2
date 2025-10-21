@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Janitors closet sign_0: -1963614196124778046
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

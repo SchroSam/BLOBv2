@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class Blob : MonoBehaviour {
     private class PropagateCollisions : MonoBehaviour {
@@ -29,6 +29,8 @@ public class Blob : MonoBehaviour {
         CreateReferencePoints();
         CreateMesh();
         MapVerticesToReferencePoints();
+        //Line to kill all Blobs on scene change
+        SceneManager.activeSceneChanged += OnActiveSceneChanged;
     }
 
     void CreateReferencePoints() {
@@ -180,7 +182,14 @@ public class Blob : MonoBehaviour {
         mesh.RecalculateBounds();
     }
 
-    Vector3 LocalPosition(GameObject obj) {
+    Vector3 LocalPosition(GameObject obj)
+    {
         return transform.InverseTransformPoint(obj.transform.position);
+    }
+    
+    void OnActiveSceneChanged(Scene oldScene, Scene newScene)
+    {
+        if(gameObject != null)
+            Destroy(gameObject);
     }
 }
