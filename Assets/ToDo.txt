@@ -1,7 +1,7 @@
 Stuff to Add/Change:
 --MVP--
 
-1. Make combat with Leg Enemy actually be impactful at all (lol)
+-MADE LEG ENEMY COMBAT BETTER-
 2. Finish and refine first level
 3. Add Boss and ending slides
   3.a. Boss Logic
@@ -9,9 +9,10 @@ Stuff to Add/Change:
 
 --STRETCH--
 
-4. Re-add collision to BLOB logo
-5. Add more/refine SFX
-  5.a. Blob wet slapping noise for when the blob has a sudden impact
+4. Tune Player firing direction
+5. Re-add collision to BLOB logo
+6. Add more/refine SFX
+  6.a. Blob wet slapping noise for when the blob has a sudden impact
 
 Known bugs to fix:
 --MVP--
@@ -21,4 +22,4 @@ Known bugs to fix:
 2. Somewhat related to Leg enemy combat feeling better, just making the leg enemy hitreg good at all (lol)
 
 --STRETCH--
-3. Similarly to fix (1.) limb prefabs spawned in game are not deleted on exit which mostly just makes it weird in the editor to my knowledge
+-FIXED STUFF NOT GETTING DELETED ON SCENE END-

@@ -48,7 +48,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aca649b40a7fddd42a22d02882cb88fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  force: 8
+  knockBackMultiplier: 10
+  knockBackResistance: 4
+  maxVerticalForce: 0.5
+  minHorizontalForce: 10
   z: 0
 --- !u!114 &6339780263527942363
 MonoBehaviour:

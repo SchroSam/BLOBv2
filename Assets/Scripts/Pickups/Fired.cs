@@ -2,18 +2,36 @@ using UnityEngine;
 
 public class Fired : MonoBehaviour
 {
-    public float force = 8.0f;
+    public float knockBackMultiplier = 10.0f;
+    public float knockBackResistance = 5.0f;
+    public float maxVerticalForce = 0.5f;
+    public float minHorizontalForce = 10f;
     private Rigidbody2D right;
     public int z;
     void Start()
     {
-            right = GetComponent<Rigidbody2D>();
-            Vector2 dir = GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody2D>().linearVelocity;
-            dir.Normalize();
-            dir.x += GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody2D>().linearVelocityX/10f;
-            right.AddForce((dir * 100) * force);
-            if(z <= 0)
-                transform.localRotation = Quaternion.Euler(0, 180, 0);
+        right = GetComponent<Rigidbody2D>();
+        Vector2 dir = GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody2D>().linearVelocity;
+        
+        if (dir.x < 0 && dir.x > -0.5)
+            dir.x = -dir.x;
+        //dir.Normalize();
+        dir.x += GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody2D>().linearVelocityX / 10f;
+
+        Debug.Log(dir.x);
+        if (dir.x < minHorizontalForce && dir.x >= 0)
+            dir.x = minHorizontalForce;
+        else if (dir.x > -minHorizontalForce && dir.x < 0)
+            dir.x = -minHorizontalForce;
+
+        if (dir.y > maxVerticalForce)
+            dir.y = maxVerticalForce;
+        else if (dir.y < -maxVerticalForce)
+            dir.y = -maxVerticalForce;
+
+        right.AddForce(dir * 100);
+        if(dir.x <= 0)
+            transform.localRotation = Quaternion.Euler(0, 180, 0);
     }
 
     // Update is called once per frame
@@ -25,6 +43,36 @@ public class Fired : MonoBehaviour
         }
         else if (other.CompareTag("Enemy") && other.GetComponent<LegEnemyMove>() != null)
         {
+            Vector2 knockBackVector = gameObject.GetComponent<Rigidbody2D>().linearVelocity;
+            Vector2 currentVelocity = other.gameObject.GetComponent<Rigidbody2D>().linearVelocity;
+
+            // if (Math.Abs(gameObject.GetComponent<Rigidbody2D>().linearVelocity.x) < minimumKnockback)
+            // {
+            //     if (knockBackVector.x >= 0)
+            //         knockBackVector.x = minimumKnockback;
+            //     else
+            //         knockBackVector.x = -minimumKnockback;
+            // }
+
+            // Debug.Log(knockBackVector);
+            // Debug.Log(other.gameObject.GetComponent<Rigidbody2D>().linearVelocity);
+
+            // if ((knockBackVector.x >= 0 && currentVelocity.x >= 0) || (knockBackVector.x < 0 && currentVelocity.x < 0))
+            // {
+            //     other.gameObject.GetComponent<Rigidbody2D>().linearVelocity = knockBackVector - currentVelocity;
+            // }
+            // else
+            // {
+            //     if(knockBackVector.x >= 0)
+            //     {
+                     other.gameObject.GetComponent<Rigidbody2D>().linearVelocity = currentVelocity + knockBackVector / knockBackResistance;
+            //     }
+            // }
+
+            
+            
+
+            //other.GetComponent<Rigidbody2D>().AddForce(knockBackVector * knockBackMultiplier);
             other.GetComponent<LegEnemyMove>().hurt();
             Destroy(gameObject);
         }
@@ -38,7 +86,7 @@ public class Fired : MonoBehaviour
         }
         else
         {
-            Debug.Log(other.gameObject.name);
+            //Debug.Log(other.gameObject.name);
             Destroy(gameObject);
         }
         

@@ -9,11 +9,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6764612022741709363}
+  - component: {fileID: 1638820074555104889}
+  - component: {fileID: 181384364366508812}
   - component: {fileID: 974790657841680287}
   - component: {fileID: 1435261616985399346}
   - component: {fileID: 3183751786933694028}
-  - component: {fileID: 181384364366508812}
-  - component: {fileID: 1638820074555104889}
   m_Layer: 0
   m_Name: LegFired
   m_TagString: FLEG
@@ -37,6 +37,36 @@ Transform:
   - {fileID: 2935185534756560707}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1638820074555104889
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 156417649371751523}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aca649b40a7fddd42a22d02882cb88fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  knockBackMultiplier: 10
+  knockBackResistance: 4
+  maxVerticalForce: 0.5
+  minHorizontalForce: 10
+  z: 0
+--- !u!114 &181384364366508812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 156417649371751523}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ad9fc667a52b4d468df9eb791f2a8f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  drop: {fileID: 4879707903960116068, guid: a26fd4e06e66906429ff9aadc98b36e2, type: 3}
 --- !u!212 &974790657841680287
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -165,33 +195,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &181384364366508812
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 156417649371751523}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ad9fc667a52b4d468df9eb791f2a8f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  drop: {fileID: 4879707903960116068, guid: a26fd4e06e66906429ff9aadc98b36e2, type: 3}
---- !u!114 &1638820074555104889
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 156417649371751523}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aca649b40a7fddd42a22d02882cb88fd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  force: 8
-  z: 0
 --- !u!1 &539194442991898243
 GameObject:
   m_ObjectHideFlags: 0

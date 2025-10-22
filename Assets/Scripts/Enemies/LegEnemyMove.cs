@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 
@@ -5,7 +6,8 @@ using UnityEngine;
 public class LegEnemyMove : MonoBehaviour
 {
     public float speed;
-    public int mode = 0;
+    public enum state {moving, attacking, stunned}
+    public state mode = state.moving;
     public GameObject player;
     public GameObject attack;
     public Animator animator;
@@ -29,6 +31,8 @@ public class LegEnemyMove : MonoBehaviour
 
     }
 
+    
+
     // void FixedUpdate()
     // {
     //     while (animator.GetFloat("mode") == 0.0f)
@@ -42,39 +46,48 @@ public class LegEnemyMove : MonoBehaviour
     // }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        animator.SetInteger("mode", mode);
+        animator.SetInteger("mode", (int)mode);
 
         
 
-        if (mode == 0)
+        if (mode == state.moving)
         {
             if (player.transform.position.x > transform.position.x)
             {
-                Vector2 position = transform.position;
-                position.x = position.x + (speed / 200);
-                transform.position = position;
+                // Vector2 position = transform.position;
+                // position.x = position.x + (speed / 200);
+                // transform.position = position;
+
+                if (gameObject.GetComponent<Rigidbody2D>().linearVelocity.x < speed)
+                    gameObject.GetComponent<Rigidbody2D>().AddForceX(speed);
+                    
+
                 pd = 1;
                 transform.localRotation = Quaternion.Euler(0, 0, 0);
             }
             else
             {
-                Vector2 position = transform.position;
-                position.x = position.x - (speed / 200);
-                transform.position = position;
+                // Vector2 position = transform.position;
+                // position.x = position.x - (speed / 200);
+                // transform.position = position;
+
+                if(gameObject.GetComponent<Rigidbody2D>().linearVelocity.x > -speed)
+                    gameObject.GetComponent<Rigidbody2D>().AddForceX(-speed);
+
                 pd = 0;
                 transform.localRotation = Quaternion.Euler(0, 180, 0);
             }
             tim += Time.deltaTime;
             if (pd != pdt)
             {
-                mode = 2;
-                tim = 2 + (Random.Range(0, 0.5f));
+                mode = state.stunned;
+                tim = 2 + UnityEngine.Random.Range(0, 0.5f);
                 pdt = pd;
             }
         }
-        else if (mode == 1)
+        else if (mode == state.attacking)
         {
             {
 
@@ -100,7 +113,7 @@ public class LegEnemyMove : MonoBehaviour
                 }
             }
         }
-        else
+        else if (mode == state.stunned)
         {
             tim -= Time.deltaTime;
             if (tim < 0)
@@ -112,7 +125,7 @@ public class LegEnemyMove : MonoBehaviour
     }
     public void modeChange()
         {
-            mode = 1;
+            mode = state.attacking;
             tim = 0;
         }
     public void hurt()
@@ -120,7 +133,7 @@ public class LegEnemyMove : MonoBehaviour
         health -= 1;
         if (health == 0)
         {
-            Debug.Log("I, " + gameObject.name + " just killed myself");
+            //Debug.Log("I, " + gameObject.name + " just killed myself");
             Destroy(gameObject);
         }
     }
