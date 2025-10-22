@@ -16,6 +16,8 @@ TagManager:
   - FLEG
   - FBAT
   - Puzz2
+  - ground
+  - Ground
   layers:
   - Default
   - TransparentFX

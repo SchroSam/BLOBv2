@@ -45,14 +45,14 @@ public class PlayerController : MonoBehaviour
         UpdateHealthUI();
         UpdatedamageOverlays();
     }
-    void UpdateHealthUI()
+    public void UpdateHealthUI()
     {
         // Ensure index is within bounds of your slimesprites array
         int index = Mathf.Clamp(playerhealth, 0, slimesprites.Length - 1);
         healthimage.sprite = slimesprites[index];
     }
 
-    void UpdatedamageOverlays()
+    public void UpdatedamageOverlays()
     {
         int lost = Mathf.Clamp(4 - playerhealth, 0, damageOverlays.Length);
         for (int i = 0; i < damageOverlays.Length; i++)
