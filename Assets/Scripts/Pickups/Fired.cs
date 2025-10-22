@@ -12,13 +12,13 @@ public class Fired : MonoBehaviour
     {
         right = GetComponent<Rigidbody2D>();
         Vector2 dir = GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody2D>().linearVelocity;
-        
+
         if (dir.x < 0 && dir.x > -0.5)
             dir.x = -dir.x;
         //dir.Normalize();
         dir.x += GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody2D>().linearVelocityX / 10f;
 
-        Debug.Log(dir.x);
+        
         if (dir.x < minHorizontalForce && dir.x >= 0)
             dir.x = minHorizontalForce;
         else if (dir.x > -minHorizontalForce && dir.x < 0)

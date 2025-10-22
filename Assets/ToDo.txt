@@ -3,6 +3,8 @@ Stuff to Add/Change:
 
 -MADE LEG ENEMY COMBAT BETTER-
 2. Finish and refine first level
+  2.a. Playtest whole game before final build
+  2.b. Add Janitor's closet door entry popup
 3. Add Boss and ending slides
   3.a. Boss Logic
   3.b. Boss Visuals (animations and such)
@@ -10,9 +12,9 @@ Stuff to Add/Change:
 --STRETCH--
 
 4. Tune Player firing direction
-5. Re-add collision to BLOB logo
-6. Add more/refine SFX
-  6.a. Blob wet slapping noise for when the blob has a sudden impact
+5. Add more/refine SFX
+  5.a. Blob wet slapping noise for when the blob has a sudden impact
+6. Re-add collision to BLOB logo
 
 Known bugs to fix:
 --MVP--
