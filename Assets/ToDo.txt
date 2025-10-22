@@ -4,7 +4,6 @@ Stuff to Add/Change:
 -MADE LEG ENEMY COMBAT BETTER-
 2. Finish and refine first level
   2.a. Playtest whole game before final build
-  2.b. Add Janitor's closet door entry popup
 3. Add Boss and ending slides
   3.a. Boss Logic
   3.b. Boss Visuals (animations and such)
