@@ -20,8 +20,6 @@ public class PlayerController : MonoBehaviour
     public GameObject batShot;
     public GameObject legShot;
     public GameObject brainShot;
-    private int dire = 0;
-    private Component mik;
     public int playerhealth;
     public float healtime;
     public float invistime;
@@ -88,18 +86,6 @@ public class PlayerController : MonoBehaviour
             UpdateHealthUI();
             UpdatedamageOverlays();
         }
-        float z = Input.GetAxis("Horizontal");
-        if (z != 0)
-        {
-            if (z < 0)
-            {
-                dire = 0;
-            }
-            else
-            {
-                dire = 1;
-            }
-        }
         // Dash input (Shift key)
         if (Input.GetKeyDown(KeyCode.LeftShift) && Time.time >= lastDash + dashCooldown)
         {
@@ -132,15 +118,6 @@ public class PlayerController : MonoBehaviour
                 GameObject newObject = Instantiate(armShot, transform.position, Quaternion.identity);
                 gameObject.GetComponent<SpawnOnPlayer>().KillLimbArm();
 
-                if (dire > 0)
-                {
-                    newObject.GetComponent<Fired>().z = 1;
-                }
-                else
-                {
-                    newObject.GetComponent<Fired>().z = 0;
-                }
-
             }
         }
         if (Input.GetKeyDown(KeyCode.Alpha4))
@@ -160,14 +137,6 @@ public class PlayerController : MonoBehaviour
                 gameObject.GetComponent<SpawnOnPlayer>().KillLimbBat();
 
 
-                if (dire > 0)
-                {
-                    newObject.GetComponent<Fired>().z = 1;
-                }
-                else
-                {
-                    newObject.GetComponent<Fired>().z = 0;
-                }
 
             }
         }
@@ -187,15 +156,6 @@ public class PlayerController : MonoBehaviour
                 InventoryManager.Instance.UpdateUIFromPlayer(this);
                 GameObject newObject = Instantiate(legShot, transform.position, Quaternion.identity);
                 gameObject.GetComponent<SpawnOnPlayer>().KillLimbLeg();
-
-                if (dire > 0)
-                {
-                    newObject.GetComponent<Fired>().z = 1;
-                }
-                else
-                {
-                    newObject.GetComponent<Fired>().z = 0;
-                }
             }
 
         }
@@ -217,14 +177,6 @@ public class PlayerController : MonoBehaviour
                 GameObject newObject = Instantiate(brainShot, transform.position, Quaternion.identity);
                 gameObject.GetComponent<SpawnOnPlayer>().KillLimbBrain();
 
-                if (dire > 0)
-                {
-                    newObject.GetComponent<Fired>().z = 1;
-                }
-                else
-                {
-                    newObject.GetComponent<Fired>().z = 0;
-                }
                 
             }
         }
@@ -356,13 +308,15 @@ public class PlayerController : MonoBehaviour
                 {
                     //Physics2D.IgnoreCollision(gameObject.GetComponent<CircleCollider2D>(), collision.gameObject.GetComponent<BoxCollider2D>(), false);
                     collision.gameObject.GetComponent<BoxCollider2D>().enabled = true;
+
+                    collision.gameObject.GetComponent<Rigidbody2D>().linearVelocity = new Vector2(0, collision.gameObject.GetComponent<Rigidbody2D>().linearVelocity.y);
+
                     collision.gameObject.GetComponent<LegEnemyMove>().modeChange();
-                    collision.gameObject.GetComponent<Animator>().SetInteger("mode", collision.gameObject.GetComponent<LegEnemyMove>().mode);
+                    collision.gameObject.GetComponent<Animator>().SetInteger("mode", (int)collision.gameObject.GetComponent<LegEnemyMove>().mode);
                 }
             }
 
-            float tim2 = 0f;
-            tim2 = Time.time;
+            float tim2 = Time.time;
             while (tim2 - tim < 1f)
             {
                 tim2 += Time.deltaTime;
@@ -372,7 +326,7 @@ public class PlayerController : MonoBehaviour
                     for (int i = 0; i < recentCollison.Count; i++)
                     {
                         recentCollison[i].GetComponent<BoxCollider2D>().enabled = true;
-                        Debug.Log("Enabled Box collider of " + recentCollison[i].name);
+                        //Debug.Log("Enabled Box collider of " + recentCollison[i].name);
                     }
                     recentCollison.Clear();
                 }
