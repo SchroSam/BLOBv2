@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7760722829731945627}
+  - component: {fileID: 808156150934717779}
   - component: {fileID: 3267907663934090381}
   - component: {fileID: 4455815182362981481}
-  - component: {fileID: 808156150934717779}
   - component: {fileID: 9118780153706425006}
   m_Layer: 0
   m_Name: Elevator
@@ -35,6 +35,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 5096642548743224522}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &808156150934717779
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1581423635658411957}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b735454929d7e40448521659c8872af4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetTransform: {fileID: 5880761366128182899}
+  smoothTime: 1
+  waitTime: 2
+  returnDelay: 3
 --- !u!212 &3267907663934090381
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -136,21 +152,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 10.3, y: 1.8985863}
   m_EdgeRadius: 0
---- !u!114 &808156150934717779
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1581423635658411957}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b735454929d7e40448521659c8872af4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  targetTransform: {fileID: 5880761366128182899}
-  speed: 0.1
-  waitTime: 2
 --- !u!82 &9118780153706425006
 AudioSource:
   m_ObjectHideFlags: 0
