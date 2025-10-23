@@ -6,17 +6,16 @@ public class Bomb : MonoBehaviour
     [Header("Explosion Settings")]
     public float explosionRadius = 2f;
     public int damage = 1;
-    public float flashDuration = 0.15f; // short but noticeable
+    public float flashDuration = 0.25f;
     public int flashCount = 3;
     public float explosionDelay = 0.2f;
 
     [Header("References")]
-    public SpriteRenderer spriteRenderer;   // assign in inspector or auto-find
-    public Material flashMaterial;          // a white material for flashing
-    public GameObject explosionEffect;      // optional
+    public SpriteRenderer spriteRenderer;
+    public GameObject explosionEffect;
 
-    private Material originalMaterial;
     private bool hasExploded = false;
+    private Color originalColor;
 
     void Start()
     {
@@ -24,12 +23,9 @@ public class Bomb : MonoBehaviour
             spriteRenderer = GetComponentInChildren<SpriteRenderer>();
 
         if (spriteRenderer != null)
-            originalMaterial = spriteRenderer.material;
+            originalColor = spriteRenderer.color;
         else
-            Debug.LogWarning("Bomb has no SpriteRenderer!", this);
-
-        if (flashMaterial == null)
-            Debug.LogWarning("Assign a white flash material in inspector!", this);
+            Debug.LogWarning("Bomb has no SpriteRenderer assigned!", this);
     }
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -44,26 +40,54 @@ public class Bomb : MonoBehaviour
     {
         hasExploded = true;
 
-        if (spriteRenderer != null && flashMaterial != null)
+        // Flash red before explosion
+        if (spriteRenderer != null)
         {
             for (int i = 0; i < flashCount; i++)
             {
-                spriteRenderer.material = flashMaterial;  // flash white
+                spriteRenderer.color = Color.red;
                 yield return new WaitForSeconds(flashDuration);
-                spriteRenderer.material = originalMaterial; // revert
+
+                spriteRenderer.color = originalColor;
                 yield return new WaitForSeconds(flashDuration);
             }
         }
 
         yield return new WaitForSeconds(explosionDelay);
+
         Explode();
     }
 
-    void Explode()
+    private void Explode()
     {
+        // Spawn explosion prefab
         if (explosionEffect != null)
-            Instantiate(explosionEffect, transform.position, Quaternion.identity);
+        {
+            GameObject explosion = Instantiate(explosionEffect, transform.position, Quaternion.identity);
 
+            // Automatically destroy explosion after animation
+            Animator anim = explosion.GetComponent<Animator>();
+            if (anim != null)
+            {
+                // Wait until animation starts before getting its length
+                AnimatorClipInfo[] clipInfo = anim.GetCurrentAnimatorClipInfo(0);
+                if (clipInfo.Length > 0)
+                {
+                    float animLength = clipInfo[0].clip.length;
+                    Destroy(explosion, animLength + 0.1f);
+                }
+                else
+                {
+                    Destroy(explosion, 1f);
+                }
+            }
+            else
+            {
+                Destroy(explosion, 1f);
+            }
+        }
+
+        // Damage nearby players
         Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, explosionRadius);
         foreach (Collider2D hit in hits)
         {
@@ -82,6 +106,7 @@ public class Bomb : MonoBehaviour
             }
         }
 
+        // Destroy the bomb after the explosion
         Destroy(gameObject);
     }
 
@@ -91,3 +116,5 @@ public class Bomb : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, explosionRadius);
     }
 }
+
+

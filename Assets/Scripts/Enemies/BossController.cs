@@ -9,21 +9,29 @@ public class BossController : MonoBehaviour
     private bool movingRight = true;
 
     [Header("Attack Settings")]
-    public GameObject bombPrefab;       // Drag your bomb sprite here
-    public GameObject enemyPrefab;      // Drag one of your existing enemies here
-    public Transform dropPoint;         // Empty GameObject under boss where bombs spawn
-    public float bombDropInterval = 2f; // How often to drop bombs
-    public float enemySpawnInterval = 5f; // How often to spawn an enemy
+    public GameObject bombPrefab;       // Bomb prefab
+    public GameObject enemyPrefab;      // Enemy prefab
+
+    // Two groups of drop points
+    public Transform[] dropPointsGroup1;
+    public Transform[] dropPointsGroup2;
+
+    private bool useGroup1 = true; // Tracks which group is active
+    public float bombDropInterval = 2f;
+    public float enemySpawnInterval = 5f;
 
     [Header("Health Settings")]
     public int bossHealth = 10;
+
+    [Header("References")]
+    public GameObject player; // Assign the player here
 
     private float bombTimer;
     private float enemyTimer;
 
     void Start()
     {
-        bombTimer = bombDropInterval;
+        bombTimer = 0f; // So the first bomb drops immediately
         enemyTimer = enemySpawnInterval;
     }
 
@@ -35,7 +43,6 @@ public class BossController : MonoBehaviour
 
     void MoveBoss()
     {
-        // Move left/right
         if (movingRight)
         {
             transform.Translate(Vector2.right * moveSpeed * Time.deltaTime);
@@ -55,14 +62,12 @@ public class BossController : MonoBehaviour
         bombTimer -= Time.deltaTime;
         enemyTimer -= Time.deltaTime;
 
-        // Drop bombs
         if (bombTimer <= 0f)
         {
-            DropBomb();
+            DropBombs();
             bombTimer = bombDropInterval;
         }
 
-        // Spawn enemies
         if (enemyTimer <= 0f)
         {
             SpawnEnemy();
@@ -70,21 +75,45 @@ public class BossController : MonoBehaviour
         }
     }
 
-    void DropBomb()
+    void DropBombs()
     {
-        if (bombPrefab != null && dropPoint != null)
+        Transform[] activeGroup = useGroup1 ? dropPointsGroup1 : dropPointsGroup2;
+
+        foreach (Transform dropPoint in activeGroup)
         {
-            Instantiate(bombPrefab, dropPoint.position, Quaternion.identity);
+            if (dropPoint != null && bombPrefab != null)
+            {
+                Instantiate(bombPrefab, dropPoint.position, Quaternion.identity);
+            }
         }
+
+        useGroup1 = !useGroup1; // Alternate groups for the next drop
+        Debug.Log("Bombs dropped on " + (useGroup1 ? "Group 2" : "Group 1"));
     }
 
     void SpawnEnemy()
     {
         if (enemyPrefab != null)
         {
-            // Spawns enemy somewhere near the boss
-            Vector3 spawnPos = transform.position + new Vector3(Random.Range(-2f, 2f), -2f, 0f);
-            Instantiate(enemyPrefab, spawnPos, Quaternion.identity);
+            Vector3 spawnPos = new Vector3(
+                transform.position.x + Random.Range(-2f, 2f),
+                -2.44f, // Fixed Y position
+                0f
+            );
+
+            GameObject enemy = Instantiate(enemyPrefab, spawnPos, Quaternion.identity);
+
+            // Assign the player to the enemy's public variable
+            var enemyScript = enemy.GetComponent<MonoBehaviour>(); // get any script
+            var fields = enemy.GetComponents<MonoBehaviour>();
+            foreach (var field in fields)
+            {
+                var playerField = field.GetType().GetField("player");
+                if (playerField != null)
+                {
+                    playerField.SetValue(field, player);
+                }
+            }
         }
     }
 
@@ -99,8 +128,6 @@ public class BossController : MonoBehaviour
 
     void Die()
     {
-        // Could play animation or particle effect here
         Destroy(gameObject);
     }
 }
-
