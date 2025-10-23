@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 
 
@@ -9,17 +10,13 @@ public class LegEnemyMove : MonoBehaviour
     public enum state {moving, attacking, stunned}
     public state mode = state.moving;
     public GameObject player;
-    public GameObject attack;
     public Animator animator;
     private float tim;
     private int fCheck;
     private int pd = 0;
     private int pdt = 0;
     public int health;
-    private SpriteRenderer spriteRenderer;
 
-    public float interval = 0.5f;
-    public float lastWalk = 0.0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,7 +28,19 @@ public class LegEnemyMove : MonoBehaviour
 
     }
 
-    
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            Debug.Log("Ignoring collider of GameObject: " + collision.name);
+            Physics2D.IgnoreCollision(gameObject.GetComponent<BoxCollider2D>(), collision.gameObject.GetComponent<CircleCollider2D>());
+
+            for(int i = 1; i < collision.transform.childCount; i++)
+            {
+                Physics2D.IgnoreCollision(gameObject.GetComponent<BoxCollider2D>(), collision.transform.GetChild(i).GetComponent<CircleCollider2D>());
+            }
+        }
+    }
 
     // void FixedUpdate()
     // {
@@ -52,9 +61,16 @@ public class LegEnemyMove : MonoBehaviour
 
         
 
+
         if (mode == state.moving)
         {
-            if (player.transform.position.x > transform.position.x)
+            if (Vector2.Distance(transform.position, new Vector3(player.transform.position.x + player.transform.localScale.x / 2, player.transform.position.y, player.transform.position.z)) < 1f ||
+               Vector2.Distance(transform.position, new Vector3(player.transform.position.x - player.transform.localScale.x / 2, player.transform.position.y, player.transform.position.z)) < 1f)
+            {
+                gameObject.GetComponent<Rigidbody2D>().linearVelocity = new Vector2(0, gameObject.GetComponent<Rigidbody2D>().linearVelocity.y);
+                mode = state.attacking;
+            }
+            else if (player.transform.position.x > transform.position.x)
             {
                 // Vector2 position = transform.position;
                 // position.x = position.x + (speed / 200);
@@ -62,7 +78,7 @@ public class LegEnemyMove : MonoBehaviour
 
                 if (gameObject.GetComponent<Rigidbody2D>().linearVelocity.x < speed)
                     gameObject.GetComponent<Rigidbody2D>().AddForceX(speed);
-                    
+
 
                 pd = 1;
                 transform.localRotation = Quaternion.Euler(0, 0, 0);
@@ -73,7 +89,7 @@ public class LegEnemyMove : MonoBehaviour
                 // position.x = position.x - (speed / 200);
                 // transform.position = position;
 
-                if(gameObject.GetComponent<Rigidbody2D>().linearVelocity.x > -speed)
+                if (gameObject.GetComponent<Rigidbody2D>().linearVelocity.x > -speed)
                     gameObject.GetComponent<Rigidbody2D>().AddForceX(-speed);
 
                 pd = 0;
@@ -92,24 +108,17 @@ public class LegEnemyMove : MonoBehaviour
             {
 
                 tim += Time.deltaTime;
-                if (tim > 2)
+                if (tim > 2 && Math.Abs(player.transform.position.x - transform.position.x) > 1f)
                 {
-                    mode = 0;
+                    mode = state.moving;
                     tim = 0;
                     fCheck = 0;
                 }
                 if (tim >= 1 && fCheck != 1)
                 {
-                    GameObject newObject = Instantiate(attack, transform.position, Quaternion.identity);
+                    //GameObject newObject = Instantiate(attack, transform.position, Quaternion.identity);
+                    //StartCoroutine(PauseThenContinue());
                     fCheck = 1;
-                    if (player.transform.position.x > transform.position.x)
-                    {
-                        newObject.GetComponent<EnemyAttack>().z = 1;
-                    }
-                    else
-                    {
-                        newObject.GetComponent<EnemyAttack>().z = 0;
-                    }
                 }
             }
         }
@@ -118,7 +127,7 @@ public class LegEnemyMove : MonoBehaviour
             tim -= Time.deltaTime;
             if (tim < 0)
             {
-                mode = 0;
+                mode = state.moving;
                 tim = 0;
             }
         }
@@ -136,5 +145,17 @@ public class LegEnemyMove : MonoBehaviour
             //Debug.Log("I, " + gameObject.name + " just killed myself");
             Destroy(gameObject);
         }
+    }
+
+    IEnumerator PauseThenContinue()
+    {
+        transform.GetChild(0).gameObject.SetActive(true);
+        yield return new WaitForSeconds(0.2f); // Wait for 2 seconds
+        transform.GetChild(0).gameObject.SetActive(false);
+    }
+
+    public void spawnAttack()
+    {
+        StartCoroutine(PauseThenContinue());
     }
 }

@@ -41,7 +41,7 @@ public class InventoryManager : MonoBehaviour
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         // Try to find the player and UI again in the new scene
-        currentPlayer = FindObjectOfType<PlayerController>();
+        currentPlayer = FindFirstObjectByType<PlayerController>();
         ReconnectUI();
         UpdateUIFromPlayer(currentPlayer);
     }

@@ -1,3 +1,5 @@
+using System;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -41,7 +43,7 @@ public class IgnoreEnemy : MonoBehaviour
     }
     private void Awake()
     {
-        GameObject[] allObjects = FindObjectsOfType<GameObject>(true);
+        GameObject[] allObjects = FindObjectsByType<GameObject>(FindObjectsSortMode.None);
 
         foreach (GameObject obj in allObjects)
         {

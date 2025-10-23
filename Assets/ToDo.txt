@@ -20,7 +20,7 @@ Known bugs to fix:
 
 -FIXED BLOBS NOT DESPAWNING ON SCENE CHANGE-
 
-2. Somewhat related to Leg enemy combat feeling better, just making the leg enemy hitreg good at all (lol)
+-FIXED LEG ENEMY HITREG-
 
 --STRETCH--
 -FIXED STUFF NOT GETTING DELETED ON SCENE END-

@@ -6,6 +6,11 @@ public class PickupItem : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (collision.CompareTag("BlobPhys") || collision.CompareTag("Player"))
+        {
+            Physics2D.IgnoreCollision(gameObject.GetComponent<BoxCollider2D>(), collision.GetComponent<CircleCollider2D>());
+        }
+
         if (!isCollected && collision.CompareTag("Player"))
         {
             gameObject.GetComponent<AudioSource>().Play();

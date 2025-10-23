@@ -228,8 +228,8 @@ public class PlayerController : MonoBehaviour
                 gameObject.GetComponent<AudioSource>().clip = Resources.Load<AudioClip>("Pickup");
             }
             gameObject.GetComponent<AudioSource>().Play();
-            
-            
+
+
             Destroy(collision.gameObject);
             InventoryManager.Instance.UpdateUIFromPlayer(this);
         }
@@ -265,25 +265,15 @@ public class PlayerController : MonoBehaviour
         }
         if (collision.CompareTag("Lattack") && gameObject.GetComponent<CircleCollider2D>().gameObject.name == "PlayerBlob")
         {
-            Destroy(collision);
-            playerhealth -= 1;
-
-            if (gameObject.GetComponent<AudioSource>().resource.name != "Hurt" || playerhealth != 0)
-            {
-                gameObject.GetComponent<AudioSource>().clip = Resources.Load<AudioClip>("Hurt");
-            }
-            else if(gameObject.GetComponent<AudioSource>().resource.name != "Die")
-            {
-                gameObject.GetComponent<AudioSource>().clip = Resources.Load<AudioClip>("Die");
-            }
-                gameObject.GetComponent<AudioSource>().Play();
-
-            UpdateHealthUI();
-            UpdatedamageOverlays();
+            PlayerHurt();
         }
-    }
-    private void OnTriggerStay2D(Collider2D collision)
-    {
+        if (collision.CompareTag("Enemy"))
+        {
+            Physics2D.IgnoreCollision(gameObject.GetComponent<CircleCollider2D>(), collision.GetComponent<BoxCollider2D>());
+        }
+
+        //ADDITIONS START
+
         if (collision.gameObject.CompareTag("Enemy") && gameObject.name == "PlayerBlob")
         {
             recentCollison.Add(collision.gameObject);
@@ -307,12 +297,12 @@ public class PlayerController : MonoBehaviour
                 else
                 {
                     //Physics2D.IgnoreCollision(gameObject.GetComponent<CircleCollider2D>(), collision.gameObject.GetComponent<BoxCollider2D>(), false);
-                    collision.gameObject.GetComponent<BoxCollider2D>().enabled = true;
+                    // collision.gameObject.GetComponent<BoxCollider2D>().enabled = true;
 
-                    collision.gameObject.GetComponent<Rigidbody2D>().linearVelocity = new Vector2(0, collision.gameObject.GetComponent<Rigidbody2D>().linearVelocity.y);
+                    // collision.gameObject.GetComponent<Rigidbody2D>().linearVelocity = new Vector2(0, collision.gameObject.GetComponent<Rigidbody2D>().linearVelocity.y);
 
-                    collision.gameObject.GetComponent<LegEnemyMove>().modeChange();
-                    collision.gameObject.GetComponent<Animator>().SetInteger("mode", (int)collision.gameObject.GetComponent<LegEnemyMove>().mode);
+                    // collision.gameObject.GetComponent<LegEnemyMove>().modeChange();
+                    // collision.gameObject.GetComponent<Animator>().SetInteger("mode", (int)collision.gameObject.GetComponent<LegEnemyMove>().mode);
                 }
             }
 
@@ -332,5 +322,23 @@ public class PlayerController : MonoBehaviour
                 }
             }
         }
+
+    }
+    public void PlayerHurt()
+    {
+        playerhealth -= 1;
+
+        if (gameObject.GetComponent<AudioSource>().resource.name != "Hurt" || playerhealth != 0)
+        {
+            gameObject.GetComponent<AudioSource>().clip = Resources.Load<AudioClip>("Hurt");
+        }
+        else if (gameObject.GetComponent<AudioSource>().resource.name != "Die")
+        {
+            gameObject.GetComponent<AudioSource>().clip = Resources.Load<AudioClip>("Die");
+        }
+        gameObject.GetComponent<AudioSource>().Play();
+
+        UpdateHealthUI();
+        UpdatedamageOverlays();
     }
 }
