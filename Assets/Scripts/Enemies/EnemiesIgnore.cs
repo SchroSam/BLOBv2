@@ -27,6 +27,7 @@ public class EnemiesIgnore : MonoBehaviour
         TempEnemy[] pickups = FindObjectsByType<TempEnemy>(FindObjectsSortMode.None);
         Elevator[] eles = FindObjectsByType<Elevator>(FindObjectsSortMode.None);
         LegEnemyMove[] legEnemies = FindObjectsByType<LegEnemyMove>(FindObjectsSortMode.None);
+        Bomb[] bombs = FindObjectsByType<Bomb>(FindObjectsSortMode.None);
 
         foreach (TempEnemy obj in pickups)
         {
@@ -40,6 +41,11 @@ public class EnemiesIgnore : MonoBehaviour
         }
 
         foreach (LegEnemyMove obj in legEnemies)
+        {
+            Physics2D.IgnoreCollision(gameObject.GetComponent<BoxCollider2D>(), obj.gameObject.GetComponent<BoxCollider2D>());
+        }
+
+        foreach(Bomb obj in bombs)
         {
             Physics2D.IgnoreCollision(gameObject.GetComponent<BoxCollider2D>(), obj.gameObject.GetComponent<BoxCollider2D>());
         }
