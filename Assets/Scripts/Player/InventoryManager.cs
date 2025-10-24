@@ -11,8 +11,8 @@ public class InventoryManager : MonoBehaviour
     public TMP_Text legsText;
     public TMP_Text brainsText;
     public TMP_Text batteriesText;
-
     private PlayerController currentPlayer;
+    public Color BlobColor;
 
     void Awake()
     {
@@ -24,6 +24,7 @@ public class InventoryManager : MonoBehaviour
 
             // Listen for scene loads to re-hook UI and player
             SceneManager.sceneLoaded += OnSceneLoaded;
+            SceneManager.activeSceneChanged += OnActiveSceneChanged;
         }
         else
         {
@@ -35,7 +36,16 @@ public class InventoryManager : MonoBehaviour
     private void OnDestroy()
     {
         SceneManager.sceneLoaded -= OnSceneLoaded;
+        SceneManager.activeSceneChanged -= OnActiveSceneChanged;
     }
+
+    //right before you change scenes
+    void OnActiveSceneChanged(Scene oldScene, Scene newScene)
+    {
+        currentPlayer = FindFirstObjectByType<PlayerController>();
+        BlobColor = currentPlayer.GetComponent<Grow>().BlobColor;
+    }
+
 
     // Called automatically whenever a new scene is loaded
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
@@ -44,6 +54,7 @@ public class InventoryManager : MonoBehaviour
         currentPlayer = FindFirstObjectByType<PlayerController>();
         ReconnectUI();
         UpdateUIFromPlayer(currentPlayer);
+        currentPlayer.GetComponent<Renderer>().material.color = BlobColor;
     }
 
     private void ReconnectUI()

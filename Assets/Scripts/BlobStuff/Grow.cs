@@ -23,12 +23,15 @@ public class Grow : MonoBehaviour
 
     public bool clicky = true;
 
+    public Color BlobColor;
+
     void Start()
     {
         if (clicky)
         {
-            GetComponent<Renderer>().material.color =
-                HSV(Random.value, 0.99f, 0.99f);
+            BlobColor = HSV(Random.value, 0.99f, 0.99f);
+            GetComponent<Renderer>().material.color = BlobColor;
+            
             transform = GetComponent<Transform>();
             rigidbody = GetComponent<Rigidbody2D>();
             rigidbody.bodyType = RigidbodyType2D.Kinematic;

@@ -22,32 +22,32 @@ public class IgnoreEnemy : MonoBehaviour
     //     }
     // }
 
-    void TraverseHierarchy(Transform current)
-    {
-        //Debug.Log("Found: " + current.name);
-        if (current.gameObject.tag == "Enemy")
-            {
-                Physics2D.IgnoreCollision(gameObject.GetComponent<BoxCollider2D>(), current.gameObject.GetComponent<BoxCollider2D>());
-            }
+    // void TraverseHierarchy(Transform current)
+    // {
+    //     //Debug.Log("Found: " + current.name);
+    //     if (current.gameObject.tag == "Enemy")
+    //         {
+    //             Physics2D.IgnoreCollision(gameObject.GetComponent<BoxCollider2D>(), current.gameObject.GetComponent<BoxCollider2D>());
+    //         }
 
 
-        foreach (Transform child in current)
-        {
+    //     foreach (Transform child in current)
+    //     {
 
-            if (child.gameObject.tag == "Enemy")
-            {
-                Physics2D.IgnoreCollision(gameObject.GetComponent<BoxCollider2D>(), child.gameObject.GetComponent<BoxCollider2D>());
-            }
-            TraverseHierarchy(child);
-        }
-    }
-    private void Awake()
-    {
-        GameObject[] allObjects = FindObjectsByType<GameObject>(FindObjectsSortMode.None);
+    //         if (child.gameObject.tag == "Enemy")
+    //         {
+    //             Physics2D.IgnoreCollision(gameObject.GetComponent<BoxCollider2D>(), child.gameObject.GetComponent<BoxCollider2D>());
+    //         }
+    //         TraverseHierarchy(child);
+    //     }
+    // }
+    // private void Awake()
+    // {
+    //     GameObject[] allObjects = FindObjectsByType<GameObject>(FindObjectsSortMode.None);
 
-        foreach (GameObject obj in allObjects)
-        {
-            TraverseHierarchy(obj.transform);
-        }
-    }
+    //     foreach (GameObject obj in allObjects)
+    //     {
+    //         TraverseHierarchy(obj.transform);
+    //     }
+    // }
 }
