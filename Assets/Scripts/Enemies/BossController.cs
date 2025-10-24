@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class BossController : MonoBehaviour
 {
@@ -25,6 +26,7 @@ public class BossController : MonoBehaviour
 
     [Header("References")]
     public GameObject player; // Assign the player here
+    public GameObject explosionPrefab; // Assign your explosion prefab here
 
     private float bombTimer;
     private float enemyTimer;
@@ -104,7 +106,6 @@ public class BossController : MonoBehaviour
             GameObject enemy = Instantiate(enemyPrefab, spawnPos, Quaternion.identity);
 
             // Assign the player to the enemy's public variable
-            var enemyScript = enemy.GetComponent<MonoBehaviour>(); // get any script
             var fields = enemy.GetComponents<MonoBehaviour>();
             foreach (var field in fields)
             {
@@ -122,12 +123,30 @@ public class BossController : MonoBehaviour
         bossHealth -= amount;
         if (bossHealth <= 0)
         {
-            Die();
+            StartCoroutine(ExplosionSequence());
         }
     }
 
-    void Die()
+    IEnumerator ExplosionSequence()
     {
+        // Wait briefly before explosions begin
+        yield return new WaitForSeconds(0.2f);
+
+        if (explosionPrefab != null)
+        {
+            // Explosion 1 (left)
+            Instantiate(explosionPrefab, transform.position + new Vector3(-1f, 0f, 0f), Quaternion.identity);
+            yield return new WaitForSeconds(0.5f);
+
+            // Explosion 2 (center)
+            Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+            yield return new WaitForSeconds(0.5f);
+
+            // Explosion 3 (right)
+            Instantiate(explosionPrefab, transform.position + new Vector3(1f, 0f, 0f), Quaternion.identity);
+            yield return new WaitForSeconds(0.3f);
+        }
+
         Destroy(gameObject);
     }
 }
