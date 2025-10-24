@@ -4030,9 +4030,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 678224343}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f118f16c310dded4597b36dba53b55f6, type: 3}
+  m_Script: {fileID: 11500000, guid: c8a66e490e0f6a744b8e24e0fa60342b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sceneToLoad: JanitorBossRoom
 --- !u!4 &700032522 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7807724952908837297, guid: 395b758c9d9cb8e4387d9102641bd0d4, type: 3}
@@ -16206,11 +16207,8 @@ MonoBehaviour:
   speed: 2
   mode: 0
   player: {fileID: 1266199974}
-  attack: {fileID: 2552173367517773812, guid: 78aeef54d0e557843a9d45c2090ec974, type: 3}
   animator: {fileID: 5352286648195016366}
   health: 3
-  interval: 0.5
-  lastWalk: 0
 --- !u!4 &1437883178444917701
 Transform:
   m_ObjectHideFlags: 0
@@ -16761,11 +16759,8 @@ MonoBehaviour:
   speed: 2
   mode: 0
   player: {fileID: 1266199974}
-  attack: {fileID: 2552173367517773812, guid: 78aeef54d0e557843a9d45c2090ec974, type: 3}
   animator: {fileID: 4750090248635692472}
   health: 3
-  interval: 0.5
-  lastWalk: 0
 --- !u!1 &1753788286314492661
 GameObject:
   m_ObjectHideFlags: 0
@@ -22607,11 +22602,8 @@ MonoBehaviour:
   speed: 2
   mode: 0
   player: {fileID: 1266199974}
-  attack: {fileID: 2552173367517773812, guid: 78aeef54d0e557843a9d45c2090ec974, type: 3}
   animator: {fileID: 7221399293742729100}
   health: 3
-  interval: 0.5
-  lastWalk: 0
 --- !u!1001 &4467642611713739201
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23681,11 +23673,8 @@ MonoBehaviour:
   speed: 2
   mode: 0
   player: {fileID: 1266199974}
-  attack: {fileID: 2552173367517773812, guid: 78aeef54d0e557843a9d45c2090ec974, type: 3}
   animator: {fileID: 2159484403129705530}
   health: 3
-  interval: 0.5
-  lastWalk: 0
 --- !u!1 &4923849031327646971
 GameObject:
   m_ObjectHideFlags: 0
@@ -28725,11 +28714,8 @@ MonoBehaviour:
   speed: 2
   mode: 0
   player: {fileID: 1266199974}
-  attack: {fileID: 2552173367517773812, guid: 78aeef54d0e557843a9d45c2090ec974, type: 3}
   animator: {fileID: 4322913048864802981}
   health: 3
-  interval: 0.5
-  lastWalk: 0
 --- !u!4 &7077373170478042447
 Transform:
   m_ObjectHideFlags: 0
@@ -32816,11 +32802,8 @@ MonoBehaviour:
   speed: 2
   mode: 0
   player: {fileID: 1266199974}
-  attack: {fileID: 2552173367517773812, guid: 78aeef54d0e557843a9d45c2090ec974, type: 3}
   animator: {fileID: 2790591004338386229}
   health: 3
-  interval: 0.5
-  lastWalk: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

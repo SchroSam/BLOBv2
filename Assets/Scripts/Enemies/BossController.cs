@@ -26,12 +26,8 @@ public class BossController : MonoBehaviour
 
     [Header("References")]
     public GameObject player; // Assign the player here
-    public GameObject explosionPrefab; // Assign your explosion prefab here
-
     private float bombTimer;
     private float enemyTimer;
-    private Transform globDropPoint;
-
     private Transform[] activeGroup;
 
     void Start()
@@ -39,9 +35,9 @@ public class BossController : MonoBehaviour
         bombTimer = 0f; // So the first bomb drops immediately
         enemyTimer = enemySpawnInterval;
 
-        // TEST ONLY: trigger explosions immediately
-    if (Application.isEditor)
-        StartCoroutine(ExplosionSequence());
+    // TEST ONLY: trigger explosions immediately
+     if (Application.isEditor)
+        gameObject.GetComponent<BossDeathHandler>().TriggerDeathSequence();
     }
 
     void Update()
@@ -142,29 +138,9 @@ public class BossController : MonoBehaviour
         bossHealth -= amount;
         if (bossHealth <= 0)
         {
-             GetComponent<BossDeathHandler>()?.TriggerDeathSequence();
+            GetComponent<BossDeathHandler>()?.TriggerDeathSequence();
         }
     }
 
-    IEnumerator ExplosionSequence()
-    {
-        yield return new WaitForSeconds(0.2f);
 
-        if (explosionPrefab != null)
-        {
-            // Explosion 1 (left)
-            Instantiate(explosionPrefab, transform.position + new Vector3(-1f, 0f, 0f), Quaternion.identity);
-            yield return new WaitForSeconds(0.5f);
-
-            // Explosion 2 (center)
-            Instantiate(explosionPrefab, transform.position, Quaternion.identity);
-            yield return new WaitForSeconds(0.5f);
-
-            // Explosion 3 (right)
-            Instantiate(explosionPrefab, transform.position + new Vector3(1f, 0f, 0f), Quaternion.identity);
-            yield return new WaitForSeconds(0.3f);
-        }
-
-        Destroy(gameObject);
-    }
 }

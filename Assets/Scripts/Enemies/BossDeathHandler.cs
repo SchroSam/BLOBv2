@@ -1,6 +1,5 @@
 using UnityEngine;
 using System.Collections;
-using UnityEngine.SceneManagement;
 
 public class BossDeathHandler : MonoBehaviour
 {
@@ -9,12 +8,10 @@ public class BossDeathHandler : MonoBehaviour
     public float explosionDelay = 0.5f;  // Time between explosions
 
     [Header("UI Settings")]
-    public GameObject endPopup;          // "Press Enter" UI object
-    public string nextSceneName = "NextLevel";  // Scene to load after Enter
-
+    public GameObject sceneChangeDoor;          // "Press Enter" UI object
     private bool deathTriggered = false;
 
-    // 👇 Call this from BossController when health reaches 0
+    // 👇 Call this from BossController when health reaches 0 // really, pointing down emoji?
     public void TriggerDeathSequence()
     {
         if (!deathTriggered)
@@ -42,21 +39,47 @@ public class BossDeathHandler : MonoBehaviour
             // Explosion 3
             Instantiate(explosionPrefab, transform.position + new Vector3(1f, 0f, 0f), Quaternion.identity);
             yield return new WaitForSeconds(0.3f);
+
+            Destroy(gameObject);
         }
 
         // Hide the boss sprite
-        SpriteRenderer sr = GetComponent<SpriteRenderer>();
-        if (sr != null)
-            sr.enabled = false;
+        // SpriteRenderer sr = GetComponent<SpriteRenderer>();
+        // if (sr != null)
+        //     sr.enabled = false;
 
-        // Show the popup
-        if (endPopup != null)
-            endPopup.SetActive(true);
+        // // Show the popup
+        // if (sceneChangeDoor != null)
+        //     sceneChangeDoor.SetActive(true);
 
-        // Wait for Enter key
-        while (!Input.GetKeyDown(KeyCode.Return))
-            yield return null;
+        // // Wait for Enter key
+        // while (!Input.GetKeyDown(KeyCode.Return))
+        //     yield return null;
 
-        SceneManager.LoadScene(nextSceneName);
+        sceneChangeDoor.SetActive(true);
+
+        //SceneManager.LoadScene(nextSceneName);
     }
+
+    // IEnumerator ExplosionSequence()
+    // {
+    //     yield return new WaitForSeconds(0.2f);
+
+    //     if (explosionPrefab != null)
+    //     {
+    //         // Explosion 1 (left)
+    //         Instantiate(explosionPrefab, transform.position + new Vector3(-1f, 0f, 0f), Quaternion.identity);
+    //         yield return new WaitForSeconds(0.5f);
+
+    //         // Explosion 2 (center)
+    //         Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+    //         yield return new WaitForSeconds(0.5f);
+
+    //         // Explosion 3 (right)
+    //         Instantiate(explosionPrefab, transform.position + new Vector3(1f, 0f, 0f), Quaternion.identity);
+    //         yield return new WaitForSeconds(0.3f);
+    //     }
+
+    //     Destroy(gameObject);
+    // }
 }

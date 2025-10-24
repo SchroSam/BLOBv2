@@ -30,7 +30,7 @@ public class Bomb : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Untagged") && !hasExploded)
+        if (collision.gameObject.CompareTag("Ground") && !hasExploded)
         {
             StartCoroutine(FlashAndExplode());
         }

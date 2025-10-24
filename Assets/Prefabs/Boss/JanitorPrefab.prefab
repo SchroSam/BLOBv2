@@ -517,6 +517,7 @@ GameObject:
   - component: {fileID: 1482031356781903164}
   - component: {fileID: 1655559957115938798}
   - component: {fileID: 8147167474488168164}
+  - component: {fileID: 5292636392703271547}
   m_Layer: 0
   m_Name: Boss
   m_TagString: Untagged
@@ -553,7 +554,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 3
   leftLimit: -17.63
-  rightLimit: 17.75
+  rightLimit: 14.51
   bombPrefab: {fileID: 6909973860824832322, guid: 24f136e47cdeff045b7b6279760d1fdd, type: 3}
   enemyPrefab: {fileID: 7682320270014523074, guid: 55fab87569465e24c8cc0ca2ab23598e, type: 3}
   dropPointsGroup1:
@@ -561,10 +562,10 @@ MonoBehaviour:
   - {fileID: 8646806299830953864}
   - {fileID: 6055112256445126087}
   dropPointsGroup2: []
+  bombDropInterval: 4
   enemySpawnInterval: 3
   bossHealth: 10
   player: {fileID: 0}
-  explosionPrefab: {fileID: 0}
 --- !u!212 &1655559957115938798
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -642,6 +643,22 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &5292636392703271547
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6657440221069315802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94fb361cb2e841f4c9a9edf0cb6bd3f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explosionPrefab: {fileID: 0}
+  explosionDelay: 0.5
+  sceneChangeDoor: {fileID: 0}
+  nextSceneName: NextLevel
 --- !u!1 &8968685870384275622
 GameObject:
   m_ObjectHideFlags: 0

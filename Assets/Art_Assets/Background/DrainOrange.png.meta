@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 9df2f25d6ccbf6e458cc138c22bcd6e2
+guid: 36fc12c6fbc6ab24586855ea2a5b06cf
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7506889146548301723
-    second: BossRoomCeiling_0
+      213: -3287031328590213662
+    second: DrainOrange_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,30 +96,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: BossRoomCeiling_0
+      name: DrainOrange_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 512
-        height: 512
+        x: 164
+        y: 221
+        width: 177
+        height: 35
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b9f2f34d7e3dd2860800000000000000
-      internalID: 7506889146548301723
+      spriteID: 2edcccd0c6e1262d0800000000000000
+      internalID: -3287031328590213662
       vertices: []
       indices: 
       edges: []
@@ -147,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      BossRoomCeiling_0: 7506889146548301723
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
