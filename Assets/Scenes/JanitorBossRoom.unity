@@ -1584,7 +1584,7 @@ RectTransform:
   m_GameObject: {fileID: 532802718}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 5.332328, y: 5.332328, z: 5.332328}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1516652987}
@@ -1614,7 +1614,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 7104337029617900957, guid: 720382260993e414681fc277d3a65bbe, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2746,9 +2746,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94fb361cb2e841f4c9a9edf0cb6bd3f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosionPrefab: {fileID: 0}
+  explosionPrefab: {fileID: 6078089331287086720, guid: f3b5b53dee7ffab46932d026806bab69, type: 3}
   explosionDelay: 0.5
-  endPopup: {fileID: 0}
+  endPopup: {fileID: 532802718}
   nextSceneName: NextLevel
 --- !u!1 &964160192
 GameObject:
@@ -4812,7 +4812,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1516652984
 MonoBehaviour:
   m_ObjectHideFlags: 0
