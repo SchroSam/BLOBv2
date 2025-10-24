@@ -38,6 +38,10 @@ public class BossController : MonoBehaviour
     {
         bombTimer = 0f; // So the first bomb drops immediately
         enemyTimer = enemySpawnInterval;
+
+        // TEST ONLY: trigger explosions immediately
+    if (Application.isEditor)
+        StartCoroutine(ExplosionSequence());
     }
 
     void Update()
@@ -50,7 +54,6 @@ public class BossController : MonoBehaviour
     {
         if (movingRight)
         {
-            
             transform.Translate(Vector2.right * moveSpeed * Time.deltaTime);
             if (transform.position.x >= rightLimit)
             {
@@ -74,19 +77,10 @@ public class BossController : MonoBehaviour
         bombTimer -= Time.deltaTime;
         enemyTimer -= Time.deltaTime;
 
-        //if (bombTimer <= 0.5f)
-        
-
         if (bombTimer <= 0f)
         {
             bombTimer = bombDropInterval;
-
-
             DropBombs();
-            
-            
-
-            
         }
 
         if (enemyTimer <= 0f)
@@ -98,23 +92,15 @@ public class BossController : MonoBehaviour
 
     void DropBombs()
     {
-
         activeGroup = useGroup1 ? dropPointsGroup1 : dropPointsGroup2;
 
-        // foreach (Transform dropPoint in activeGroup)
-        // {
-            if (activeGroup != null && bombPrefab != null)
-            {
-                //globDropPoint = dropPoint;
-                gameObject.GetComponent<Animator>().SetBool("attackStarted", true);
-            }
-        //}
-
-        
-        //Debug.Log("DropBomb called: " + cycles++);
+        if (activeGroup != null && bombPrefab != null)
+        {
+            gameObject.GetComponent<Animator>().SetBool("attackStarted", true);
+        }
     }
-    
-    //Called by the animator
+
+    // Called by the animator
     void spawnBomb()
     {
         gameObject.GetComponent<Animator>().SetBool("attackStarted", false);
@@ -156,13 +142,12 @@ public class BossController : MonoBehaviour
         bossHealth -= amount;
         if (bossHealth <= 0)
         {
-            StartCoroutine(ExplosionSequence());
+             GetComponent<BossDeathHandler>()?.TriggerDeathSequence();
         }
     }
 
     IEnumerator ExplosionSequence()
     {
-        // Wait briefly before explosions begin
         yield return new WaitForSeconds(0.2f);
 
         if (explosionPrefab != null)
