@@ -5,8 +5,10 @@ Stuff to Add/Change:
 2. Finish and refine first level
   2.a. Playtest whole game before final build
 3. Add Boss and ending slides
-  3.a. Boss Logic
-  3.b. Boss Visuals (animations and such)
+  -BOSS LOGIC BASICALLY DONE-
+  -BOSS VISUALS BASICALLY DONE-
+  3.c. boss final playtest and polish pass
+  3.d. Add ending slides and any "cutscene" effects
 
 --STRETCH--
 
