@@ -47,7 +47,7 @@ public class EnemiesIgnore : MonoBehaviour
 
         foreach(Bomb obj in bombs)
         {
-            Physics2D.IgnoreCollision(gameObject.GetComponent<BoxCollider2D>(), obj.gameObject.GetComponent<BoxCollider2D>());
+            Physics2D.IgnoreCollision(gameObject.GetComponent<BoxCollider2D>(), obj.gameObject.GetComponent<CircleCollider2D>());
         }
 
     }

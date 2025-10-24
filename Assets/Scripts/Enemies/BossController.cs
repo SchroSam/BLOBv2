@@ -18,7 +18,7 @@ public class BossController : MonoBehaviour
     public Transform[] dropPointsGroup2;
 
     private bool useGroup1 = true; // Tracks which group is active
-    public float bombDropInterval = 2f;
+    public float bombDropInterval = 1.3f;
     public float enemySpawnInterval = 5f;
 
     [Header("Health Settings")]
@@ -30,6 +30,9 @@ public class BossController : MonoBehaviour
 
     private float bombTimer;
     private float enemyTimer;
+    private Transform globDropPoint;
+
+    private Transform[] activeGroup;
 
     void Start()
     {
@@ -47,15 +50,22 @@ public class BossController : MonoBehaviour
     {
         if (movingRight)
         {
+            
             transform.Translate(Vector2.right * moveSpeed * Time.deltaTime);
             if (transform.position.x >= rightLimit)
+            {
                 movingRight = false;
+                gameObject.GetComponent<SpriteRenderer>().flipX = false;
+            }
         }
         else
         {
             transform.Translate(Vector2.left * moveSpeed * Time.deltaTime);
             if (transform.position.x <= leftLimit)
+            {
                 movingRight = true;
+                gameObject.GetComponent<SpriteRenderer>().flipX = true;
+            }
         }
     }
 
@@ -64,10 +74,19 @@ public class BossController : MonoBehaviour
         bombTimer -= Time.deltaTime;
         enemyTimer -= Time.deltaTime;
 
+        //if (bombTimer <= 0.5f)
+        
+
         if (bombTimer <= 0f)
         {
-            DropBombs();
             bombTimer = bombDropInterval;
+
+
+            DropBombs();
+            
+            
+
+            
         }
 
         if (enemyTimer <= 0f)
@@ -79,16 +98,30 @@ public class BossController : MonoBehaviour
 
     void DropBombs()
     {
-        Transform[] activeGroup = useGroup1 ? dropPointsGroup1 : dropPointsGroup2;
 
-        foreach (Transform dropPoint in activeGroup)
-        {
-            if (dropPoint != null && bombPrefab != null)
+        activeGroup = useGroup1 ? dropPointsGroup1 : dropPointsGroup2;
+
+        // foreach (Transform dropPoint in activeGroup)
+        // {
+            if (activeGroup != null && bombPrefab != null)
             {
-                Instantiate(bombPrefab, dropPoint.position, Quaternion.identity);
+                //globDropPoint = dropPoint;
+                gameObject.GetComponent<Animator>().SetBool("attackStarted", true);
             }
-        }
+        //}
 
+        
+        //Debug.Log("DropBomb called: " + cycles++);
+    }
+    
+    //Called by the animator
+    void spawnBomb()
+    {
+        gameObject.GetComponent<Animator>().SetBool("attackStarted", false);
+        for (int i = 0; i < activeGroup.Length; i++)
+        {
+            Instantiate(bombPrefab, activeGroup[i].position, Quaternion.identity);
+        }
         useGroup1 = !useGroup1; // Alternate groups for the next drop
         Debug.Log("Bombs dropped on " + (useGroup1 ? "Group 2" : "Group 1"));
     }
