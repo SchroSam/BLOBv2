@@ -27,8 +27,8 @@ public class Grow : MonoBehaviour
 
     void Start()
     {
-        if (clicky)
-        {
+        // if (clicky)
+        // {
             BlobColor = HSV(Random.value, 0.99f, 0.99f);
             GetComponent<Renderer>().material.color = BlobColor;
             
@@ -38,7 +38,7 @@ public class Grow : MonoBehaviour
             startTime = Time.time;
             startScale = transform.localScale.x;
             startMass = rigidbody.mass;
-        }
+        //}
     }
 
     void Update()
