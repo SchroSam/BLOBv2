@@ -1583,11 +1583,11 @@ PrefabInstance:
     - target: {fileID: 854019433890518008, guid: e2edf120096b05d488d4ef723a8ed6df, type: 3}
       propertyPath: PlayMenu
       value: 
-      objectReference: {fileID: 741136806}
+      objectReference: {fileID: 0}
     - target: {fileID: 854019433890518008, guid: e2edf120096b05d488d4ef723a8ed6df, type: 3}
       propertyPath: QuitMenu
       value: 
-      objectReference: {fileID: 1309468698}
+      objectReference: {fileID: 0}
     - target: {fileID: 2448938830017783914, guid: e2edf120096b05d488d4ef723a8ed6df, type: 3}
       propertyPath: m_Name
       value: FinishedUi
@@ -1702,10 +1702,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8702175604483995868, guid: e2edf120096b05d488d4ef723a8ed6df, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 8702175604483995868, guid: e2edf120096b05d488d4ef723a8ed6df, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 5595768655265631470, guid: e2edf120096b05d488d4ef723a8ed6df, type: 3}
       insertIndex: 9
@@ -2207,11 +2208,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &741136806 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8174068781215019531, guid: e2edf120096b05d488d4ef723a8ed6df, type: 3}
-  m_PrefabInstance: {fileID: 536725132}
-  m_PrefabAsset: {fileID: 0}
 --- !u!224 &754198128 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5595768655265631470, guid: e2edf120096b05d488d4ef723a8ed6df, type: 3}
@@ -4449,11 +4445,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1061869434}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1309468698 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8044355251781220568, guid: e2edf120096b05d488d4ef723a8ed6df, type: 3}
-  m_PrefabInstance: {fileID: 536725132}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1315670717
 GameObject:
   m_ObjectHideFlags: 0

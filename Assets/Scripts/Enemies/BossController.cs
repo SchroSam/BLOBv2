@@ -36,8 +36,8 @@ public class BossController : MonoBehaviour
         enemyTimer = enemySpawnInterval;
 
     // TEST ONLY: trigger explosions immediately
-     if (Application.isEditor)
-        gameObject.GetComponent<BossDeathHandler>().TriggerDeathSequence();
+    //  if (Application.isEditor)
+    //     gameObject.GetComponent<BossDeathHandler>().TriggerDeathSequence();
     }
 
     void Update()
