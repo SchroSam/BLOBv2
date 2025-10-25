@@ -30,7 +30,7 @@ public class LegEnemyMove : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.CompareTag("Player") || collision.CompareTag("BlobPhys"))
         {
             Debug.Log("Ignoring collider of GameObject: " + collision.name);
             Physics2D.IgnoreCollision(gameObject.GetComponent<BoxCollider2D>(), collision.gameObject.GetComponent<CircleCollider2D>());
