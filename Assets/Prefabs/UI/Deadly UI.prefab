@@ -65,7 +65,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Title Screen
+  m_text: '[/] to restart'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7847a0e940ea68c4a8e41a35ef55e499, type: 2}
   m_sharedMaterial: {fileID: 3067810629039366496, guid: 7847a0e940ea68c4a8e41a35ef55e499, type: 2}
@@ -184,6 +184,8 @@ MonoBehaviour:
   PlayMenu: {fileID: 0}
   QuitMenu: {fileID: 0}
   CredMenu: {fileID: 0}
+  controlsImage: {fileID: 0}
+  controlsDisplayTime: 7
 --- !u!1 &2218532279540742888
 GameObject:
   m_ObjectHideFlags: 0
@@ -479,7 +481,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 1
+  m_PresetInfoIsWorld: 0
 --- !u!114 &5952747536149883942
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -206,8 +206,12 @@ public class PlayerController : MonoBehaviour
                 GameObject newObject = Instantiate(brainShot, transform.position, Quaternion.identity);
                 gameObject.GetComponent<SpawnOnPlayer>().KillLimbBrain();
 
-                
+
             }
+        }
+        if (Input.GetKeyDown(KeyCode.Slash))
+        {
+            SceneManager.LoadScene("MainMenu");
         }
 
         // if (Input.GetKeyDown(KeyCode.Alpha5))
