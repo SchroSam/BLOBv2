@@ -128,6 +128,7 @@ MonoBehaviour:
   startMass: 0
   velocity: {x: 0, y: 0, z: 0}
   clicky: 1
+  BlobColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &4415715137794803464
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -186,7 +187,6 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  - {fileID: 0}
   GameOverImage: {fileID: 0}
 --- !u!114 &8795786415622898076
 MonoBehaviour:
@@ -203,7 +203,7 @@ MonoBehaviour:
   spritePrefabArm: {fileID: 216977880142089823, guid: bc37bd18393366147a1445168708ce65, type: 3}
   spritePrefabLeg: {fileID: 216977880142089823, guid: b70e9fbc1b5c7944183e0cf985d56746, type: 3}
   spritePrefabBat: {fileID: 216977880142089823, guid: 64e0e4baa1a0d7942866783654985f0e, type: 3}
-  player: {fileID: 4461132364606670918}
+  player: {fileID: 464436}
   maxDist: 1
   arms: []
   legs: []

@@ -30,7 +30,7 @@ public class Blob : MonoBehaviour {
         CreateMesh();
         MapVerticesToReferencePoints();
         //Line to kill all Blobs on scene change
-        SceneManager.activeSceneChanged += OnActiveSceneChanged;
+        SceneManager.activeSceneChanged += OnSceneLoaded;
     }
 
     void CreateReferencePoints() {
@@ -187,9 +187,9 @@ public class Blob : MonoBehaviour {
         return transform.InverseTransformPoint(obj.transform.position);
     }
     
-    void OnActiveSceneChanged(Scene oldScene, Scene newScene)
+    void OnSceneLoaded(Scene oldScene, Scene newScene)
     {
-        if(gameObject != null)
+        if(FindFirstObjectByType<PlayerController>() != null && gameObject.tag != "Player")
             Destroy(gameObject);
     }
 }

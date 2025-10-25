@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
+using Microsoft.Unity.VisualStudio.Editor;
 public class PlayerController : MonoBehaviour
 {
     [Header("Movement Settings")]
@@ -29,11 +30,11 @@ public class PlayerController : MonoBehaviour
     private List<GameObject> recentCollison = new List<GameObject>();
 
     [Header("Health Sprites")]
-    public Sprite[] slimesprites;
+    public List<Sprite> slimesprites;
     public UnityEngine.UI.Image healthimage;
 
     [Header("Lost Health Sprites")]
-    public GameObject[] damageOverlays;
+    public List<GameObject> damageOverlays;
 
     public GameObject GameOverImage;
 
@@ -49,7 +50,7 @@ public class PlayerController : MonoBehaviour
     public void UpdateHealthUI()
     {
         // Ensure index is within bounds of your slimesprites array
-        int index = Mathf.Clamp(playerhealth, 0, slimesprites.Length - 1);
+        int index = Mathf.Clamp(playerhealth, 0, slimesprites.Count - 1);
         healthimage.sprite = slimesprites[index];
     }
 
@@ -58,16 +59,33 @@ public class PlayerController : MonoBehaviour
         SceneManager.activeSceneChanged -= OnActiveSceneChanged;
     }
 
-    void Awake()
-    {
-        SceneManager.activeSceneChanged += OnActiveSceneChanged;
-    }
+    // void Awake()
+    // {
+    //     if(slimesprites.Count == 0)
+    //     {
+    //         Canvas canvas = FindFirstObjectByType<Canvas>().transform.GetChild(0).GetComponent<Canvas>();
+    //         Debug.Log(canvas.name);
+    //         for (int i = 0; i < canvas.transform.childCount; i++)
+    //         {
+    //             if (canvas.transform.GetChild(i).name == "MidRightSplat" || canvas.transform.GetChild(i).name == "MidLeftSplat" || canvas.transform.GetChild(i).name == "MidBottomRightSplat")
+    //             {
+    //                 slimesprites.Add(canvas.transform.GetChild(i).GetComponent<SpriteRenderer>().sprite);
+    //             }
+    //             else if(canvas.transform.GetChild(i).name == "FullVial")
+    //             {
+    //                 healthimage = canvas.transform.GetChild(i).GetComponent<UnityEngine.UI.Image>();
+    //             }
+    //         }
+    //     }
+
+    //     SceneManager.activeSceneChanged += OnActiveSceneChanged;
+    // }
 
 
     public void UpdatedamageOverlays()
     {
-        int lost = Mathf.Clamp(4 - playerhealth, 0, damageOverlays.Length);
-        for (int i = 0; i < damageOverlays.Length; i++)
+        int lost = Mathf.Clamp(4 - playerhealth, 0, damageOverlays.Count);
+        for (int i = 0; i < damageOverlays.Count; i++)
         {
             damageOverlays[i].SetActive(i < lost);
         }
