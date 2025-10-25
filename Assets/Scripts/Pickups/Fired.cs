@@ -6,8 +6,9 @@ public class Fired : MonoBehaviour
     public float knockBackResistance = 5.0f;
     public float maxVerticalForce = 0.5f;
     public float minHorizontalForce = 10f;
+    private int damage = 1;
     private Rigidbody2D right;
-    public int z;
+    
     void Start()
     {
         right = GetComponent<Rigidbody2D>();
@@ -41,8 +42,9 @@ public class Fired : MonoBehaviour
         {
             Physics2D.IgnoreCollision(gameObject.GetComponent<BoxCollider2D>(), other.GetComponent<CircleCollider2D>());
         }
-        else if (other.CompareTag("Enemy") && other.GetComponent<LegEnemyMove>() != null)
+        else if ((other.CompareTag("Enemy") && other.GetComponent<LegEnemyMove>() != null) || other.CompareTag("Boss") && other.GetComponent<BossController>() != null)
         {
+            Debug.Log(other.tag);
             Vector2 knockBackVector = gameObject.GetComponent<Rigidbody2D>().linearVelocity;
             Vector2 currentVelocity = other.gameObject.GetComponent<Rigidbody2D>().linearVelocity;
 
@@ -65,15 +67,21 @@ public class Fired : MonoBehaviour
             // {
             //     if(knockBackVector.x >= 0)
             //     {
-                     other.gameObject.GetComponent<Rigidbody2D>().linearVelocity = currentVelocity + knockBackVector / knockBackResistance;
+            if (other.tag == "Enemy")
+                other.gameObject.GetComponent<Rigidbody2D>().linearVelocity = currentVelocity + knockBackVector / knockBackResistance;
+            else
+                other.gameObject.GetComponent<Rigidbody2D>().linearVelocity = currentVelocity + knockBackVector / knockBackResistance;
             //     }
             // }
 
-            
-            
+
+
 
             //other.GetComponent<Rigidbody2D>().AddForce(knockBackVector * knockBackMultiplier);
-            other.GetComponent<LegEnemyMove>().hurt();
+            if (other.tag == "Enemy")
+                other.GetComponent<LegEnemyMove>().hurt();
+            else
+                other.GetComponent<BossController>().TakeDamage(damage);
             Destroy(gameObject);
         }
         else if (other.CompareTag("Puzz2") && gameObject.CompareTag("FBAT"))

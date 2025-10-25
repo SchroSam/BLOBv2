@@ -1,10 +1,11 @@
 using UnityEngine;
-using System.Collections;
+using System;
 
 public class BossController : MonoBehaviour
 {
     [Header("Movement Settings")]
-    public float moveSpeed = 3f;
+    public float acceleration = 3f;
+    public float maxSpeed = 5f;
     public float leftLimit = -8f;
     public float rightLimit = 8f;
     private bool movingRight = true;
@@ -50,18 +51,27 @@ public class BossController : MonoBehaviour
     {
         if (movingRight)
         {
-            transform.Translate(Vector2.right * moveSpeed * Time.deltaTime);
+            //transform.Translate(Vector2.right * moveSpeed * Time.deltaTime);
+
+            if (Math.Abs(GetComponent<Rigidbody2D>().linearVelocityX) < maxSpeed)
+                GetComponent<Rigidbody2D>().AddForceX(acceleration);
+            
             if (transform.position.x >= rightLimit)
             {
+                GetComponent<Rigidbody2D>().linearVelocityX = 0;
                 movingRight = false;
                 gameObject.GetComponent<SpriteRenderer>().flipX = false;
             }
         }
         else
         {
-            transform.Translate(Vector2.left * moveSpeed * Time.deltaTime);
+            //transform.Translate(Vector2.left * moveSpeed * Time.deltaTime);
+            if (Math.Abs(GetComponent<Rigidbody2D>().linearVelocityX) < maxSpeed)
+                GetComponent<Rigidbody2D>().AddForceX(-acceleration);
+                
             if (transform.position.x <= leftLimit)
             {
+                GetComponent<Rigidbody2D>().linearVelocityX = 0;
                 movingRight = true;
                 gameObject.GetComponent<SpriteRenderer>().flipX = true;
             }
@@ -113,7 +123,7 @@ public class BossController : MonoBehaviour
         if (enemyPrefab != null)
         {
             Vector3 spawnPos = new Vector3(
-                transform.position.x + Random.Range(-2f, 2f),
+                transform.position.x + UnityEngine.Random.Range(-2f, 2f),
                 -2.44f, // Fixed Y position
                 0f
             );

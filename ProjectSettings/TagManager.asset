@@ -17,6 +17,7 @@ TagManager:
   - FBAT
   - Puzz2
   - Ground
+  - Boss
   layers:
   - Default
   - TransparentFX

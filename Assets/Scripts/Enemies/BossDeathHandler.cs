@@ -40,6 +40,7 @@ public class BossDeathHandler : MonoBehaviour
             Instantiate(explosionPrefab, transform.position + new Vector3(1f, 0f, 0f), Quaternion.identity);
             yield return new WaitForSeconds(0.3f);
 
+            Debug.Log("Destroying Boss!");
             Destroy(gameObject);
         }
 

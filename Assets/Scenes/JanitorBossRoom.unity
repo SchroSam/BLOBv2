@@ -1090,7 +1090,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57c6938dcc9d6c744b70b23217a30665, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 3
+  acceleration: 3
+  maxSpeed: 5
   leftLimit: -17.63
   rightLimit: 17.75
   bombPrefab: {fileID: 6909973860824832322, guid: 24f136e47cdeff045b7b6279760d1fdd, type: 3}
@@ -2115,6 +2116,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2021468031}
     - target: {fileID: 3558468577594287343, guid: 2bdeceb755ea9d1449ca0c22c797cf08, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.55
+      objectReference: {fileID: 0}
+    - target: {fileID: 3558468577594287343, guid: 2bdeceb755ea9d1449ca0c22c797cf08, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.28
+      objectReference: {fileID: 0}
+    - target: {fileID: 3558468577594287343, guid: 2bdeceb755ea9d1449ca0c22c797cf08, type: 3}
       propertyPath: m_LocalPosition.z
       value: -2
       objectReference: {fileID: 0}
@@ -2126,10 +2135,6 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -1
       objectReference: {fileID: 0}
-    - target: {fileID: 5292636392703271547, guid: 2bdeceb755ea9d1449ca0c22c797cf08, type: 3}
-      propertyPath: explosionPrefab
-      value: 
-      objectReference: {fileID: 6078089331287086720, guid: f3b5b53dee7ffab46932d026806bab69, type: 3}
     - target: {fileID: 5292636392703271547, guid: 2bdeceb755ea9d1449ca0c22c797cf08, type: 3}
       propertyPath: sceneChangeDoor
       value: 
