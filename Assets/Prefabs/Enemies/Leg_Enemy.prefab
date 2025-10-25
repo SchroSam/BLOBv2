@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 1574109084766827484}
   - component: {fileID: 5637519519159271572}
   - component: {fileID: 3283145439700619856}
+  - component: {fileID: -8133488153137184808}
   m_Layer: 0
   m_Name: Leg_Enemy
   m_TagString: Enemy
@@ -245,7 +246,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: ac751a34f6b0e4b448179334a489904f, type: 3}
   m_Resource: {fileID: 8300000, guid: ac751a34f6b0e4b448179334a489904f, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.12
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -329,6 +330,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &-8133488153137184808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7682320270014523074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38a50393f6d43484381dda62d9db8f03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 3283145439700619856}
+  footstepClip: {fileID: 8300000, guid: ac751a34f6b0e4b448179334a489904f, type: 3}
 --- !u!1001 &3562330015340303973
 PrefabInstance:
   m_ObjectHideFlags: 0

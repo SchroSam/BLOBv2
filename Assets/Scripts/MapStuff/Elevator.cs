@@ -126,33 +126,68 @@ public class Elevator : MonoBehaviour
     private bool playerTrigger = false;
     private bool returning = false;
     private Vector3 velocity = Vector3.zero;
+
     public float smoothTime = 0.3f;
     public float waitTime = 2.0f;
-    public float returnDelay = 3.0f;  // Time to wait at the target before returning
+    public float returnDelay = 3.0f;
 
-    public void Start()
+    [Header("Audio Settings")]
+    public AudioSource elevatorAudio;     // Assign in Inspector
+    public AudioClip elevatorMoveClip;    // Looping movement sound
+
+    private bool isMoving = false;
+    private bool playerOnElevator = false;
+
+    void Start()
     {
         originalPosition = transform.position;
-        // Don't modify targetTransform position - it should be set in the Unity Editor
+
+        if (elevatorAudio)
+        {
+            elevatorAudio.loop = true;
+            elevatorAudio.playOnAwake = false;
+        }
     }
 
-    public void OnTriggerEnter2D(Collider2D collision)
+    void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Player")
+        if (collision.CompareTag("Player"))
         {
+            playerOnElevator = true;
             StartCoroutine(PauseThenContinue());
         }
     }
 
-    public void FixedUpdate()
+    void OnTriggerExit2D(Collider2D collision)
     {
-        if (playerTrigger || returning)
+        if (collision.CompareTag("Player"))
+        {
+            playerOnElevator = false;
+            StopMovingSound(); // stop sound if player steps off
+        }
+    }
+
+    void FixedUpdate()
+    {
+        bool movingUp = playerTrigger;  // elevator moving up
+        bool shouldMove = playerTrigger || returning;
+
+        if (shouldMove)
         {
             Vector3 target = playerTrigger ? targetTransform.position : originalPosition;
             transform.position = Vector3.SmoothDamp(transform.position, target, ref velocity, smoothTime);
 
+            // Play sound only when moving up AND player is on elevator
+            if (movingUp && playerOnElevator && !isMoving)
+            {
+                StartMovingSound();
+            }
+
+            // Stop sound when reaching the target or if player steps off
             if (Vector3.Distance(transform.position, target) < 0.01f)
             {
+                StopMovingSound();
+
                 if (playerTrigger)
                 {
                     playerTrigger = false;
@@ -166,18 +201,34 @@ public class Elevator : MonoBehaviour
         }
     }
 
+    void StartMovingSound()
+    {
+        if (!isMoving && elevatorAudio && elevatorMoveClip)
+        {
+            elevatorAudio.clip = elevatorMoveClip;
+            elevatorAudio.Play();
+            isMoving = true;
+        }
+    }
+
+    void StopMovingSound()
+    {
+        if (isMoving && elevatorAudio)
+        {
+            elevatorAudio.Stop();
+        }
+        isMoving = false;
+    }
+
     IEnumerator PauseThenContinue()
     {
-        yield return new WaitForSeconds(waitTime); // Wait for 2 seconds
+        yield return new WaitForSeconds(waitTime);
         playerTrigger = true;
-        Debug.Log("playerTrigger set True");
     }
 
     IEnumerator ReturnAfterDelay()
     {
         yield return new WaitForSeconds(returnDelay);
         returning = true;
-        Debug.Log("Returning to original position");
     }
 }
-

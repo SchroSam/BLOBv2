@@ -7,6 +7,12 @@ public class BossDeathHandler : MonoBehaviour
     public GameObject explosionPrefab;   // Assign your explosion prefab
     public float explosionDelay = 0.5f;  // Time between explosions
 
+    [Header("Audio")]
+public AudioClip deathSound;         // assign your boss death sound
+    [Range(0f, 1f)]
+    public float deathSoundVolume = 1f;
+
+
     [Header("UI Settings")]
     public GameObject sceneChangeDoor;          // "Press Enter" UI object
     private bool deathTriggered = false;
@@ -23,6 +29,12 @@ public class BossDeathHandler : MonoBehaviour
 
     IEnumerator DeathSequence()
     {
+        // Play death sound
+        if (deathSound != null)
+        {
+            AudioSource.PlayClipAtPoint(deathSound, transform.position, deathSoundVolume);
+        }
+
         // Wait briefly before explosions begin
         yield return new WaitForSeconds(0.2f);
 

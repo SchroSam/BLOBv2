@@ -14,6 +14,11 @@ public class Bomb : MonoBehaviour
     public SpriteRenderer spriteRenderer;
     public GameObject explosionEffect;
 
+    [Header("Audio")]
+    public AudioClip explosionSound;           // assign explosion clip in inspector
+    [Range(0f, 1f)]
+    public float explosionSoundVolume = 1f;   // inspector volume control
+
     private bool hasExploded = false;
     private Color originalColor;
 
@@ -60,6 +65,12 @@ public class Bomb : MonoBehaviour
 
     private void Explode()
     {
+        // Play explosion sound at bomb position
+        if (explosionSound != null)
+        {
+            AudioSource.PlayClipAtPoint(explosionSound, transform.position, explosionSoundVolume);
+        }
+
         // Spawn explosion prefab
         if (explosionEffect != null)
         {
@@ -116,5 +127,3 @@ public class Bomb : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, explosionRadius);
     }
 }
-
-
