@@ -50,7 +50,9 @@ MonoBehaviour:
   targetTransform: {fileID: 5880761366128182899}
   smoothTime: 1
   waitTime: 2
-  returnDelay: 3
+  returnDelay: 1
+  elevatorAudio: {fileID: 0}
+  elevatorMoveClip: {fileID: 0}
 --- !u!212 &3267907663934090381
 SpriteRenderer:
   m_ObjectHideFlags: 0

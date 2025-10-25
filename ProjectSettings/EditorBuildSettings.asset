@@ -17,6 +17,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/JanitorBossRoom.unity
     guid: 377889b71f453df45b9c708d9e2f5277
+  - enabled: 1
+    path: Assets/Scenes/EndingSlides.unity
+    guid: 54204fffe8c1caa45912653900af4ddc
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

@@ -316,9 +316,9 @@ public class PlayerController : MonoBehaviour
             }
             else
             {
-                if (collision.gameObject.GetComponent<ArmEnemyMovement>() != null)
+                if (collision.gameObject.GetComponent<ArmEnemyMovement>() != null && collision.gameObject.GetComponent<ArmEnemyMovement>().mode != 1)
                 {
-
+                    
                     //Physics2D.IgnoreCollision(gameObject.GetComponent<CircleCollider2D>(), collision.gameObject.GetComponent<BoxCollider2D>(), false);
                     collision.gameObject.GetComponent<BoxCollider2D>().enabled = true;
                     collision.gameObject.GetComponent<ArmEnemyMovement>().modeChange();

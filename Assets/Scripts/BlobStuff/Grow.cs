@@ -45,7 +45,7 @@ public class Grow : MonoBehaviour
     {
         if (growing)
         {
-            if (Input.GetMouseButtonUp(Left))
+            if (Input.GetMouseButtonUp(Left) && !clicky)
             {
                 StopGrowing();
                 return;

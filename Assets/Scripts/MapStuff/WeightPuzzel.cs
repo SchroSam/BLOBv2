@@ -45,28 +45,28 @@ public class WeightPuzzel : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("FARM"))
-        {
-            collision.gameObject.SetActive(false);
-            weightNeeded -= 1;
+        // if (collision.CompareTag("FARM"))
+        // {
+        //     collision.gameObject.SetActive(false);
+        //     weightNeeded -= 1;
             
-                rval1 = Random.Range(0, maxDist); // The distance from center
-                rval2 = Random.Range(0, 359); // Rotation of the object
-                rval3 = Random.Range(0, 359) * Mathf.Deg2Rad; // Rotation relative of the center
+        //         rval1 = Random.Range(0, maxDist); // The distance from center
+        //         rval2 = Random.Range(0, 359); // Rotation of the object
+        //         rval3 = Random.Range(0, 359) * Mathf.Deg2Rad; // Rotation relative of the center
 
-                float offsetX = Mathf.Cos(rval3) * rval1;
-                float offsety = Mathf.Sin(rval3) * rval1;
+        //         float offsetX = Mathf.Cos(rval3) * rval1;
+        //         float offsety = Mathf.Sin(rval3) * rval1;
 
-                // Spawn at player's position, no rotation
-                Vector3 spawnPosition = transform.position + new Vector3(offsetX, offsety, 0);
+        //         // Spawn at player's position, no rotation
+        //         Vector3 spawnPosition = transform.position + new Vector3(offsetX, offsety, 0);
 
-                // Instantiate the object at the calculated position
-                GameObject spawned = Instantiate(spritePrefab1, spawnPosition, Quaternion.Euler(0, 0, rval2));
+        //         // Instantiate the object at the calculated position
+        //         GameObject spawned = Instantiate(spritePrefab1, spawnPosition, Quaternion.Euler(0, 0, rval2));
 
-                // Make the sprite a child of the player so it sticks
-                spawned.transform.SetParent(transform);
+        //         // Make the sprite a child of the player so it sticks
+        //         spawned.transform.SetParent(transform);
             
-        }
+        // }
         if (collision.CompareTag("FLEG"))
         {
             collision.gameObject.SetActive(false);
