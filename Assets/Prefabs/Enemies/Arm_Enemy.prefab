@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 9178082304346646893}
   - component: {fileID: 2090844574091089573}
   - component: {fileID: 8129516015942722248}
-  - component: {fileID: 2833149760702477234}
   - component: {fileID: 5963116010767912686}
   m_Layer: 0
   m_Name: Arm_Enemy
@@ -124,6 +123,7 @@ MonoBehaviour:
   shrinkDuration: 2
   targetScale: {x: 0, y: 0, z: 0}
   player: {fileID: 0}
+  drop: {fileID: 4534806233703194560, guid: cb672cbd50e896a439e85d3c1b93149e, type: 3}
 --- !u!61 &2090844574091089573
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -197,19 +197,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 6
---- !u!114 &2833149760702477234
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4925443356360065480}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ad9fc667a52b4d468df9eb791f2a8f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  drop: {fileID: 4534806233703194560, guid: cb672cbd50e896a439e85d3c1b93149e, type: 3}
 --- !u!61 &5963116010767912686
 BoxCollider2D:
   m_ObjectHideFlags: 0

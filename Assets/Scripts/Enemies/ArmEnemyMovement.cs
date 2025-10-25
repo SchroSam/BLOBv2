@@ -11,6 +11,7 @@ public class ArmEnemyMovement : MonoBehaviour
     private Vector3 initialScale;
     private float elapsedTime = 0f;
     public GameObject player;
+    public GameObject drop;
     // Start is called before the first frame update
     void Start()
     {
@@ -48,6 +49,7 @@ public class ArmEnemyMovement : MonoBehaviour
             }
             if (transform.localScale.y <= 0)
             {
+                Instantiate(drop, player.transform.position, transform.rotation);
                 Destroy(gameObject);
             }
         }

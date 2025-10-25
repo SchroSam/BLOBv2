@@ -92,6 +92,10 @@ public class Fired : MonoBehaviour
         {
             gameObject.SetActive(false);
         }
+        else if(other.CompareTag("Arm") || other.CompareTag("Leg") || other.CompareTag("Battery"))
+        {
+            
+        }
         else
         {
             //Debug.Log(other.gameObject.name);
