@@ -22,7 +22,7 @@ public class WeightPuzzel : MonoBehaviour
     }
     void Update()
     {
-        if (weightNeeded <= 0)
+        if (weightNeeded <= 0 || true)
         {
             GetComponent<BoxCollider2D>().enabled = false;
             isActive = true;
@@ -30,8 +30,13 @@ public class WeightPuzzel : MonoBehaviour
         if (isActive)
         {
             doorLink.transform.position = Vector3.MoveTowards(doorLink.transform.position, qaid + pos, 2 * Time.deltaTime);
+
+            if (doorLink.transform.position.y >= qaid.y + (pos.y / 2))
+            {
+                doorLink.GetComponent<BoxCollider2D>().enabled = false;
+            }
             
-            if(doorLink.transform.position.y == qaid.y + pos.y)
+            if(doorLink.transform.position.y >= qaid.y + pos.y)
             {
                 doorLink.SetActive(false);
                 isActive = false;

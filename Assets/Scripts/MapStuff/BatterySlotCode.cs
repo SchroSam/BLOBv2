@@ -22,7 +22,14 @@ public class BatterySlotCode : MonoBehaviour
             visual.SetActive(true);
             doorLink.transform.position = Vector3.MoveTowards(doorLink.transform.position, origPos + pos, 2 * Time.deltaTime);
         }
-        if(doorLink.transform.position.y == origPos.y + pos.y)
+
+        if (doorLink.transform.position.y >= origPos.y + (pos.y / 2))
+        {
+            doorLink.GetComponent<BoxCollider2D>().enabled = false;
+        }
+
+
+        if(doorLink.transform.position.y >= origPos.y + pos.y)
         {
             doorLink.SetActive(false);
         }    
