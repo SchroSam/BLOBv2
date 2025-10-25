@@ -42,6 +42,8 @@ public class Pause : MonoBehaviour
         pauseMenuUI.SetActive(false);
         GameIsPaused = false;
 
+        InventoryManager.Instance.clearLimbInfo();
+
         SceneManager.LoadScene("MainMenu");
         Time.timeScale = 1.0f;
     }

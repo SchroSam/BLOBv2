@@ -1,4 +1,5 @@
 using System;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Cam : MonoBehaviour
@@ -9,6 +10,10 @@ public class Cam : MonoBehaviour
     private Vector3 velocity = Vector3.zero;
     Vector3 targetTransform;
     public float yOffset = 1;
+
+    private bool camLock = false;
+
+    public float maxHeight = 99999;
 
     // Update is called once per frame
     private void Start()
@@ -24,7 +29,16 @@ public class Cam : MonoBehaviour
         targetTransform.z = transform.position.z;
         targetTransform.y = target.transform.position.y + yOffset;
 
-        transform.position = Vector3.SmoothDamp(transform.position, targetTransform, ref velocity, smoothTime);
+        //if(transform.position.y + (GetComponent<Camera>().orthographicSize / 2) < maxHeight)
+            transform.position = Vector3.SmoothDamp(transform.position, targetTransform, ref velocity, smoothTime);
+
+        if(transform.position.y + (GetComponent<Camera>().orthographicSize / 2) > maxHeight || camLock)
+        {
+            camLock = true;
+            //transform.position = Vector3.SmoothDamp(transform.position, new Vector3(transform.position.x, transform.position.y - 3, transform.position.z), ref velocity, smoothTime);
+            transform.position = new Vector3(transform.position.x, 1.07f, transform.position.z);
+            transform.GetComponent<Camera>().orthographicSize = 6.93f;
+        }
 
 
     }

@@ -30,11 +30,12 @@ public class MainMenuButtons : MonoBehaviour
 
         yield return new WaitForSeconds(controlsDisplayTime);
 
-         
-            
 
-    // Smoothly load the main game scene
+
+
+        // Smoothly load the main game scene
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("MainGame");
+        InventoryManager.Instance.clearLimbInfo();
         asyncLoad.allowSceneActivation = true;
 
         while (!asyncLoad.isDone)

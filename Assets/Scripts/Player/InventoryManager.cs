@@ -95,6 +95,21 @@ public class InventoryManager : MonoBehaviour
         Debug.Log($"CacheLimbData called: arms={cachedArmFloaters.Count} legs={cachedLegFloaters.Count} bat={cachedBatteryFloaters.Count} doRetrieveCache={doRetrieveCache} (backed up to static)");
     }
 
+    public void clearLimbInfo()
+    {
+        cachedArmFloaters.Clear();
+        cachedArmFloaters.Clear();
+        cachedArmFloaters.Clear();
+
+        s_cachedLimbs.Clear();
+        s_cachedArmFloaters.Clear();
+        s_cachedLegFloaters.Clear();
+        s_cachedBatteryFloaters.Clear();
+
+        doRetrieveCache = false;
+        s_doRetrieveCache = false;
+    }
+
     //right before you change scenes
     void OnActiveSceneChanged(Scene oldScene, Scene newScene)
     {
@@ -156,7 +171,7 @@ public class InventoryManager : MonoBehaviour
                 {
                     if (ld.prefab == null) continue;
                     Debug.Log(ld.prefab.name);
-                    GameObject spawned = Instantiate(ld.prefab, player.transform);
+                    GameObject spawned = Instantiate(ld.prefab, player.transform.GetChild(0));
                     spawned.transform.localPosition = ld.localPosition;
                     spawned.transform.localRotation = ld.localRotation;
                     spawned.transform.localScale = ld.localScale;
@@ -167,7 +182,7 @@ public class InventoryManager : MonoBehaviour
                 {
                     if (ld.prefab == null) continue;
                     Debug.Log(ld.prefab.name);
-                    GameObject spawned = Instantiate(ld.prefab, player.transform);
+                    GameObject spawned = Instantiate(ld.prefab, player.transform.GetChild(0));
                     spawned.transform.localPosition = ld.localPosition;
                     spawned.transform.localRotation = ld.localRotation;
                     spawned.transform.localScale = ld.localScale;
@@ -178,7 +193,7 @@ public class InventoryManager : MonoBehaviour
                 {
                     if (ld.prefab == null) continue;
                     Debug.Log(ld.prefab.name);
-                    GameObject spawned = Instantiate(ld.prefab, player.transform);
+                    GameObject spawned = Instantiate(ld.prefab, player.transform.GetChild(0));
                     spawned.transform.localPosition = ld.localPosition;
                     spawned.transform.localRotation = ld.localRotation;
                     spawned.transform.localScale = ld.localScale;
