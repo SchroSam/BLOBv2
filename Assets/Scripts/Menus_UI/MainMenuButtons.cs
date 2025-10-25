@@ -15,6 +15,10 @@ public class MainMenuButtons : MonoBehaviour
 
     public void TitileNowButton()
     {
+        if (InventoryManager.Instance != null)
+        {
+            InventoryManager.Instance.clearLimbInfo();
+        }
         SceneManager.LoadScene("MainMenu");
     }
 
