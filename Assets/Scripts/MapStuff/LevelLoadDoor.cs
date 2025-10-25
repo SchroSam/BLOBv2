@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections;
+using System.Collections.Generic;
 public class LevelLoadDoor : MonoBehaviour
 {
     public string sceneToLoad;
@@ -33,11 +34,15 @@ public class LevelLoadDoor : MonoBehaviour
         if (inputsActive && Input.GetKeyDown(KeyCode.Return) && !isLoading)
         {
             //Debug.Log("main if entered");
-            InventoryManager.Instance.cachedLimbs[0] = FindFirstObjectByType<PlayerController>().armCount;
-            InventoryManager.Instance.cachedLimbs[1] = FindFirstObjectByType<PlayerController>().legCount;
-            InventoryManager.Instance.cachedLimbs[2] = FindFirstObjectByType<PlayerController>().batCount;
-            InventoryManager.Instance.cachedLimbs[3] = FindFirstObjectByType<PlayerController>().brainCount;
-            InventoryManager.Instance.calledMyself = true;
+            PlayerController player = FindFirstObjectByType<PlayerController>();
+            var spawnComp = player.GetComponent<SpawnOnPlayer>();
+            
+            // Cache both limb counts and LimbData in one atomic operation
+            var limbs = new List<int> { player.armCount, player.legCount, player.batCount, player.brainCount };
+            InventoryManager.Instance.cachedLimbs = limbs;
+            InventoryManager.Instance.CacheLimbData(spawnComp.armsData, spawnComp.legsData, spawnComp.batData);
+            
+            Debug.Log($"LevelLoadDoor caching before scene load - Counts: {string.Join(",", limbs)}, Data: arms={spawnComp.armsData?.Count ?? 0} legs={spawnComp.legsData?.Count ?? 0} bat={spawnComp.batData?.Count ?? 0}");
 
             isLoading = true;
             if (fadeObject != null) //wait for transition

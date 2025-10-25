@@ -7523,6 +7523,10 @@ PrefabInstance:
     - target: {fileID: -5311222889144748140, guid: 8a8d083fa12618f42aae9c29cf076400, type: 3}
       propertyPath: GameOverImage
       value: 
+      objectReference: {fileID: 1986391711}
+    - target: {fileID: -5311222889144748140, guid: 8a8d083fa12618f42aae9c29cf076400, type: 3}
+      propertyPath: damageOverlays.Array.size
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: -5311222889144748140, guid: 8a8d083fa12618f42aae9c29cf076400, type: 3}
       propertyPath: 'damageOverlays.Array.data[0]'
@@ -7536,21 +7540,17 @@ PrefabInstance:
       propertyPath: 'damageOverlays.Array.data[2]'
       value: 
       objectReference: {fileID: 1986391714}
-    - target: {fileID: -5311222889144748140, guid: 8a8d083fa12618f42aae9c29cf076400, type: 3}
-      propertyPath: 'damageOverlays.Array.data[3]'
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 143058, guid: 8a8d083fa12618f42aae9c29cf076400, type: 3}
       propertyPath: m_Name
       value: PlayerBlob
       objectReference: {fileID: 0}
     - target: {fileID: 464436, guid: 8a8d083fa12618f42aae9c29cf076400, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -31.38
+      value: 2.21
       objectReference: {fileID: 0}
     - target: {fileID: 464436, guid: 8a8d083fa12618f42aae9c29cf076400, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -21.82
+      value: 22.85
       objectReference: {fileID: 0}
     - target: {fileID: 464436, guid: 8a8d083fa12618f42aae9c29cf076400, type: 3}
       propertyPath: m_LocalPosition.z
@@ -7585,7 +7585,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 9039915426980959748, guid: 8a8d083fa12618f42aae9c29cf076400, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8a8d083fa12618f42aae9c29cf076400, type: 3}
@@ -12073,6 +12074,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e2edf120096b05d488d4ef723a8ed6df, type: 3}
+--- !u!1 &1986391711 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2949508208455089381, guid: e2edf120096b05d488d4ef723a8ed6df, type: 3}
+  m_PrefabInstance: {fileID: 1986391710}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1986391714 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6920220983951131324, guid: e2edf120096b05d488d4ef723a8ed6df, type: 3}
@@ -16151,7 +16157,7 @@ Transform:
   m_GameObject: {fileID: 2647845184615165975}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -31.38, y: -21.82, z: -10}
+  m_LocalPosition: {x: 2.2100005, y: 22.849998, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -32643,10 +32649,10 @@ MonoBehaviour:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 1986391710}
   - {fileID: 1463375194722619623}
   - {fileID: 6200080323825347947}
   - {fileID: 1266199973}
-  - {fileID: 1986391710}
   - {fileID: 91325292}
   - {fileID: 1727884773}
   - {fileID: 1251818325}
