@@ -1,4 +1,6 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class MainMenuButtons : MonoBehaviour
 {
@@ -6,28 +8,50 @@ public class MainMenuButtons : MonoBehaviour
     public GameObject PlayMenu;
     public GameObject QuitMenu;
     public GameObject CredMenu;
-    // Start is called before the first frame update
+
+    [Header("Controls Display")]
+    public GameObject controlsImage;   // Assign your controls image here
+    public float controlsDisplayTime = 7f; // Time to show controls
+
     public void TitileNowButton()
     {
-        // Play Now Button has been pressed, here you can initialize your game (For example Load a Scene called GameLevel etc.)
-        UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene("MainMenu");
     }
 
     public void PlayNowButton()
     {
-        // Play Now Button has been pressed, here you can initialize your game (For example Load a Scene called GameLevel etc.)
-        UnityEngine.SceneManagement.SceneManager.LoadScene("MainGame");
-    }
-    public void CredNowButton()
-    {
-        // Play Now Button has been pressed, here you can initialize your game (For example Load a Scene called GameLevel etc.)
-        UnityEngine.SceneManagement.SceneManager.LoadScene("Credits");
-    }
-    public void QuitButton()
-    {
-        // Quit Game
-        Application.Quit();
+        StartCoroutine(ShowControlsAndStartGame());
     }
 
+   private IEnumerator ShowControlsAndStartGame()
+    {
+        if (controlsImage != null)
+         controlsImage.SetActive(true);
+
+        yield return new WaitForSeconds(controlsDisplayTime);
+
+         if (controlsImage != null)
+            controlsImage.SetActive(false);
+
+    // Smoothly load the main game scene
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("MainGame");
+        asyncLoad.allowSceneActivation = true;
+
+        while (!asyncLoad.isDone)
+        {   
+        yield return null; // wait until scene is fully loaded
+        }
+    }
+
+    public void CredNowButton()
+    {
+        SceneManager.LoadScene("Credits");
+    }
+
+    public void QuitButton()
+    {
+        Application.Quit();
+    }
 }
+
 

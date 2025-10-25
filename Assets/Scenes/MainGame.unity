@@ -7458,10 +7458,6 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: -5311222889144748140, guid: 8a8d083fa12618f42aae9c29cf076400, type: 3}
-      propertyPath: damageOverlays.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: -5311222889144748140, guid: 8a8d083fa12618f42aae9c29cf076400, type: 3}
       propertyPath: 'damageOverlays.Array.data[0]'
       value: 
       objectReference: {fileID: 1986391716}
@@ -7483,7 +7479,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 464436, guid: 8a8d083fa12618f42aae9c29cf076400, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 22.85
+      value: -21.82
       objectReference: {fileID: 0}
     - target: {fileID: 464436, guid: 8a8d083fa12618f42aae9c29cf076400, type: 3}
       propertyPath: m_LocalPosition.z
@@ -16155,7 +16151,7 @@ Transform:
   m_GameObject: {fileID: 2647845184615165975}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.2100005, y: 22.849998, z: -10}
+  m_LocalPosition: {x: -31.85, y: -21.8, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
