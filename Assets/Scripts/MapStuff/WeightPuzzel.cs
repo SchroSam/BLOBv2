@@ -24,11 +24,18 @@ public class WeightPuzzel : MonoBehaviour
     {
         if (weightNeeded <= 0)
         {
+            GetComponent<BoxCollider2D>().enabled = false;
             isActive = true;
         }
         if (isActive)
         {
             doorLink.transform.position = Vector3.MoveTowards(doorLink.transform.position, qaid + pos, 2 * Time.deltaTime);
+            
+            if(doorLink.transform.position.y == qaid.y + pos.y)
+            {
+                doorLink.SetActive(false);
+                isActive = false;
+            }    
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)

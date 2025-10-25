@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 public class PlayerController : MonoBehaviour
 {
     [Header("Movement Settings")]
@@ -51,6 +52,17 @@ public class PlayerController : MonoBehaviour
         int index = Mathf.Clamp(playerhealth, 0, slimesprites.Length - 1);
         healthimage.sprite = slimesprites[index];
     }
+
+    private void OnDestroy()
+    {
+        SceneManager.activeSceneChanged -= OnActiveSceneChanged;
+    }
+
+    void Awake()
+    {
+        SceneManager.activeSceneChanged += OnActiveSceneChanged;
+    }
+
 
     public void UpdatedamageOverlays()
     {
@@ -159,7 +171,7 @@ public class PlayerController : MonoBehaviour
             }
 
         }
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+        if (Input.GetKeyDown(KeyCode.K))
         {
             if (brainCount > 0)
             {
@@ -340,5 +352,10 @@ public class PlayerController : MonoBehaviour
 
         UpdateHealthUI();
         UpdatedamageOverlays();
+    }
+
+    void OnActiveSceneChanged(Scene oldScene, Scene newScene)
+    {
+        GameOverImage.SetActive(false);
     }
 }
