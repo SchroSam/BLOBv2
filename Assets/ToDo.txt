@@ -1,10 +1,3 @@
-Bugs in remaining in Pre-IndieFest build:
-
-  1. Music needs to loop
-
-  2. 2nd battery slot needs z value adjusted
-
-  3. Images showing up in blob after entering the boss room
 
 Things to Add for IndieFest build:
 
