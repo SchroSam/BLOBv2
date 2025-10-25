@@ -267,6 +267,29 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cred
       objectReference: {fileID: 0}
+    - target: {fileID: 477887888522892614, guid: 095323f9aa03f3249af8b7d85220ec08, type: 3}
+      propertyPath: m_text
+      value: 'Programming
+
+
+        Sam Schibi
+
+        Samuel (Scott) Schroeder
+
+        Jameson
+        Foster'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1088915185930930809, guid: 095323f9aa03f3249af8b7d85220ec08, type: 3}
+      propertyPath: m_text
+      value: 'Art
+
+
+        Duncan Lowther
+
+        Andrew Tobias
+
+        Sam Schibi'
+      objectReference: {fileID: 0}
     - target: {fileID: 1474006460566551278, guid: 095323f9aa03f3249af8b7d85220ec08, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5.4
@@ -994,6 +1017,7 @@ MonoBehaviour:
   startMass: 0
   velocity: {x: 0, y: 0, z: 0}
   clicky: 1
+  BlobColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
