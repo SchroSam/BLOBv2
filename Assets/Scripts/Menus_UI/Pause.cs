@@ -44,7 +44,7 @@ public class Pause : MonoBehaviour
 
         InventoryManager.Instance.clearLimbInfo();
 
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene("Assets/Scenes/MainMenu.unity");
         Time.timeScale = 1.0f;
     }
 
