@@ -1,7 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
-using Microsoft.Unity.VisualStudio.Editor;
 public class PlayerController : MonoBehaviour
 {
     [Header("Movement Settings")]
