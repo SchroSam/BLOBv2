@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class nextFadeHelper : StateMachineBehaviour
 {
+    public float delay = 0f;
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     //override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     //{
@@ -18,7 +19,7 @@ public class nextFadeHelper : StateMachineBehaviour
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         if (animator.GetComponent<AnimQueue>() != null)
-            animator.GetComponent<AnimQueue>().GotDone();
+            animator.GetComponent<AnimQueue>().GotDone(delay);
         
         animator.enabled = false;
     }

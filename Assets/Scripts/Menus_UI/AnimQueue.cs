@@ -1,4 +1,6 @@
 using UnityEngine;
+using System.Collections;
+
 
 public class AnimQueue : MonoBehaviour
 {
@@ -6,11 +8,19 @@ public class AnimQueue : MonoBehaviour
     public GameObject next;
 
     // Update is called once per frame
-    public void GotDone()
+    public void GotDone(float delay)
     {
-        if(next != null)
+
+
+        if (next != null)
         {
-            next.GetComponent<Animator>().SetTrigger("PreviousDone");
+            StartCoroutine(DeathSequence(delay));
         }
+    }
+
+    IEnumerator DeathSequence(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        next.GetComponent<Animator>().SetTrigger("PreviousDone");
     }
 }
