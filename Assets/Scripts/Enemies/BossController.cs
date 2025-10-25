@@ -55,7 +55,7 @@ public class BossController : MonoBehaviour
 
             if (Math.Abs(GetComponent<Rigidbody2D>().linearVelocityX) < maxSpeed)
                 GetComponent<Rigidbody2D>().AddForceX(acceleration);
-            
+
             if (transform.position.x >= rightLimit)
             {
                 GetComponent<Rigidbody2D>().linearVelocityX = 0;
@@ -68,13 +68,26 @@ public class BossController : MonoBehaviour
             //transform.Translate(Vector2.left * moveSpeed * Time.deltaTime);
             if (Math.Abs(GetComponent<Rigidbody2D>().linearVelocityX) < maxSpeed)
                 GetComponent<Rigidbody2D>().AddForceX(-acceleration);
-                
+
             if (transform.position.x <= leftLimit)
             {
                 GetComponent<Rigidbody2D>().linearVelocityX = 0;
                 movingRight = true;
                 gameObject.GetComponent<SpriteRenderer>().flipX = true;
             }
+        }
+
+
+        //failsafe
+        if (transform.position.x > rightLimit)
+        {
+            GetComponent<Rigidbody2D>().linearVelocityX = 0;
+            movingRight = false;
+        }
+        else if (transform.position.x < leftLimit)
+        {
+            GetComponent<Rigidbody2D>().linearVelocityX = 0;
+            movingRight = true;
         }
     }
 
