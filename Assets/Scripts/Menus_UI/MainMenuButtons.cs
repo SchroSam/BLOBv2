@@ -30,8 +30,8 @@ public class MainMenuButtons : MonoBehaviour
 
         yield return new WaitForSeconds(controlsDisplayTime);
 
-         if (controlsImage != null)
-            controlsImage.SetActive(false);
+         
+            
 
     // Smoothly load the main game scene
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("MainGame");

@@ -4,7 +4,7 @@ public class WeightPuzzel : MonoBehaviour
 {
     public bool isActive = false;
     public GameObject doorLink;
-    public Vector2 pos = new Vector2(0, 0);
+    public Vector2 pos = new Vector2(0, 5);
     private Vector2 qaid;
     public int weightNeeded = 5;
 
