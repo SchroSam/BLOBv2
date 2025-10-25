@@ -88,7 +88,7 @@ public class Fired : MonoBehaviour
         {
             gameObject.SetActive(false);
         }
-        else if (other.CompareTag("Puzz") && !gameObject.CompareTag("FBAT"))
+        else if (other.CompareTag("Puzz") && !gameObject.CompareTag("FBAT") && !gameObject.CompareTag("FARM"))
         {
             gameObject.SetActive(false);
         }
