@@ -739,6 +739,8 @@ MonoBehaviour:
   PlayMenu: {fileID: 0}
   QuitMenu: {fileID: 0}
   CredMenu: {fileID: 0}
+  controlsImage: {fileID: 0}
+  controlsDisplayTime: 7
 --- !u!1 &2448938830017783914
 GameObject:
   m_ObjectHideFlags: 0
@@ -1853,7 +1855,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 228, y: -11.9999695}
+  m_AnchoredPosition: {x: 228, y: -11.999939}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!222 &6084989929269807945
@@ -1928,7 +1930,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -13.000366, y: 13.9999695}
+  m_AnchoredPosition: {x: -13.000366, y: 13.999939}
   m_SizeDelta: {x: 100.6947, y: 102.53601}
   m_Pivot: {x: 0, y: 1}
 --- !u!222 &427135428462491979
