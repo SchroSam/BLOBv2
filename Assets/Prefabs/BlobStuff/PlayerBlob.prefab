@@ -38,6 +38,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 7822775627137099884}
   - {fileID: 4461132364606670918}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -203,12 +204,15 @@ MonoBehaviour:
   spritePrefabArm: {fileID: 216977880142089823, guid: bc37bd18393366147a1445168708ce65, type: 3}
   spritePrefabLeg: {fileID: 216977880142089823, guid: b70e9fbc1b5c7944183e0cf985d56746, type: 3}
   spritePrefabBat: {fileID: 216977880142089823, guid: 64e0e4baa1a0d7942866783654985f0e, type: 3}
-  player: {fileID: 464436}
+  player: {fileID: 7822775627137099884}
   maxDist: 1
   arms: []
   legs: []
   brain: []
   bat: []
+  armsData: []
+  legsData: []
+  batData: []
 --- !u!33 &3386826224017997663
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -359,6 +363,37 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &2837140696614845236
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7822775627137099884}
+  m_Layer: 0
+  m_Name: LimbTracker
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7822775627137099884
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2837140696614845236}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 464436}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &9039915426980959748
 GameObject:
   m_ObjectHideFlags: 0
