@@ -1,28 +1,22 @@
-Stuff to Add/Change:
---MVP--
+Bugs in remaining in Pre-IndieFest build:
 
--MADE LEG ENEMY COMBAT BETTER-
-2. Finish and refine first level
-  2.a. Playtest whole game before final build
-3. Add Boss and ending slides
-  -BOSS LOGIC BASICALLY DONE-
-  -BOSS VISUALS BASICALLY DONE-
-  3.c. boss final playtest and polish pass
-  3.d. Add ending slides and any "cutscene" effects
+  1. Music needs to loop
 
---STRETCH--
+  2. 2nd battery slot needs z value adjusted
 
-4. Tune Player firing direction
-5. Add more/refine SFX
-  5.a. Blob wet slapping noise for when the blob has a sudden impact
--RE ADDED COLLISION TO LOGO (WAY EASIER THAN I THOUGHT)-
+  3. Images showing up in blob after entering the boss room
 
-Known bugs to fix:
---MVP--
+Things to Add for IndieFest build:
 
--FIXED BLOBS NOT DESPAWNING ON SCENE CHANGE-
+  1. put the blueprint between main menu and main game
 
--FIXED LEG ENEMY HITREG-
+  2. thank you screen at the very beginning use the main menu and quit buttons from the pause menu on that as well
+
+
 
 --STRETCH--
--FIXED STUFF NOT GETTING DELETED ON SCENE END-
+
+1. Tune Player firing direction
+2. Add more/refine SFX
+  2.a. Blob wet slapping noise for when the blob has a sudden impact
+
