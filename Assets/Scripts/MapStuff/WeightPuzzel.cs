@@ -22,7 +22,7 @@ public class WeightPuzzel : MonoBehaviour
     }
     void Update()
     {
-        if (weightNeeded <= 0 || true)
+        if (weightNeeded <= 0 )
         {
             GetComponent<BoxCollider2D>().enabled = false;
             isActive = true;
