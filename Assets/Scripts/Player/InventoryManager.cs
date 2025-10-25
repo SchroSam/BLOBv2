@@ -1,10 +1,12 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
+using System.Collections.Generic;
+using System.Linq;
 
 public class InventoryManager : MonoBehaviour
 {
-    public static InventoryManager Instance; // Singleton for global access
+    public static InventoryManager Instance = null; // Singleton for global access
 
     [Header("UI")]
     public TMP_Text armsText;
@@ -13,14 +15,19 @@ public class InventoryManager : MonoBehaviour
     public TMP_Text batteriesText;
     private PlayerController currentPlayer;
     public Color BlobColor;
+    public List<int> cachedLimbs;
+    public bool calledMyself = false;
 
     void Awake()
     {
+        // Initialize the list
+        cachedLimbs = new List<int> { 0, 0, 0, 0 };
+        
         // Singleton setup
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject); // persists between scenes
+            DontDestroyOnLoad(transform.parent.gameObject); // persists between scenes
 
             // Listen for scene loads to re-hook UI and player
             SceneManager.sceneLoaded += OnSceneLoaded;
@@ -28,7 +35,7 @@ public class InventoryManager : MonoBehaviour
         }
         else
         {
-            Destroy(gameObject);
+            Destroy(transform.parent.gameObject);
             return;
         }
     }
@@ -43,16 +50,23 @@ public class InventoryManager : MonoBehaviour
     void OnActiveSceneChanged(Scene oldScene, Scene newScene)
     {
         currentPlayer = FindFirstObjectByType<PlayerController>();
+
+        Debug.Log($"Caching values before scene change - Arms: {cachedLimbs[0]}, Legs: {cachedLimbs[1]}, Batteries: {cachedLimbs[2]}, Brains: {cachedLimbs[3]}");
+        
         BlobColor = currentPlayer.GetComponent<Grow>().BlobColor;
+
     }
 
 
     // Called automatically whenever a new scene is loaded
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
+        Debug.Log($"Cached values on scene load - Arms: {cachedLimbs[0]}, Legs: {cachedLimbs[1]}, Batteries: {cachedLimbs[2]}, Brains: {cachedLimbs[3]}");
+        Debug.Log($"CalledMyself: {calledMyself}");
         // Try to find the player and UI again in the new scene
         currentPlayer = FindFirstObjectByType<PlayerController>();
         ReconnectUI();
+        
         UpdateUIFromPlayer(currentPlayer);
         currentPlayer.GetComponent<Renderer>().material.color = BlobColor;
     }
@@ -72,9 +86,26 @@ public class InventoryManager : MonoBehaviour
 
         currentPlayer = player;
 
-        if (armsText != null) armsText.text = "Arms: " + player.armCount;
-        if (legsText != null) legsText.text = "Legs: " + player.legCount;
-        if (batteriesText != null) batteriesText.text = "Batteries: " + player.batCount;
-        if (brainsText != null) brainsText.text = "Brains: " + player.brainCount;
+        if (calledMyself)
+        {
+            currentPlayer.armCount = cachedLimbs[0];
+            currentPlayer.legCount = cachedLimbs[1];
+            currentPlayer.batCount = cachedLimbs[2];
+            currentPlayer.brainCount = cachedLimbs[3];
+            calledMyself = false;
+        }
+        else
+        {
+            cachedLimbs[0] = currentPlayer.armCount;
+            cachedLimbs[1] = currentPlayer.legCount;
+            cachedLimbs[2] = currentPlayer.batCount;
+            cachedLimbs[3] = currentPlayer.brainCount;
+        }
+
+
+        if (armsText != null) armsText.text = "Arms: " + currentPlayer.armCount;
+        if (legsText != null) legsText.text = "Legs: " + currentPlayer.legCount;
+        if (batteriesText != null) batteriesText.text = "Batteries: " + currentPlayer.batCount;
+        if (brainsText != null) brainsText.text = "Brains: " + currentPlayer.brainCount;
     }
 }

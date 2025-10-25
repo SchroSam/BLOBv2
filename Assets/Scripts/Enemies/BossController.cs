@@ -115,7 +115,7 @@ public class BossController : MonoBehaviour
             Instantiate(bombPrefab, activeGroup[i].position, Quaternion.identity);
         }
         useGroup1 = !useGroup1; // Alternate groups for the next drop
-        Debug.Log("Bombs dropped on " + (useGroup1 ? "Group 2" : "Group 1"));
+        //Debug.Log("Bombs dropped on " + (useGroup1 ? "Group 2" : "Group 1"));
     }
 
     void SpawnEnemy()

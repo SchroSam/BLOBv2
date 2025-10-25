@@ -33,6 +33,11 @@ public class LevelLoadDoor : MonoBehaviour
         if (inputsActive && Input.GetKeyDown(KeyCode.Return) && !isLoading)
         {
             //Debug.Log("main if entered");
+            InventoryManager.Instance.cachedLimbs[0] = FindFirstObjectByType<PlayerController>().armCount;
+            InventoryManager.Instance.cachedLimbs[1] = FindFirstObjectByType<PlayerController>().legCount;
+            InventoryManager.Instance.cachedLimbs[2] = FindFirstObjectByType<PlayerController>().batCount;
+            InventoryManager.Instance.cachedLimbs[3] = FindFirstObjectByType<PlayerController>().brainCount;
+            InventoryManager.Instance.calledMyself = true;
 
             isLoading = true;
             if (fadeObject != null) //wait for transition

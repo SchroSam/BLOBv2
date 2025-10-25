@@ -41,7 +41,7 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         brainCount = 1;
-        InventoryManager.Instance.UpdateUIFromPlayer(this);
+        //InventoryManager.Instance.UpdateUIFromPlayer(this);
         UpdateHealthUI();
         UpdatedamageOverlays();
     }
