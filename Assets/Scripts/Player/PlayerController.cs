@@ -92,6 +92,11 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Slash))
+        {
+            SceneManager.LoadScene("MainMenu");
+        }
+
         if (playerhealth <= 0)
         {
             if (GameOverImage != null)
@@ -209,10 +214,7 @@ public class PlayerController : MonoBehaviour
 
             }
         }
-        if (Input.GetKeyDown(KeyCode.Slash))
-        {
-            SceneManager.LoadScene("MainMenu");
-        }
+
 
         // if (Input.GetKeyDown(KeyCode.Alpha5))
         // {
