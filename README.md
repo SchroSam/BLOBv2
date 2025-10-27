@@ -1,5 +1,5 @@
 # BLOBv2
-This is the build of BLOB from the 10/25/25 SAU IndieFest
+This is the build of BLOB from the 10/25/25 Arkansas IndieFest
 <p align="center">
   <img src="Assets/Art_Assets/_CoverArt.png" width="650"/>
 </p>
