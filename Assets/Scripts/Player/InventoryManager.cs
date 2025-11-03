@@ -64,6 +64,9 @@ public class InventoryManager : MonoBehaviour
         else
         {
             Debug.Log($"InventoryManager duplicate found, destroying this={GetInstanceID()} name={gameObject.name} existingInstance={Instance.GetInstanceID()}\n");
+
+            //make sure instance public vars are set correctly, also sanity check to not null out - TO FIX
+            
             Destroy(gameObject);
             return;
         }

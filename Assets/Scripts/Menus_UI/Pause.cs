@@ -41,10 +41,11 @@ public class Pause : MonoBehaviour
     {
         pauseMenuUI.SetActive(false);
         GameIsPaused = false;
+        SceneManager.LoadScene("Assets/Scenes/MainMenu.unity");
 
         InventoryManager.Instance.clearLimbInfo();
 
-        SceneManager.LoadScene("Assets/Scenes/MainMenu.unity");
+        
         Time.timeScale = 1.0f;
     }
 
